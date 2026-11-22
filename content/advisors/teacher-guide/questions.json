@@ -1,0 +1,104 @@
+[
+  {
+    "id": "disclosure-tell-whole-class",
+    "advisorId": "teacher-guide",
+    "categoryId": "disclosure-and-privacy",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 1,
+    "question": {
+      "en": "Should I tell the whole class about the student's diagnosis?"
+    },
+    "keywords": {
+      "en": ["disclosure", "diagnosis", "privacy", "class", "peers"]
+    },
+    "answerFile": null,
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "meltdown-middle-of-lesson",
+    "advisorId": "teacher-guide",
+    "categoryId": "daily-classroom-situations",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 1,
+    "question": {
+      "en": "What should I do if the child has a meltdown in the middle of a lesson?"
+    },
+    "keywords": {
+      "en": ["meltdown", "lesson", "distress", "classroom", "crisis"]
+    },
+    "answerFile": null,
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "aide-absent",
+    "advisorId": "teacher-guide",
+    "categoryId": "aide-collaboration",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 2,
+    "question": {
+      "en": "What should I do when the aide is absent?"
+    },
+    "keywords": {
+      "en": ["aide", "absence", "classroom", "support", "coverage"]
+    },
+    "answerFile": null,
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "bullying-or-teasing",
+    "advisorId": "teacher-guide",
+    "categoryId": "social-dynamics",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 1,
+    "question": {
+      "en": "How do I handle bullying or teasing toward the child?"
+    },
+    "keywords": {
+      "en": ["bullying", "teasing", "peers", "social", "safety"]
+    },
+    "answerFile": null,
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "suspected-autism-no-diagnosis",
+    "advisorId": "teacher-guide",
+    "categoryId": "parents-and-school-system",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 2,
+    "question": {
+      "en": "What should I do if I suspect a student is on the spectrum but there is no diagnosis?"
+    },
+    "keywords": {
+      "en": ["suspected autism", "diagnosis", "school", "referral", "counselor"]
+    },
+    "answerFile": null,
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "crisis-protocol",
+    "advisorId": "teacher-guide",
+    "categoryId": "boundaries-and-safety",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 1,
+    "question": {
+      "en": "What are the signs of a crisis, and what is my response protocol?"
+    },
+    "keywords": {
+      "en": ["crisis", "danger", "safety", "protocol", "emergency"]
+    },
+    "answerFile": null,
+    "relatedAdvisors": [],
+    "media": null
+  }
+]

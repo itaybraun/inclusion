@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "advisorId", "categoryId", "status", "featured", "sortOrder", "question", "keywords", "answerFile", "relatedAdvisors", "media"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+      "advisorId": { "type": "string" },
+      "categoryId": { "type": "string" },
+      "status": { "enum": ["draft", "in-review", "needs-translation", "published", "archived"] },
+      "featured": { "type": "boolean" },
+      "sortOrder": { "type": "integer", "minimum": 1 },
+      "question": { "type": "object" },
+      "keywords": { "type": "object" },
+      "answerFile": { "type": ["string", "null"] },
+      "relatedAdvisors": { "type": "array", "items": { "type": "string" } },
+      "media": { "type": ["string", "null"] }
+    }
+  }
+}

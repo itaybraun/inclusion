@@ -63,6 +63,27 @@ Each agent card should contain:
 | Administration Agent | Help navigating Israeli benefits, applications, and administrative processes. |
 | Parent Companion Agent | Empathy, encouragement, perspective, and practical next steps for parents. |
 
+### Advisor identity
+
+Each advisor should have:
+
+- A friendly, memorable name in addition to its functional role name.
+- A distinct face or avatar.
+- A dedicated identity color.
+- A short description of what the advisor can help with.
+
+**Proposed friendly names:**
+
+| Functional name | Friendly name |
+| --- | --- |
+| Teacher Guide | Maya |
+| Classroom Aide Agent | Daniel |
+| Older Sibling Agent | Noa |
+| Administration Agent | Yael |
+| Parent Companion Agent | Lev |
+
+The advisor's face and identity color should appear in the advisor card and throughout the advisor detail page. The friendly name may lead the interface, while the functional role remains visible for clarity.
+
 The Teacher Guide should remain the clearest recommended starting point for initial user testing.
 
 ### 4. Main Navigation

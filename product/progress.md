@@ -6,6 +6,8 @@
 - [x] Define the target users and primary workflows.
 - [x] Detail the Teacher Guide inputs, categories, sample conversations, and boundaries.
 - [x] Define the main menu, navigation, agents, language rollout, and MVP acceptance criteria.
+- [x] Define the reusable advisor detail experience, search, chat state, and podcast behavior.
+- [x] Plan the multilingual, expert-authored content repository and private review metadata.
 - [ ] Build the first-page UI.
 - [ ] Define safety and crisis escalation behavior.
 - [ ] Define the shared child-profile consent model.

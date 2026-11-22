@@ -236,7 +236,7 @@ main {
 .advisor-card {
   --advisor-color: var(--brand);
   position: relative;
-  min-height: 230px;
+  min-height: 168px;
   grid-column: span 2;
   display: grid;
   grid-template-columns: 58px 1fr;

@@ -1,0 +1,10 @@
+{
+  "id": "teacher-guide",
+  "friendlyName": "Maya",
+  "roleName": "Teacher Guide",
+  "description": "Practical, classroom-focused guidance for teachers supporting an autistic student.",
+  "color": "#D49A35",
+  "status": "draft",
+  "defaultLanguage": "en",
+  "supportedLanguages": ["en"]
+}

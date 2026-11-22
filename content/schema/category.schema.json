@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "description", "sortOrder"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+      "name": { "type": "object" },
+      "description": { "type": "object" },
+      "sortOrder": { "type": "integer", "minimum": 1 }
+    }
+  }
+}

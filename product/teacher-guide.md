@@ -6,6 +6,15 @@ The Teacher Guide gives elementary-school teachers practical, role-specific guid
 
 It does not diagnose, prescribe medication or treatment, or replace a school professional, clinician, or emergency service.
 
+## Advisor Identity
+
+- **Friendly name:** Maya
+- **Role name:** Teacher Guide
+- **Identity color:** Warm amber
+- **Advisor face:** A professional, approachable illustrated or photographic portrait
+
+The page should lead with Maya's name and face, while keeping "Teacher Guide" visible as the role.
+
 ## Primary User
 
 - Homeroom teachers

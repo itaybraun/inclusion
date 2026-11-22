@@ -1,0 +1,72 @@
+[
+  {
+    "id": "disclosure-and-privacy",
+    "name": {
+      "en": "Disclosure and Privacy"
+    },
+    "description": {
+      "en": "Questions about diagnosis, privacy, school staff, and peer or parent questions."
+    },
+    "sortOrder": 1
+  },
+  {
+    "id": "knowing-the-child",
+    "name": {
+      "en": "Knowing the Child"
+    },
+    "description": {
+      "en": "Understanding an individual child's strengths, needs, triggers, and routines."
+    },
+    "sortOrder": 2
+  },
+  {
+    "id": "daily-classroom-situations",
+    "name": {
+      "en": "Daily Classroom Situations"
+    },
+    "description": {
+      "en": "Practical support for distress, transitions, participation, sensory conditions, and instruction."
+    },
+    "sortOrder": 3
+  },
+  {
+    "id": "aide-collaboration",
+    "name": {
+      "en": "Working with an Aide"
+    },
+    "description": {
+      "en": "Collaboration, responsibilities, and coverage with or without a classroom aide."
+    },
+    "sortOrder": 4
+  },
+  {
+    "id": "social-dynamics",
+    "name": {
+      "en": "Social Dynamics"
+    },
+    "description": {
+      "en": "Friendship, teasing, hurtful behavior, and balancing the needs of the whole class."
+    },
+    "sortOrder": 5
+  },
+  {
+    "id": "parents-and-school-system",
+    "name": {
+      "en": "Parents and the School System"
+    },
+    "description": {
+      "en": "Communication with families and escalation through school or professional channels."
+    },
+    "sortOrder": 6
+  },
+  {
+    "id": "boundaries-and-safety",
+    "name": {
+      "en": "Boundaries and Safety"
+    },
+    "description": {
+      "en": "Crisis signs, scope limits, and when to involve emergency or professional support."
+    },
+    "sortOrder": 7
+  }
+]

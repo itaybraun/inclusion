@@ -14,6 +14,21 @@ Inclusion is an AI-agent platform that gives people supporting a child on the au
 
 The platform is not a substitute for clinicians, therapists, emergency services, or qualified professionals.
 
+## Core Content Principle
+
+The core value of Inclusion is high-quality, expert-written content. The product should not depend on loosely generated answers or pretend that AI has created trusted guidance.
+
+The MVP, advisor catalog, and future chat agent should be grounded in curated questions and answers written or reviewed by qualified professionals and domain experts. Expert content must be:
+
+- Accurate and specific to the advisor's role
+- Practical rather than theoretical
+- Reviewed before publication
+- Dated and attributable to responsible authors or reviewers
+- Clearly distinguishable from draft, internally reviewed, or AI-suggested content
+- Updated when guidance, law, policy, or educational practice changes
+
+AI chat may later help users navigate this expert content or draft suggestions, but it must not introduce unsupported advice as though it were expert-reviewed.
+
 ## Core Principles
 
 1. **Role-specific guidance:** Each agent answers for the context and responsibilities of its user.
@@ -265,3 +280,5 @@ The MVP should validate usefulness, safety, and agent role differentiation. The 
 
 - [Teacher Guide](teacher-guide.md)
 - [Main Menu](main-menu.md)
+- [Advisor Experience](advisor-experience.md)
+- [Content Management](content-management.md)
