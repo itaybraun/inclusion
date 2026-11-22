@@ -217,7 +217,8 @@ function renderTeacherContent(query = "") {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "question-button";
-    button.innerHTML = `<span>${escapeHtml(question.question.en)}</span><span aria-hidden="true">→</span>`;
+    button.setAttribute("aria-expanded", "false");
+    button.innerHTML = `<span>${escapeHtml(question.question.en)}</span><span class="question-arrow" aria-hidden="true">↓</span>`;
 
     const answer = document.createElement("div");
     answer.className = "answer-panel";
@@ -228,8 +229,14 @@ function renderTeacherContent(query = "") {
       panel.querySelectorAll(".answer-panel").forEach((item) => {
         item.hidden = true;
       });
+      panel.querySelectorAll(".question-button").forEach((item) => {
+        item.classList.remove("selected");
+        item.setAttribute("aria-expanded", "false");
+      });
       if (!wasHidden) return;
 
+      button.classList.add("selected");
+      button.setAttribute("aria-expanded", "true");
       answer.hidden = false;
       answer.textContent = "Loading answer…";
       try {

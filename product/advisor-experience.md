@@ -145,6 +145,8 @@ Example:
 
 Selecting a question opens its published answer.
 
+An open or selected question should be bold and use the advisor's leading color. Its arrow should point down. Answer text should use compact spacing: short paragraphs, close list spacing, and minimal vertical gaps between sections.
+
 The answer view should include:
 
 - The question
