@@ -1,30 +1,637 @@
 [
-  {"id":"tell-whole-class","advisorId":"teacher-guide","categoryId":"disclosure-and-privacy","status":"draft","featured":true,"sortOrder":1,"question":{"en":"Should the student tell the whole class about their diagnosis?"},"keywords":{"en":["disclosure","diagnosis","privacy","class","peers"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"parent-student-wants-no-disclosure","advisorId":"teacher-guide","categoryId":"disclosure-and-privacy","status":"draft","featured":true,"sortOrder":2,"question":{"en":"What do I do if the student or the parents insist on not telling anyone?"},"keywords":{"en":["disclosure","privacy","consent","parents"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"child-not-aware-diagnosis","advisorId":"teacher-guide","categoryId":"disclosure-and-privacy","status":"draft","featured":true,"sortOrder":3,"question":{"en":"What if the parents have told me, but the child himself isn't aware of the diagnosis?"},"keywords":{"en":["disclosure","diagnosis","child awareness","family"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"staff-who-needs-to-know","advisorId":"teacher-guide","categoryId":"disclosure-and-privacy","status":"draft","featured":false,"sortOrder":4,"question":{"en":"Who else on the school staff should know, and how much?"},"keywords":{"en":["staff","confidentiality","minimum necessary","school"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"answer-peer-parent-questions","advisorId":"teacher-guide","categoryId":"disclosure-and-privacy","status":"draft","featured":false,"sortOrder":5,"question":{"en":"What do I say if other students or their parents ask why this child is treated differently?"},"keywords":{"en":["peers","parents","fairness","privacy","accommodations"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"ten-things-teachers-should-know","advisorId":"teacher-guide","categoryId":"knowing-the-child","status":"draft","featured":true,"sortOrder":1,"question":{"en":"What are the 10 most important things a teacher should know about students on the spectrum?"},"keywords":{"en":["autism","teachers","communication","sensory","strengths"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"learn-child-triggers-strengths-routines","advisorId":"teacher-guide","categoryId":"knowing-the-child","status":"draft","featured":true,"sortOrder":2,"question":{"en":"How do I learn this particular child's triggers, strengths, and routines?"},"keywords":{"en":["triggers","strengths","routines","individual profile","observation"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"first-meeting-parents","advisorId":"teacher-guide","categoryId":"knowing-the-child","status":"draft","featured":true,"sortOrder":3,"question":{"en":"What should I ask the parents in our first meeting?"},"keywords":{"en":["parents","meeting","communication","sensory","routines"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"meltdown-middle-of-lesson","advisorId":"teacher-guide","categoryId":"daily-classroom-situations","status":"draft","featured":true,"sortOrder":1,"question":{"en":"What do I do when the child has a meltdown in the middle of a lesson?"},"keywords":{"en":["meltdown","lesson","distress","classroom","crisis"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"transitions-and-substitute-teacher","advisorId":"teacher-guide","categoryId":"daily-classroom-situations","status":"draft","featured":true,"sortOrder":2,"question":{"en":"How do I handle transitions, schedule changes, or a substitute teacher?"},"keywords":{"en":["transitions","schedule","substitute","predictability"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"refuses-or-leaves-room","advisorId":"teacher-guide","categoryId":"daily-classroom-situations","status":"draft","featured":true,"sortOrder":3,"question":{"en":"The child refuses to participate or leaves the room. How should I respond?"},"keywords":{"en":["refusal","leaving room","participation","distress"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"sensory-crowds-and-travel","advisorId":"teacher-guide","categoryId":"daily-classroom-situations","status":"draft","featured":true,"sortOrder":4,"question":{"en":"How do I handle noise, bright lights, or crowded spaces like assemblies, recess, and field trips?"},"keywords":{"en":["sensory","noise","lights","crowds","assembly","field trip"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"clear-instructions","advisorId":"teacher-guide","categoryId":"daily-classroom-situations","status":"draft","featured":false,"sortOrder":5,"question":{"en":"How do I give instructions so the child understands them?"},"keywords":{"en":["instructions","communication","visuals","literal language"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"adapt-tests-homework-grading","advisorId":"teacher-guide","categoryId":"daily-classroom-situations","status":"draft","featured":false,"sortOrder":6,"question":{"en":"How do I adapt tests, homework, and grading?"},"keywords":{"en":["tests","homework","grading","accommodation","curriculum"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"teaching-with-aide","advisorId":"teacher-guide","categoryId":"aide-collaboration","status":"draft","featured":true,"sortOrder":1,"question":{"en":"What changes in my teaching when the child has an aide?"},"keywords":{"en":["aide","teaching","support","independence"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"aide-absent","advisorId":"teacher-guide","categoryId":"aide-collaboration","status":"draft","featured":true,"sortOrder":2,"question":{"en":"What do I do when the aide is absent?"},"keywords":{"en":["aide","absence","coverage","support"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"divide-aide-responsibilities","advisorId":"teacher-guide","categoryId":"aide-collaboration","status":"draft","featured":false,"sortOrder":3,"question":{"en":"How do I divide responsibilities between me and the aide?"},"keywords":{"en":["aide","roles","responsibility","teacher"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"child-needs-aide","advisorId":"teacher-guide","categoryId":"aide-collaboration","status":"draft","featured":true,"sortOrder":4,"question":{"en":"The child has no aide but clearly needs one. What are my options?"},"keywords":{"en":["aide","resource","school process","support"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"bullying-or-teasing","advisorId":"teacher-guide","categoryId":"social-dynamics","status":"draft","featured":true,"sortOrder":1,"question":{"en":"How do I handle bullying or teasing toward the child?"},"keywords":{"en":["bullying","teasing","peers","safety"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"encourage-friendships","advisorId":"teacher-guide","categoryId":"social-dynamics","status":"draft","featured":true,"sortOrder":2,"question":{"en":"How do I encourage friendships without forcing them?"},"keywords":{"en":["friendship","peers","social","choice"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"hurtful-speech-without-intent","advisorId":"teacher-guide","categoryId":"social-dynamics","status":"draft","featured":false,"sortOrder":3,"question":{"en":"What do I do when the child says or does something hurtful without meaning to?"},"keywords":{"en":["hurtful behavior","intent","impact","social"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"protect-class-learning","advisorId":"teacher-guide","categoryId":"social-dynamics","status":"draft","featured":false,"sortOrder":4,"question":{"en":"How do I protect the rest of the class's learning without sidelining this child?"},"keywords":{"en":["whole class","learning","inclusion","boundaries"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"feedback-to-parents","advisorId":"teacher-guide","categoryId":"parents-and-school-system","status":"draft","featured":true,"sortOrder":1,"question":{"en":"How do I give parents honest feedback without alarming them?"},"keywords":{"en":["parent feedback","communication","strengths","concerns"]},"answerFile":"answers.json","relatedAdvisors":["parent-companion"],"media":null},
-  {"id":"suspected-autism-no-diagnosis","advisorId":"teacher-guide","categoryId":"parents-and-school-system","status":"draft","featured":true,"sortOrder":2,"question":{"en":"What do I do if I suspect a student is on the spectrum but there's no diagnosis?"},"keywords":{"en":["suspected autism","diagnosis","parent contact","school support"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"parent-communication-frequency","advisorId":"teacher-guide","categoryId":"parents-and-school-system","status":"draft","featured":false,"sortOrder":3,"question":{"en":"How often should I communicate with parents, and how?"},"keywords":{"en":["parent communication","frequency","feedback","contact"]},"answerFile":"answers.json","relatedAdvisors":["parent-companion"],"media":null},
-  {"id":"escalation-protocol","advisorId":"teacher-guide","categoryId":"parents-and-school-system","status":"draft","featured":true,"sortOrder":4,"question":{"en":"When should I escalate to the school counselor, principal, or an outside professional?"},"keywords":{"en":["escalation","counselor","principal","professional","safety"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"crisis-protocol","advisorId":"teacher-guide","categoryId":"boundaries-and-safety","status":"draft","featured":true,"sortOrder":1,"question":{"en":"What are the signs of a crisis, and what's my protocol?"},"keywords":{"en":["crisis","danger","safety","protocol","emergency"]},"answerFile":"answers.json","relatedAdvisors":[],"media":null},
-  {"id":"out-of-scope-questions","advisorId":"teacher-guide","categoryId":"boundaries-and-safety","status":"draft","featured":true,"sortOrder":2,"question":{"en":"What questions are outside this advisor's scope, such as diagnosis, medication, or treatment?"},"keywords":{"en":["scope","diagnosis","medication","treatment","referral"]},"answerFile":"answers.json","relatedAdvisors":["parent-companion","administration"],"media":null}
+  {
+    "id": "tell-whole-class",
+    "advisorId": "teacher-guide",
+    "categoryId": "disclosure-and-privacy",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 1,
+    "question": {
+      "en": "Should the student tell the whole class about their diagnosis?"
+    },
+    "keywords": {
+      "en": [
+        "disclosure",
+        "diagnosis",
+        "privacy",
+        "class",
+        "peers"
+      ]
+    },
+    "answerFile": "questions/tell-whole-class/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "parent-student-wants-no-disclosure",
+    "advisorId": "teacher-guide",
+    "categoryId": "disclosure-and-privacy",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 2,
+    "question": {
+      "en": "What do I do if the student or the parents insist on not telling anyone?"
+    },
+    "keywords": {
+      "en": [
+        "disclosure",
+        "privacy",
+        "consent",
+        "parents"
+      ]
+    },
+    "answerFile": "questions/parent-student-wants-no-disclosure/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "child-not-aware-diagnosis",
+    "advisorId": "teacher-guide",
+    "categoryId": "disclosure-and-privacy",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 3,
+    "question": {
+      "en": "What if the parents have told me, but the child himself isn't aware of the diagnosis?"
+    },
+    "keywords": {
+      "en": [
+        "disclosure",
+        "diagnosis",
+        "child awareness",
+        "family"
+      ]
+    },
+    "answerFile": "questions/child-not-aware-diagnosis/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "staff-who-needs-to-know",
+    "advisorId": "teacher-guide",
+    "categoryId": "disclosure-and-privacy",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 4,
+    "question": {
+      "en": "Who else on the school staff should know, and how much?"
+    },
+    "keywords": {
+      "en": [
+        "staff",
+        "confidentiality",
+        "minimum necessary",
+        "school"
+      ]
+    },
+    "answerFile": "questions/staff-who-needs-to-know/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "answer-peer-parent-questions",
+    "advisorId": "teacher-guide",
+    "categoryId": "disclosure-and-privacy",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 5,
+    "question": {
+      "en": "What do I say if other students or their parents ask why this child is treated differently?"
+    },
+    "keywords": {
+      "en": [
+        "peers",
+        "parents",
+        "fairness",
+        "privacy",
+        "accommodations"
+      ]
+    },
+    "answerFile": "questions/answer-peer-parent-questions/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "ten-things-teachers-should-know",
+    "advisorId": "teacher-guide",
+    "categoryId": "knowing-the-child",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 1,
+    "question": {
+      "en": "What are the 10 most important things a teacher should know about students on the spectrum?"
+    },
+    "keywords": {
+      "en": [
+        "autism",
+        "teachers",
+        "communication",
+        "sensory",
+        "strengths"
+      ]
+    },
+    "answerFile": "questions/ten-things-teachers-should-know/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "learn-child-triggers-strengths-routines",
+    "advisorId": "teacher-guide",
+    "categoryId": "knowing-the-child",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 2,
+    "question": {
+      "en": "How do I learn this particular child's triggers, strengths, and routines?"
+    },
+    "keywords": {
+      "en": [
+        "triggers",
+        "strengths",
+        "routines",
+        "individual profile",
+        "observation"
+      ]
+    },
+    "answerFile": "questions/learn-child-triggers-strengths-routines/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "first-meeting-parents",
+    "advisorId": "teacher-guide",
+    "categoryId": "knowing-the-child",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 3,
+    "question": {
+      "en": "What should I ask the parents in our first meeting?"
+    },
+    "keywords": {
+      "en": [
+        "parents",
+        "meeting",
+        "communication",
+        "sensory",
+        "routines"
+      ]
+    },
+    "answerFile": "questions/first-meeting-parents/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "meltdown-middle-of-lesson",
+    "advisorId": "teacher-guide",
+    "categoryId": "daily-classroom-situations",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 1,
+    "question": {
+      "en": "What do I do when the child has a meltdown in the middle of a lesson?"
+    },
+    "keywords": {
+      "en": [
+        "meltdown",
+        "lesson",
+        "distress",
+        "classroom",
+        "crisis"
+      ]
+    },
+    "answerFile": "questions/meltdown-middle-of-lesson/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "transitions-and-substitute-teacher",
+    "advisorId": "teacher-guide",
+    "categoryId": "daily-classroom-situations",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 2,
+    "question": {
+      "en": "How do I handle transitions, schedule changes, or a substitute teacher?"
+    },
+    "keywords": {
+      "en": [
+        "transitions",
+        "schedule",
+        "substitute",
+        "predictability"
+      ]
+    },
+    "answerFile": "questions/transitions-and-substitute-teacher/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "refuses-or-leaves-room",
+    "advisorId": "teacher-guide",
+    "categoryId": "daily-classroom-situations",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 3,
+    "question": {
+      "en": "The child refuses to participate or leaves the room. How should I respond?"
+    },
+    "keywords": {
+      "en": [
+        "refusal",
+        "leaving room",
+        "participation",
+        "distress"
+      ]
+    },
+    "answerFile": "questions/refuses-or-leaves-room/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "sensory-crowds-and-travel",
+    "advisorId": "teacher-guide",
+    "categoryId": "daily-classroom-situations",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 4,
+    "question": {
+      "en": "How do I handle noise, bright lights, or crowded spaces like assemblies, recess, and field trips?"
+    },
+    "keywords": {
+      "en": [
+        "sensory",
+        "noise",
+        "lights",
+        "crowds",
+        "assembly",
+        "field trip"
+      ]
+    },
+    "answerFile": "questions/sensory-crowds-and-travel/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "clear-instructions",
+    "advisorId": "teacher-guide",
+    "categoryId": "daily-classroom-situations",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 5,
+    "question": {
+      "en": "How do I give instructions so the child understands them?"
+    },
+    "keywords": {
+      "en": [
+        "instructions",
+        "communication",
+        "visuals",
+        "literal language"
+      ]
+    },
+    "answerFile": "questions/clear-instructions/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "adapt-tests-homework-grading",
+    "advisorId": "teacher-guide",
+    "categoryId": "daily-classroom-situations",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 6,
+    "question": {
+      "en": "How do I adapt tests, homework, and grading?"
+    },
+    "keywords": {
+      "en": [
+        "tests",
+        "homework",
+        "grading",
+        "accommodation",
+        "curriculum"
+      ]
+    },
+    "answerFile": "questions/adapt-tests-homework-grading/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "teaching-with-aide",
+    "advisorId": "teacher-guide",
+    "categoryId": "aide-collaboration",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 1,
+    "question": {
+      "en": "What changes in my teaching when the child has an aide?"
+    },
+    "keywords": {
+      "en": [
+        "aide",
+        "teaching",
+        "support",
+        "independence"
+      ]
+    },
+    "answerFile": "questions/teaching-with-aide/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "aide-absent",
+    "advisorId": "teacher-guide",
+    "categoryId": "aide-collaboration",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 2,
+    "question": {
+      "en": "What do I do when the aide is absent?"
+    },
+    "keywords": {
+      "en": [
+        "aide",
+        "absence",
+        "coverage",
+        "support"
+      ]
+    },
+    "answerFile": "questions/aide-absent/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "divide-aide-responsibilities",
+    "advisorId": "teacher-guide",
+    "categoryId": "aide-collaboration",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 3,
+    "question": {
+      "en": "How do I divide responsibilities between me and the aide?"
+    },
+    "keywords": {
+      "en": [
+        "aide",
+        "roles",
+        "responsibility",
+        "teacher"
+      ]
+    },
+    "answerFile": "questions/divide-aide-responsibilities/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "child-needs-aide",
+    "advisorId": "teacher-guide",
+    "categoryId": "aide-collaboration",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 4,
+    "question": {
+      "en": "The child has no aide but clearly needs one. What are my options?"
+    },
+    "keywords": {
+      "en": [
+        "aide",
+        "resource",
+        "school process",
+        "support"
+      ]
+    },
+    "answerFile": "questions/child-needs-aide/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "bullying-or-teasing",
+    "advisorId": "teacher-guide",
+    "categoryId": "social-dynamics",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 1,
+    "question": {
+      "en": "How do I handle bullying or teasing toward the child?"
+    },
+    "keywords": {
+      "en": [
+        "bullying",
+        "teasing",
+        "peers",
+        "safety"
+      ]
+    },
+    "answerFile": "questions/bullying-or-teasing/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "encourage-friendships",
+    "advisorId": "teacher-guide",
+    "categoryId": "social-dynamics",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 2,
+    "question": {
+      "en": "How do I encourage friendships without forcing them?"
+    },
+    "keywords": {
+      "en": [
+        "friendship",
+        "peers",
+        "social",
+        "choice"
+      ]
+    },
+    "answerFile": "questions/encourage-friendships/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "hurtful-speech-without-intent",
+    "advisorId": "teacher-guide",
+    "categoryId": "social-dynamics",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 3,
+    "question": {
+      "en": "What do I do when the child says or does something hurtful without meaning to?"
+    },
+    "keywords": {
+      "en": [
+        "hurtful behavior",
+        "intent",
+        "impact",
+        "social"
+      ]
+    },
+    "answerFile": "questions/hurtful-speech-without-intent/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "protect-class-learning",
+    "advisorId": "teacher-guide",
+    "categoryId": "social-dynamics",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 4,
+    "question": {
+      "en": "How do I protect the rest of the class's learning without sidelining this child?"
+    },
+    "keywords": {
+      "en": [
+        "whole class",
+        "learning",
+        "inclusion",
+        "boundaries"
+      ]
+    },
+    "answerFile": "questions/protect-class-learning/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "feedback-to-parents",
+    "advisorId": "teacher-guide",
+    "categoryId": "parents-and-school-system",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 1,
+    "question": {
+      "en": "How do I give parents honest feedback without alarming them?"
+    },
+    "keywords": {
+      "en": [
+        "parent feedback",
+        "communication",
+        "strengths",
+        "concerns"
+      ]
+    },
+    "answerFile": "questions/feedback-to-parents/answer.md",
+    "relatedAdvisors": [
+      "parent-companion"
+    ],
+    "media": null
+  },
+  {
+    "id": "suspected-autism-no-diagnosis",
+    "advisorId": "teacher-guide",
+    "categoryId": "parents-and-school-system",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 2,
+    "question": {
+      "en": "What do I do if I suspect a student is on the spectrum but there's no diagnosis?"
+    },
+    "keywords": {
+      "en": [
+        "suspected autism",
+        "diagnosis",
+        "parent contact",
+        "school support"
+      ]
+    },
+    "answerFile": "questions/suspected-autism-no-diagnosis/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "parent-communication-frequency",
+    "advisorId": "teacher-guide",
+    "categoryId": "parents-and-school-system",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 3,
+    "question": {
+      "en": "How often should I communicate with parents, and how?"
+    },
+    "keywords": {
+      "en": [
+        "parent communication",
+        "frequency",
+        "feedback",
+        "contact"
+      ]
+    },
+    "answerFile": "questions/parent-communication-frequency/answer.md",
+    "relatedAdvisors": [
+      "parent-companion"
+    ],
+    "media": null
+  },
+  {
+    "id": "escalation-protocol",
+    "advisorId": "teacher-guide",
+    "categoryId": "parents-and-school-system",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 4,
+    "question": {
+      "en": "When should I escalate to the school counselor, principal, or an outside professional?"
+    },
+    "keywords": {
+      "en": [
+        "escalation",
+        "counselor",
+        "principal",
+        "professional",
+        "safety"
+      ]
+    },
+    "answerFile": "questions/escalation-protocol/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "crisis-protocol",
+    "advisorId": "teacher-guide",
+    "categoryId": "boundaries-and-safety",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 1,
+    "question": {
+      "en": "What are the signs of a crisis, and what's my protocol?"
+    },
+    "keywords": {
+      "en": [
+        "crisis",
+        "danger",
+        "safety",
+        "protocol",
+        "emergency"
+      ]
+    },
+    "answerFile": "questions/crisis-protocol/answer.md",
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "out-of-scope-questions",
+    "advisorId": "teacher-guide",
+    "categoryId": "boundaries-and-safety",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 2,
+    "question": {
+      "en": "What questions are outside this advisor's scope, such as diagnosis, medication, or treatment?"
+    },
+    "keywords": {
+      "en": [
+        "scope",
+        "diagnosis",
+        "medication",
+        "treatment",
+        "referral"
+      ]
+    },
+    "answerFile": "questions/out-of-scope-questions/answer.md",
+    "relatedAdvisors": [
+      "parent-companion",
+      "administration"
+    ],
+    "media": null
+  }
 ]

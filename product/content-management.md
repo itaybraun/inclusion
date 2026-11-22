@@ -31,18 +31,14 @@ content/
   advisors/
     teacher-guide/
       advisor.json
-      categories/
-        disclosure-and-privacy.json
-        knowing-the-child.json
-        daily-classroom-situations.json
+      categories.json
+      questions.json
       questions/
         meltdown-in-middle-of-lesson/
-          question.json
           answer.md
           answer-he.md
           answer-ar.md
           media.json
-          comments.md
     classroom-aide/
     older-sibling/
     administration/
@@ -51,13 +47,13 @@ content/
   schema/
 ```
 
-`answer.md` is the English answer. Language-specific filenames are permitted for the MVP. Category files may use the same language-keyed structure when that is easier for editing.
+`answer.md` is the English answer. Language-specific filenames are permitted for the MVP.
 
-Markdown is preferred for answer prose because it supports headings, lists, emphasis, links, and accessibility-friendly structure.
+Markdown is the primary answer format because it supports headings, lists, bold text, links, images, and accessibility-friendly structure. HTML may be supported later for deliberate rich-content cases, but any HTML must use a strict allow-list and sanitization.
 
 JSON is preferred for identity and metadata because it is straightforward to validate and inspect.
 
-Large category files are permitted if they remain readable, but separate question folders are recommended for:
+Separate question folders are recommended for:
 
 - Long answers
 - Multiple translations
@@ -210,15 +206,9 @@ Answer front matter is content metadata, not a substitute for human expert accou
 
 Comments must be visible only to repository editors and configured review tools. They must not be shipped to the public site or returned by search.
 
-Use an unbuildable or editor-only location such as `comments.md` or `editorial/`:
+Private comments must live in an access-controlled CMS, private repository, or editor-only review system. This public repository must not contain private editorial metadata.
 
-```text
-questions/meltdown-middle-of-lesson/
-  answer.md
-  comments.md
-```
-
-`comments.md` may contain:
+Private comment records may contain:
 
 - Open editorial questions
 - Safety concerns
@@ -228,7 +218,7 @@ questions/meltdown-middle-of-lesson/
 - Deferred follow-up work
 - Reviewer decisions
 
-The build must exclude internal fields, comment files, draft answers, and unpublished sources.
+The public build must exclude internal fields, private comments, draft answers, and unpublished sources.
 
 ## Translation Model
 

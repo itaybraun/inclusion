@@ -7,10 +7,11 @@ This folder is the source of truth for expert-written advisor content.
 - `advisors/<advisor-id>/advisor.json` identifies the advisor.
 - `advisors/<advisor-id>/categories.json` defines the browsable question categories.
 - `advisors/<advisor-id>/questions.json` contains the curated question catalog.
-- `advisors/<advisor-id>/answers.json` contains the draft English answers keyed by question ID.
-- `advisors/<advisor-id>/editorial.json` contains private drafting and review metadata and must not be published.
+- `advisors/<advisor-id>/questions/<question-id>/answer.md` contains the editable rich answer for that question.
+- `advisors/<advisor-id>/questions/<question-id>/answer-he.md` may contain a localized Hebrew answer.
+- `advisors/<advisor-id>/questions/<question-id>/answer-ar.md` may contain a localized Arabic answer.
 - `schema/` documents validation rules.
 
-The MVP may use large advisor catalog files. Individual question folders may replace these files later as content volume grows.
+Markdown is the primary answer format because it supports headings, lists, bold text, links, and images while remaining easy for experts to edit. HTML may be permitted only for a deliberate rich-content extension, such as supported media embeds, with strict allow-list sanitization.
 
 Only `published` content should be included in the public website and search index.
