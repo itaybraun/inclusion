@@ -6,5 +6,5 @@
   "color": "#D49A35",
   "status": "draft",
   "defaultLanguage": "en",
-  "supportedLanguages": ["en"]
+  "supportedLanguages": ["en", "he"]
 }

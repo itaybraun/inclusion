@@ -2,70 +2,84 @@
   {
     "id": "disclosure-and-privacy",
     "name": {
-      "en": "Disclosure and Privacy"
+      "en": "Disclosure and Privacy",
+      "he": "חשיפה ופרטיות"
     },
     "description": {
-      "en": "Questions about diagnosis, privacy, school staff, and peer or parent questions."
+      "en": "Questions about diagnosis, privacy, school staff, and peer or parent questions.",
+      "he": "שאלות על אבחנה, פרטיות, צוות בית הספר ופניות מתלמידים או מהורים."
     },
     "sortOrder": 1
   },
   {
     "id": "knowing-the-child",
     "name": {
-      "en": "Knowing the Child"
+      "en": "Knowing the Child",
+      "he": "היכרות עם הילד"
     },
     "description": {
-      "en": "Understanding an individual child's strengths, needs, triggers, and routines."
+      "en": "Understanding an individual child's strengths, needs, triggers, and routines.",
+      "he": "היכרות עם החוזקות, הצרכים, הגורמים המעוררים וההרגלים של הילד המסוים."
     },
     "sortOrder": 2
   },
   {
     "id": "daily-classroom-situations",
     "name": {
-      "en": "Daily Classroom Situations"
+      "en": "Daily Classroom Situations",
+      "he": "מצבים יומיומיים בכיתה"
     },
     "description": {
-      "en": "Practical support for distress, transitions, participation, sensory conditions, and instruction."
+      "en": "Practical support for distress, transitions, participation, sensory conditions, and instruction.",
+      "he": "הכוונה מעשית למצוקה, למעברים, להשתתפות, לרגישויות חושיות ולהוראה."
     },
     "sortOrder": 3
   },
   {
     "id": "aide-collaboration",
     "name": {
-      "en": "Working with an Aide"
+      "en": "Working with an Aide",
+      "he": "עבודה עם סייעת או סייע"
     },
     "description": {
-      "en": "Collaboration, responsibilities, and coverage with or without a classroom aide."
+      "en": "Collaboration, responsibilities, and coverage with or without a classroom aide.",
+      "he": "שיתוף פעולה, חלוקת אחריות ומענה בכיתה עם סייעת או בלעדיה."
     },
     "sortOrder": 4
   },
   {
     "id": "social-dynamics",
     "name": {
-      "en": "Social Dynamics"
+      "en": "Social Dynamics",
+      "he": "יחסים חברתיים"
     },
     "description": {
-      "en": "Friendship, teasing, hurtful behavior, and balancing the needs of the whole class."
+      "en": "Friendship, teasing, hurtful behavior, and balancing the needs of the whole class.",
+      "he": "חברויות, הקנטות, התנהגות פוגעת ואיזון בין צורכי כלל הכיתה."
     },
     "sortOrder": 5
   },
   {
     "id": "parents-and-school-system",
     "name": {
-      "en": "Parents and the School System"
+      "en": "Parents and the School System",
+      "he": "הורים ומערכת החינוך"
     },
     "description": {
-      "en": "Communication with families and escalation through school or professional channels."
+      "en": "Communication with families and escalation through school or professional channels.",
+      "he": "תקשורת עם המשפחה ופנייה לגורמים המתאימים בבית הספר ומחוצה לו."
     },
     "sortOrder": 6
   },
   {
     "id": "boundaries-and-safety",
     "name": {
-      "en": "Boundaries and Safety"
+      "en": "Boundaries and Safety",
+      "he": "גבולות ובטיחות"
     },
     "description": {
-      "en": "Crisis signs, scope limits, and when to involve emergency or professional support."
+      "en": "Crisis signs, scope limits, and when to involve emergency or professional support.",
+      "he": "זיהוי מצבי משבר, גבולות המענה ומתי לערב אנשי מקצוע או שירותי חירום."
     },
     "sortOrder": 7
   }

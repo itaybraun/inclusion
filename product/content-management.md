@@ -226,9 +226,13 @@ Every supported language should maintain the same question identifier and answer
 
 English is the initial authoring language. Hebrew and Arabic should be treated as separate expert-reviewed translations rather than automated output shown as final.
 
+The advisor UI must display only content available in the selected language. Partial translations are valid; untranslated questions are omitted rather than silently replaced with English. The language direction (`ltr`/`rtl`) applies to the whole page and to localized answer content.
+
 For each language, track:
 
 - Translation status
+- Localized question text and localized search keywords
+- A language-specific answer file path
 - Translator or reviewer
 - Translation date
 - Review date

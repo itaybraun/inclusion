@@ -12,6 +12,20 @@
   --parent: #7a8f67;
 }
 
+html[dir="rtl"] .top-nav { direction: rtl; }
+html[dir="rtl"] .brand { direction: rtl; }
+html[dir="rtl"] .advisor-card { direction: rtl; text-align: right; }
+html[dir="rtl"] .card-accent { right: 0; left: auto; }
+html[dir="rtl"] .category-button { text-align: right; }
+html[dir="rtl"] .category-button.selected { box-shadow: inset -3px 0 0 var(--teacher); }
+html[dir="rtl"] .question-button { text-align: right; }
+html[dir="rtl"] .question-button .question-arrow { margin-right: 12px; margin-left: 0; }
+html[dir="rtl"] .detail-actions { right: auto; left: 5%; }
+html[dir="rtl"] .detail-back { text-align: right; }
+html[dir="rtl"] .dialog-close { right: auto; left: 14px; }
+html[dir="rtl"] .language-menu { right: auto; left: 0; }
+html[dir="rtl"] .language-option { text-align: right; }
+
 * { box-sizing: border-box; }
 
 body {
@@ -146,6 +160,7 @@ button { cursor: pointer; }
 
 .language-option.selected { background: #edf2ef; }
 .language-option:not(.selected):hover { background: #f5f7f5; }
+.language-option:disabled { cursor: not-allowed; opacity: 0.6; }
 .check { color: var(--brand); font-weight: 700; }
 .coming-soon {
   color: #858e89;
@@ -544,6 +559,16 @@ main {
 .search-status:not(:empty) {
   margin: 4px 0 6px;
 }
+.translation-notice {
+  margin: 8px 0 12px;
+  border-inline-start: 3px solid var(--teacher);
+  padding: 8px 12px;
+  background: #fbfaf7;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.translation-notice[hidden] { display: none; }
 .category-list {
   display: grid;
   grid-template-columns: 230px minmax(0, 1fr);
@@ -720,6 +745,7 @@ button:focus-visible, a:focus-visible {
   }
   .advisor-card:last-child { grid-column: 1 / -1; max-width: calc(50% - 8px); }
   .detail-actions { right: 0; top: 0; }
+  html[dir="rtl"] .detail-actions { right: auto; left: 0; }
 }
 
 @media (max-width: 620px) {
@@ -739,6 +765,7 @@ button:focus-visible, a:focus-visible {
     min-height: 170px;
   }
   .detail-actions { top: 0; right: 0; }
+  html[dir="rtl"] .detail-actions { right: auto; left: 0; }
   .chat-icon-button { width: 46px; height: 46px; }
   .category-list { grid-template-columns: 1fr; }
   .category-sidebar {

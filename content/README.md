@@ -10,8 +10,10 @@ This folder is the source of truth for expert-written advisor content.
 - `advisors/<advisor-id>/questions/<question-id>/answer.md` contains the editable rich answer for that question.
 - `advisors/<advisor-id>/questions/<question-id>/answer-he.md` may contain a localized Hebrew answer.
 - `advisors/<advisor-id>/questions/<question-id>/answer-ar.md` may contain a localized Arabic answer.
+- `questions.json` stores localized question text and an `answerFiles` map keyed by language (`en`, `he`, `ar`).
 - `schema/` documents validation rules.
 
 Markdown is the primary answer format because it supports headings, lists, bold text, links, and images while remaining easy for experts to edit. HTML may be permitted only for a deliberate rich-content extension, such as supported media embeds, with strict allow-list sanitization.
 
 Only `published` content should be included in the public website and search index.
+The current Hebrew content is a partial translation preview and is marked for human review. Missing translations are omitted rather than silently replaced with English.

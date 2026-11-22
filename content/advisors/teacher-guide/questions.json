@@ -7,7 +7,8 @@
     "featured": true,
     "sortOrder": 1,
     "question": {
-      "en": "Should the student tell the whole class about their diagnosis?"
+      "en": "Should the student tell the whole class about their diagnosis?",
+      "he": "האם לספר לכל הכיתה על האבחנה של התלמיד?"
     },
     "keywords": {
       "en": [
@@ -16,11 +17,23 @@
         "privacy",
         "class",
         "peers"
+      ],
+      "he": [
+        "שיתוף",
+        "אבחנה",
+        "פרטיות",
+        "כיתה"
       ]
     },
-    "answerFile": "questions/tell-whole-class/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/tell-whole-class/answer.md",
+      "he": "questions/tell-whole-class/answer-he.md"
+    },
+    "translationStatus": {
+      "he": "needs-human-review"
+    }
   },
   {
     "id": "parent-student-wants-no-disclosure",
@@ -40,9 +53,11 @@
         "parents"
       ]
     },
-    "answerFile": "questions/parent-student-wants-no-disclosure/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/parent-student-wants-no-disclosure/answer.md"
+    }
   },
   {
     "id": "child-not-aware-diagnosis",
@@ -62,9 +77,11 @@
         "family"
       ]
     },
-    "answerFile": "questions/child-not-aware-diagnosis/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/child-not-aware-diagnosis/answer.md"
+    }
   },
   {
     "id": "staff-who-needs-to-know",
@@ -84,9 +101,11 @@
         "school"
       ]
     },
-    "answerFile": "questions/staff-who-needs-to-know/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/staff-who-needs-to-know/answer.md"
+    }
   },
   {
     "id": "answer-peer-parent-questions",
@@ -107,9 +126,11 @@
         "accommodations"
       ]
     },
-    "answerFile": "questions/answer-peer-parent-questions/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/answer-peer-parent-questions/answer.md"
+    }
   },
   {
     "id": "ten-things-teachers-should-know",
@@ -130,9 +151,11 @@
         "strengths"
       ]
     },
-    "answerFile": "questions/ten-things-teachers-should-know/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/ten-things-teachers-should-know/answer.md"
+    }
   },
   {
     "id": "learn-child-triggers-strengths-routines",
@@ -153,9 +176,11 @@
         "observation"
       ]
     },
-    "answerFile": "questions/learn-child-triggers-strengths-routines/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/learn-child-triggers-strengths-routines/answer.md"
+    }
   },
   {
     "id": "first-meeting-parents",
@@ -165,7 +190,8 @@
     "featured": true,
     "sortOrder": 3,
     "question": {
-      "en": "What should I ask the parents in our first meeting?"
+      "en": "What should I ask the parents in our first meeting?",
+      "he": "מה כדאי לשאול את ההורים בפגישת ההיכרות הראשונה?"
     },
     "keywords": {
       "en": [
@@ -174,11 +200,23 @@
         "communication",
         "sensory",
         "routines"
+      ],
+      "he": [
+        "הורים",
+        "פגישה",
+        "תקשורת",
+        "חוזקות"
       ]
     },
-    "answerFile": "questions/first-meeting-parents/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/first-meeting-parents/answer.md",
+      "he": "questions/first-meeting-parents/answer-he.md"
+    },
+    "translationStatus": {
+      "he": "needs-human-review"
+    }
   },
   {
     "id": "meltdown-middle-of-lesson",
@@ -188,7 +226,8 @@
     "featured": true,
     "sortOrder": 1,
     "question": {
-      "en": "What do I do when the child has a meltdown in the middle of a lesson?"
+      "en": "What do I do when the child has a meltdown in the middle of a lesson?",
+      "he": "מה לעשות כשהילד חווה התפרצות במהלך השיעור?"
     },
     "keywords": {
       "en": [
@@ -197,11 +236,23 @@
         "distress",
         "classroom",
         "crisis"
+      ],
+      "he": [
+        "התפרצות",
+        "שיעור",
+        "מצוקה",
+        "כיתה"
       ]
     },
-    "answerFile": "questions/meltdown-middle-of-lesson/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/meltdown-middle-of-lesson/answer.md",
+      "he": "questions/meltdown-middle-of-lesson/answer-he.md"
+    },
+    "translationStatus": {
+      "he": "needs-human-review"
+    }
   },
   {
     "id": "transitions-and-substitute-teacher",
@@ -221,9 +272,11 @@
         "predictability"
       ]
     },
-    "answerFile": "questions/transitions-and-substitute-teacher/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/transitions-and-substitute-teacher/answer.md"
+    }
   },
   {
     "id": "refuses-or-leaves-room",
@@ -243,9 +296,11 @@
         "distress"
       ]
     },
-    "answerFile": "questions/refuses-or-leaves-room/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/refuses-or-leaves-room/answer.md"
+    }
   },
   {
     "id": "sensory-crowds-and-travel",
@@ -267,9 +322,11 @@
         "field trip"
       ]
     },
-    "answerFile": "questions/sensory-crowds-and-travel/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/sensory-crowds-and-travel/answer.md"
+    }
   },
   {
     "id": "clear-instructions",
@@ -279,7 +336,8 @@
     "featured": false,
     "sortOrder": 5,
     "question": {
-      "en": "How do I give instructions so the child understands them?"
+      "en": "How do I give instructions so the child understands them?",
+      "he": "איך לתת הוראות ברורות שהילד יוכל להבין?"
     },
     "keywords": {
       "en": [
@@ -287,11 +345,23 @@
         "communication",
         "visuals",
         "literal language"
+      ],
+      "he": [
+        "הוראות",
+        "תקשורת",
+        "הבנה",
+        "עזרים חזותיים"
       ]
     },
-    "answerFile": "questions/clear-instructions/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/clear-instructions/answer.md",
+      "he": "questions/clear-instructions/answer-he.md"
+    },
+    "translationStatus": {
+      "he": "needs-human-review"
+    }
   },
   {
     "id": "adapt-tests-homework-grading",
@@ -312,9 +382,11 @@
         "curriculum"
       ]
     },
-    "answerFile": "questions/adapt-tests-homework-grading/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/adapt-tests-homework-grading/answer.md"
+    }
   },
   {
     "id": "teaching-with-aide",
@@ -334,9 +406,11 @@
         "independence"
       ]
     },
-    "answerFile": "questions/teaching-with-aide/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/teaching-with-aide/answer.md"
+    }
   },
   {
     "id": "aide-absent",
@@ -346,7 +420,8 @@
     "featured": true,
     "sortOrder": 2,
     "question": {
-      "en": "What do I do when the aide is absent?"
+      "en": "What do I do when the aide is absent?",
+      "he": "מה לעשות כשהסייעת או הסייע נעדרים?"
     },
     "keywords": {
       "en": [
@@ -354,11 +429,23 @@
         "absence",
         "coverage",
         "support"
+      ],
+      "he": [
+        "סייעת",
+        "היעדרות",
+        "תמיכה",
+        "כיסוי"
       ]
     },
-    "answerFile": "questions/aide-absent/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/aide-absent/answer.md",
+      "he": "questions/aide-absent/answer-he.md"
+    },
+    "translationStatus": {
+      "he": "needs-human-review"
+    }
   },
   {
     "id": "divide-aide-responsibilities",
@@ -378,9 +465,11 @@
         "teacher"
       ]
     },
-    "answerFile": "questions/divide-aide-responsibilities/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/divide-aide-responsibilities/answer.md"
+    }
   },
   {
     "id": "child-needs-aide",
@@ -400,9 +489,11 @@
         "support"
       ]
     },
-    "answerFile": "questions/child-needs-aide/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/child-needs-aide/answer.md"
+    }
   },
   {
     "id": "bullying-or-teasing",
@@ -412,7 +503,8 @@
     "featured": true,
     "sortOrder": 1,
     "question": {
-      "en": "How do I handle bullying or teasing toward the child?"
+      "en": "How do I handle bullying or teasing toward the child?",
+      "he": "איך להתמודד עם הצקה או בריונות כלפי הילד?"
     },
     "keywords": {
       "en": [
@@ -420,11 +512,23 @@
         "teasing",
         "peers",
         "safety"
+      ],
+      "he": [
+        "בריונות",
+        "הצקה",
+        "חברים",
+        "בטיחות"
       ]
     },
-    "answerFile": "questions/bullying-or-teasing/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/bullying-or-teasing/answer.md",
+      "he": "questions/bullying-or-teasing/answer-he.md"
+    },
+    "translationStatus": {
+      "he": "needs-human-review"
+    }
   },
   {
     "id": "encourage-friendships",
@@ -444,9 +548,11 @@
         "choice"
       ]
     },
-    "answerFile": "questions/encourage-friendships/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/encourage-friendships/answer.md"
+    }
   },
   {
     "id": "hurtful-speech-without-intent",
@@ -466,9 +572,11 @@
         "social"
       ]
     },
-    "answerFile": "questions/hurtful-speech-without-intent/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/hurtful-speech-without-intent/answer.md"
+    }
   },
   {
     "id": "protect-class-learning",
@@ -488,9 +596,11 @@
         "boundaries"
       ]
     },
-    "answerFile": "questions/protect-class-learning/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/protect-class-learning/answer.md"
+    }
   },
   {
     "id": "feedback-to-parents",
@@ -500,7 +610,8 @@
     "featured": true,
     "sortOrder": 1,
     "question": {
-      "en": "How do I give parents honest feedback without alarming them?"
+      "en": "How do I give parents honest feedback without alarming them?",
+      "he": "איך לשתף את ההורים במשוב כן בלי להבהיל אותם?"
     },
     "keywords": {
       "en": [
@@ -508,13 +619,25 @@
         "communication",
         "strengths",
         "concerns"
+      ],
+      "he": [
+        "משוב להורים",
+        "תקשורת",
+        "חוזקות",
+        "חששות"
       ]
     },
-    "answerFile": "questions/feedback-to-parents/answer.md",
     "relatedAdvisors": [
       "parent-companion"
     ],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/feedback-to-parents/answer.md",
+      "he": "questions/feedback-to-parents/answer-he.md"
+    },
+    "translationStatus": {
+      "he": "needs-human-review"
+    }
   },
   {
     "id": "suspected-autism-no-diagnosis",
@@ -534,9 +657,11 @@
         "school support"
       ]
     },
-    "answerFile": "questions/suspected-autism-no-diagnosis/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/suspected-autism-no-diagnosis/answer.md"
+    }
   },
   {
     "id": "parent-communication-frequency",
@@ -556,11 +681,13 @@
         "contact"
       ]
     },
-    "answerFile": "questions/parent-communication-frequency/answer.md",
     "relatedAdvisors": [
       "parent-companion"
     ],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/parent-communication-frequency/answer.md"
+    }
   },
   {
     "id": "escalation-protocol",
@@ -581,9 +708,11 @@
         "safety"
       ]
     },
-    "answerFile": "questions/escalation-protocol/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/escalation-protocol/answer.md"
+    }
   },
   {
     "id": "crisis-protocol",
@@ -593,7 +722,8 @@
     "featured": true,
     "sortOrder": 1,
     "question": {
-      "en": "What are the signs of a crisis, and what's my protocol?"
+      "en": "What are the signs of a crisis, and what's my protocol?",
+      "he": "מהם הסימנים למשבר ומהו נוהל הפעולה?"
     },
     "keywords": {
       "en": [
@@ -602,11 +732,23 @@
         "safety",
         "protocol",
         "emergency"
+      ],
+      "he": [
+        "משבר",
+        "סכנה",
+        "בטיחות",
+        "נוהל חירום"
       ]
     },
-    "answerFile": "questions/crisis-protocol/answer.md",
     "relatedAdvisors": [],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/crisis-protocol/answer.md",
+      "he": "questions/crisis-protocol/answer-he.md"
+    },
+    "translationStatus": {
+      "he": "needs-human-review"
+    }
   },
   {
     "id": "out-of-scope-questions",
@@ -627,11 +769,13 @@
         "referral"
       ]
     },
-    "answerFile": "questions/out-of-scope-questions/answer.md",
     "relatedAdvisors": [
       "parent-companion",
       "administration"
     ],
-    "media": null
+    "media": null,
+    "answerFiles": {
+      "en": "questions/out-of-scope-questions/answer.md"
+    }
   }
 ]

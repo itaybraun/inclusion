@@ -11,6 +11,168 @@ const dialog = document.querySelector(".advisor-dialog");
 const dialogTitle = document.querySelector("#dialog-title");
 const dialogDescription = document.querySelector("#dialog-description");
 const teacherDetail = document.querySelector("#teacher-detail");
+let currentLanguage = "en";
+let teacherCategories = [];
+let teacherQuestions = [];
+let selectedCategoryId = "disclosure-and-privacy";
+
+const uiText = {
+  en: {
+    navAdvisors: "Advisors",
+    navAccessories: "Accessories",
+    navBooks: "Books",
+    navAbout: "About us",
+    homeEyebrow: "Support for every part of the journey",
+    homeTitle: "Practical guidance for your child, family, and school",
+    homeCopy: "Choose a dedicated advisor for classroom support, family support, or administrative guidance.",
+    advisors: "Advisors",
+    chooseAdvisor: "Who would you like to speak with?",
+    teacherGuide: "Teacher Guide",
+    teacherDescription: "Practical classroom guidance for situations, routines, and inclusion.",
+    classroomAide: "Classroom Aide",
+    aideDescription: "In-the-moment support for routines, de-escalation, and collaboration.",
+    olderSibling: "Older Sibling",
+    siblingDescription: "Age-appropriate support for siblings aged 10–18.",
+    administration: "Administration",
+    adminDescription: "Guidance for Israeli benefits, applications, and administrative processes.",
+    parentCompanion: "Parent Companion",
+    parentDescription: "Empathy and practical perspective for the challenges parents face.",
+    notReady: "The advisor is not ready yet",
+    allAdvisors: "← All advisors",
+    maya: "Maya",
+    detailDescription: "Practical, classroom-focused guidance for teachers supporting an autistic student.",
+    searchLabel: "Search Maya's guidance",
+    searchPlaceholder: "Search a topic or question",
+    translatedNotice: "",
+    noResults: "No matching questions found. Try a shorter topic.",
+    loadingAnswer: "Loading answer…",
+    unavailableAnswer: "This answer is not available yet.",
+    chatNotReady: "Not ready yet",
+    selectedAdvisor: "Selected advisor",
+    startConversation: "Start conversation",
+    close: "Close",
+    backToAdvisors: "Back to advisors",
+    noMatches: "matching questions",
+    matchingQuestion: "matching question",
+    other: {
+      accessories: ["Accessories", "Tools and supportive resources are being prepared."],
+      books: ["Books", "Approved educational books and reading resources will appear here."],
+      about: ["About Inclusion", "Inclusion connects families and the people around autistic children with role-specific, practical guidance."]
+    }
+  },
+  he: {
+    navAdvisors: "יועצים",
+    navAccessories: "עזרים",
+    navBooks: "ספרים",
+    navAbout: "עלינו",
+    homeEyebrow: "תמיכה לאורך הדרך",
+    homeTitle: "הכוונה מעשית לילד, למשפחה ולצוות החינוכי",
+    homeCopy: "בחרו יועץ ייעודי לקבלת תמיכה בכיתה, תמיכה למשפחה או הכוונה בנושאים מנהליים.",
+    advisors: "יועצים",
+    chooseAdvisor: "עם מי תרצו לדבר?",
+    teacherGuide: "מדריך למורה",
+    teacherDescription: "הכוונה מעשית למורים במצבים יומיומיים בכיתה, בשגרה ובהכלה.",
+    classroomAide: "מדריך לסייעת ולסייע",
+    aideDescription: "תמיכה בזמן אמת בשגרה, בהרגעה ובשיתוף פעולה בכיתה.",
+    olderSibling: "מדריך לאחים ואחיות",
+    siblingDescription: "תמיכה מותאמת גיל לאחים ולאחיות בגיל 10–18.",
+    administration: "מידע מנהלי",
+    adminDescription: "הכוונה לגבי זכויות, בקשות ותהליכים מנהליים בישראל.",
+    parentCompanion: "מלווה להורים",
+    parentDescription: "הקשבה, עידוד ונקודת מבט מעשית לאתגרים שהורים מתמודדים איתם.",
+    notReady: "היועץ עדיין לא מוכן",
+    allAdvisors: "כל היועצים ←",
+    maya: "מאיה",
+    detailDescription: "הכוונה מעשית למורים התומכים בתלמידים אוטיסטים.",
+    searchLabel: "חיפוש בהכוונה של מאיה",
+    searchPlaceholder: "חיפוש לפי נושא או שאלה",
+    translatedNotice: "זו תצוגת עברית ראשונית. רק שאלות ותשובות שתורגמו מוצגות; התרגום עדיין דורש עריכה ובדיקה.",
+    noResults: "לא נמצאו שאלות. נסו לחפש מונח קצר יותר.",
+    loadingAnswer: "התשובה נטענת…",
+    unavailableAnswer: "התשובה עדיין אינה זמינה.",
+    chatNotReady: "עדיין לא מוכן",
+    selectedAdvisor: "היועצת שנבחרה",
+    startConversation: "התחלת שיחה",
+    close: "סגירה",
+    backToAdvisors: "חזרה ליועצים",
+    noMatches: "שאלות תואמות",
+    matchingQuestion: "שאלה תואמת",
+    other: {
+      accessories: ["עזרים", "כלים ומשאבים תומכים נמצאים בהכנה."],
+      books: ["ספרים", "כאן יופיעו ספרים וחומרי קריאה חינוכיים שאושרו."],
+      about: ["על Inclusion", "Inclusion מחברת משפחות ואנשים המלווים ילדים אוטיסטים להכוונה מעשית המותאמת לתפקידם."]
+    }
+  }
+};
+
+function applyLanguage(language) {
+  currentLanguage = language;
+  const text = uiText[language];
+  document.documentElement.lang = language;
+  document.documentElement.dir = language === "he" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const key = element.dataset.i18n;
+    if (text[key]) element.textContent = text[key];
+  });
+  cards.forEach((card) => {
+    const role = text[{
+      "Teacher Guide": "teacherGuide",
+      "Classroom Aide": "classroomAide",
+      "Older Sibling": "olderSibling",
+      Administration: "administration",
+      "Parent Companion": "parentCompanion"
+    }[card.dataset.advisor]];
+    const friendlyName = language === "he"
+      ? { Maya: "מאיה", Daniel: "דניאל", Noa: "נועה", Yael: "יעל", Lev: "לב" }[card.dataset.friendlyName]
+      : card.dataset.friendlyName;
+    card.setAttribute(
+      "aria-label",
+      card.dataset.status === "ready"
+        ? language === "he" ? `פתיחת ${friendlyName}, ${role}` : `Open ${friendlyName}, ${role}`
+        : language === "he" ? `${role}, ${text.notReady}` : `${role}, ${text.notReady}`
+    );
+  });
+  document.querySelector(".top-nav").setAttribute(
+    "aria-label",
+    language === "he" ? "ניווט ראשי" : "Main navigation"
+  );
+  document.querySelector(".language-menu").setAttribute(
+    "aria-label",
+    language === "he" ? "בחירת שפה" : "Choose language"
+  );
+
+  document.querySelector(".language-code").textContent = language.toUpperCase();
+  languageOptions.forEach((option) => {
+    const selected = option.dataset.code.toLowerCase() === language;
+    option.classList.toggle("selected", selected);
+    option.setAttribute("aria-selected", String(selected));
+    const indicator = option.querySelector(".check");
+    if (indicator) indicator.hidden = !selected;
+    const comingSoon = option.querySelector(".coming-soon");
+    if (comingSoon && selected) comingSoon.hidden = true;
+  });
+
+  document.querySelector("#content-search").placeholder = text.searchPlaceholder;
+  document.querySelector(".chat-icon-button").title = `${language === "he" ? "שיחה עם מאיה" : "Chat with Maya"} — ${text.chatNotReady}`;
+  document.querySelector(".chat-icon-button").setAttribute(
+    "aria-label",
+    `${language === "he" ? "שיחה עם מאיה" : "Chat with Maya"}, ${text.chatNotReady}`
+  );
+  document.querySelector("#translation-notice").textContent = text.translatedNotice;
+  document.querySelector("#translation-notice").hidden = !text.translatedNotice;
+  document.querySelector(".dialog-kicker").textContent = text.selectedAdvisor;
+  document.querySelector(".dialog-primary").textContent = text.startConversation;
+  document.querySelector(".dialog-close").setAttribute("aria-label", text.close);
+
+  if (!otherView.hidden) {
+    const [title, copy] = text.other[document.querySelector(".nav-link.active").dataset.view];
+    document.querySelector("#other-kicker").textContent = title;
+    document.querySelector("#other-title").textContent = title;
+    document.querySelector("#other-copy").textContent = copy;
+  }
+  if (teacherQuestions.length) renderTeacherContent(document.querySelector("#content-search").value);
+}
 
 languageButton.addEventListener("click", () => {
   const open = languageMenu.classList.toggle("open");
@@ -19,16 +181,15 @@ languageButton.addEventListener("click", () => {
 
 languageOptions.forEach((option) => {
   option.addEventListener("click", () => {
-    if (!option.classList.contains("selected") && !option.dataset.language || false) return;
-  });
-});
-
-document.querySelectorAll(".language-option.selected").forEach((option) => {
-  option.addEventListener("click", () => {
+    const language = option.dataset.code.toLowerCase();
+    if (!uiText[language]) return;
+    applyLanguage(language);
     languageMenu.classList.remove("open");
     languageButton.setAttribute("aria-expanded", "false");
   });
 });
+
+applyLanguage(currentLanguage);
 
 document.addEventListener("click", (event) => {
   if (!event.target.closest(".language-wrap")) {
@@ -36,21 +197,6 @@ document.addEventListener("click", (event) => {
     languageButton.setAttribute("aria-expanded", "false");
   }
 });
-
-const viewCopy = {
-  accessories: {
-    title: "Accessories",
-    copy: "Tools and supportive resources are being prepared."
-  },
-  books: {
-    title: "Books",
-    copy: "Approved educational books and reading resources will appear here."
-  },
-  about: {
-    title: "About Inclusion",
-    copy: "Inclusion connects families and the people around autistic children with role-specific, practical guidance."
-  }
-};
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
@@ -65,10 +211,10 @@ navLinks.forEach((link) => {
       return;
     }
 
-    const copy = viewCopy[link.dataset.view];
-    document.querySelector("#other-kicker").textContent = link.textContent;
-    document.querySelector("#other-title").textContent = copy.title;
-    document.querySelector("#other-copy").textContent = copy.copy;
+    const [title, copy] = uiText[currentLanguage].other[link.dataset.view];
+    document.querySelector("#other-kicker").textContent = title;
+    document.querySelector("#other-title").textContent = title;
+    document.querySelector("#other-copy").textContent = copy;
     advisorsView.hidden = true;
     teacherDetail.hidden = true;
     otherView.hidden = false;
@@ -78,10 +224,6 @@ navLinks.forEach((link) => {
 document.querySelector("[data-back]").addEventListener("click", () => {
   document.querySelector('[data-view="advisors"]').click();
 });
-
-let teacherCategories = [];
-let teacherQuestions = [];
-let selectedCategoryId = "disclosure-and-privacy";
 
 function openDialog(card) {
   cards.forEach((item) => item.classList.remove("selected"));
@@ -100,9 +242,20 @@ function openDialog(card) {
     return;
   }
 
-  dialogTitle.textContent = `${card.dataset.friendlyName} / ${advisorName}`;
-  dialogDescription.textContent = "The advisor is not ready yet.";
-  dialog.querySelector(".dialog-primary").textContent = "Not available";
+  const heRoles = {
+    "Classroom Aide": "מדריך לסייעת ולסייע",
+    "Older Sibling": "מדריך לאחים ואחיות",
+    Administration: "מידע מנהלי",
+    "Parent Companion": "מלווה להורים"
+  };
+  const heNames = { Daniel: "דניאל", Noa: "נועה", Yael: "יעל", Lev: "לב" };
+  const role = currentLanguage === "he" ? heRoles[advisorName] : advisorName;
+  const friendlyName = currentLanguage === "he"
+    ? heNames[card.dataset.friendlyName]
+    : card.dataset.friendlyName;
+  dialogTitle.textContent = `${friendlyName} / ${role}`;
+  dialogDescription.textContent = uiText[currentLanguage].notReady;
+  dialog.querySelector(".dialog-primary").textContent = uiText[currentLanguage].close;
   dialog.hidden = false;
   dialog.querySelector(".dialog-close").focus();
 }
@@ -122,8 +275,8 @@ async function showTeacherDetail() {
 async function loadTeacherContent() {
   const base = "content/advisors/teacher-guide/";
   const [categoriesResponse, questionsResponse] = await Promise.all([
-    fetch(`${base}categories.json`),
-    fetch(`${base}questions.json`)
+    fetch(`${base}categories.json?v=hebrew-rtl-v1`),
+    fetch(`${base}questions.json?v=hebrew-rtl-v1`)
   ]);
 
   if (!categoriesResponse.ok || !questionsResponse.ok) {
@@ -149,13 +302,14 @@ function renderTeacherContent(query = "") {
     .map((category) => {
       const questions = teacherQuestions
         .filter((question) => question.categoryId === category.id)
+        .filter((question) => question.question[currentLanguage] && question.answerFiles?.[currentLanguage])
         .filter((question) => {
           if (!needle) return true;
           const searchable = [
-            question.question.en,
-            category.name.en,
-            category.description.en,
-            ...(question.keywords.en || [])
+            question.question[currentLanguage],
+            category.name[currentLanguage],
+            category.description[currentLanguage],
+            ...(question.keywords[currentLanguage] || [])
           ].join(" ").toLowerCase();
           return searchable.includes(needle);
         })
@@ -166,8 +320,8 @@ function renderTeacherContent(query = "") {
     .filter((entry) => !needle || entry.questions.length);
 
   if (!categoriesWithQuestions.length) {
-    status.textContent = "0 matching questions";
-    list.innerHTML = '<p class="answer-panel">No matching questions found. Try a shorter topic.</p>';
+    status.textContent = `0 ${uiText[currentLanguage].noMatches}`;
+    list.innerHTML = `<p class="answer-panel">${escapeHtml(uiText[currentLanguage].noResults)}</p>`;
     return;
   }
 
@@ -180,7 +334,7 @@ function renderTeacherContent(query = "") {
 
   const sidebar = document.createElement("nav");
   sidebar.className = "category-sidebar";
-  sidebar.setAttribute("aria-label", "Question categories");
+  sidebar.setAttribute("aria-label", currentLanguage === "he" ? "קטגוריות שאלות" : "Question categories");
 
   categoriesWithQuestions.forEach(({ category, questions }) => {
     const button = document.createElement("button");
@@ -188,7 +342,7 @@ function renderTeacherContent(query = "") {
     button.className = "category-button";
     if (category.id === selectedCategoryId) button.classList.add("selected");
     button.setAttribute("aria-pressed", String(category.id === selectedCategoryId));
-    button.innerHTML = `<span>${escapeHtml(category.name.en)}</span><span class="category-count">${questions.length}</span>`;
+    button.innerHTML = `<span>${escapeHtml(category.name[currentLanguage])}</span><span class="category-count">${questions.length}</span>`;
     button.addEventListener("click", () => {
       selectedCategoryId = category.id;
       renderTeacherContent(document.querySelector("#content-search").value);
@@ -205,8 +359,8 @@ function renderTeacherContent(query = "") {
   panel.className = "question-panel";
   panel.innerHTML = `
     <div class="question-panel-heading">
-      <h2>${escapeHtml(selected.category.name.en)}</h2>
-      <p>${escapeHtml(selected.category.description.en)}</p>
+      <h2>${escapeHtml(selected.category.name[currentLanguage])}</h2>
+      <p>${escapeHtml(selected.category.description[currentLanguage])}</p>
     </div>
   `;
 
@@ -218,7 +372,7 @@ function renderTeacherContent(query = "") {
     button.type = "button";
     button.className = "question-button";
     button.setAttribute("aria-expanded", "false");
-    button.innerHTML = `<span>${escapeHtml(question.question.en)}</span><span class="question-arrow" aria-hidden="true">↓</span>`;
+    button.innerHTML = `<span>${escapeHtml(question.question[currentLanguage])}</span><span class="question-arrow" aria-hidden="true">↓</span>`;
 
     const answer = document.createElement("div");
     answer.className = "answer-panel";
@@ -238,13 +392,13 @@ function renderTeacherContent(query = "") {
       button.classList.add("selected");
       button.setAttribute("aria-expanded", "true");
       answer.hidden = false;
-      answer.textContent = "Loading answer…";
+      answer.textContent = uiText[currentLanguage].loadingAnswer;
       try {
-        const response = await fetch(`content/advisors/teacher-guide/${question.answerFile}`);
+        const response = await fetch(`content/advisors/teacher-guide/${question.answerFiles[currentLanguage]}?v=hebrew-rtl-v1`);
         if (!response.ok) throw new Error("Answer unavailable");
         answer.innerHTML = renderMarkdown(await response.text());
       } catch (error) {
-        answer.textContent = "This answer is not available yet.";
+        answer.textContent = uiText[currentLanguage].unavailableAnswer;
       }
     });
 
@@ -255,7 +409,7 @@ function renderTeacherContent(query = "") {
   list.append(sidebar, panel);
 
   status.textContent = needle
-    ? `${matchCount} matching question${matchCount === 1 ? "" : "s"}`
+    ? `${matchCount} ${currentLanguage === "he" && matchCount === 1 ? uiText.he.matchingQuestion : uiText[currentLanguage].noMatches}`
     : "";
 }
 
@@ -320,9 +474,9 @@ document.querySelector("#content-search").addEventListener("input", (event) => {
 });
 
 document.querySelector(".chat-icon-button").addEventListener("click", () => {
-  dialogTitle.textContent = "Maya";
-  dialogDescription.textContent = "Not ready yet";
-  dialog.querySelector(".dialog-primary").textContent = "Close";
+  dialogTitle.textContent = uiText[currentLanguage].maya;
+  dialogDescription.textContent = uiText[currentLanguage].chatNotReady;
+  dialog.querySelector(".dialog-primary").textContent = uiText[currentLanguage].close;
   dialog.hidden = false;
   dialog.querySelector(".dialog-close").focus();
 });

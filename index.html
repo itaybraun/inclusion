@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=advisor-header-compact" />
+    <link rel="stylesheet" href="styles.css?v=hebrew-rtl-v1" />
   </head>
   <body>
     <header class="site-header">
@@ -24,10 +24,10 @@
       </a>
 
       <nav class="top-nav" aria-label="Main navigation">
-        <button class="nav-link active" type="button" data-view="advisors">Advisors</button>
-        <button class="nav-link" type="button" data-view="accessories">Accessories</button>
-        <button class="nav-link" type="button" data-view="books">Books</button>
-        <button class="nav-link" type="button" data-view="about">About us</button>
+        <button class="nav-link active" type="button" data-view="advisors" data-i18n="navAdvisors">Advisors</button>
+        <button class="nav-link" type="button" data-view="accessories" data-i18n="navAccessories">Accessories</button>
+        <button class="nav-link" type="button" data-view="books" data-i18n="navBooks">Books</button>
+        <button class="nav-link" type="button" data-view="about" data-i18n="navAbout">About us</button>
       </nav>
 
       <div class="language-wrap">
@@ -40,9 +40,9 @@
             <span>English</span><span class="check">✓</span>
           </button>
           <button class="language-option" type="button" role="option" aria-selected="false" data-language="Hebrew" data-code="HE">
-            <span>Hebrew</span><span class="coming-soon">Soon</span>
+            <span>Hebrew</span><span class="check" hidden>✓</span>
           </button>
-          <button class="language-option" type="button" role="option" aria-selected="false" data-language="Arabic" data-code="AR">
+          <button class="language-option" type="button" role="option" aria-selected="false" data-language="Arabic" data-code="AR" disabled>
             <span>Arabic</span><span class="coming-soon">Soon</span>
           </button>
         </div>
@@ -52,15 +52,15 @@
     <main>
       <section class="advisors-view view active" id="advisors-view">
         <div class="intro">
-          <p class="eyebrow">Support for every part of the journey</p>
-          <h1>Practical guidance for your child, family, and school</h1>
-          <p class="intro-copy">Choose a dedicated advisor for classroom support, family support, or administrative guidance.</p>
+          <p class="eyebrow" data-i18n="homeEyebrow">Support for every part of the journey</p>
+          <h1 data-i18n="homeTitle">Practical guidance for your child, family, and school</h1>
+          <p class="intro-copy" data-i18n="homeCopy">Choose a dedicated advisor for classroom support, family support, or administrative guidance.</p>
         </div>
 
         <div class="section-heading">
           <div>
-            <p class="section-kicker">Advisors</p>
-            <h2>Who would you like to speak with?</h2>
+            <p class="section-kicker" data-i18n="advisors">Advisors</p>
+            <h2 data-i18n="chooseAdvisor">Who would you like to speak with?</h2>
           </div>
           <div class="active-advisor" aria-live="polite" hidden>
             <span class="active-dot"></span>
@@ -75,9 +75,9 @@
               <svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H10a2 2 0 0 1 2 2v16H6.5A2.5 2.5 0 0 1 4 18.5v-13Zm16 0A2.5 2.5 0 0 0 17.5 3H14a2 2 0 0 0-2 2v16h5.5A2.5 2.5 0 0 0 20 18.5v-13Z"/><path d="M8 7h2m-2 4h2m4-4h2m-2 4h2"/></svg>
             </span>
             <span class="advisor-content">
-              <span class="advisor-name">Teacher Guide</span>
-              <span class="advisor-friendly-name">Maya</span>
-              <span class="advisor-description">Practical classroom guidance for situations, routines, and inclusion.</span>
+              <span class="advisor-name" data-i18n="teacherGuide">Teacher Guide</span>
+              <span class="advisor-friendly-name" data-i18n="maya">Maya</span>
+              <span class="advisor-description" data-i18n="teacherDescription">Practical classroom guidance for situations, routines, and inclusion.</span>
             </span>
             <span class="card-arrow" aria-hidden="true">→</span>
           </button>
@@ -88,9 +88,9 @@
               <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2"/><path d="M3.5 20v-2.2A5.8 5.8 0 0 1 9.3 12h.4A5.3 5.3 0 0 1 15 17.3V20m2-6v6m-2-3h4"/></svg>
             </span>
             <span class="advisor-content">
-              <span class="advisor-name">Classroom Aide</span>
-              <span class="advisor-description">In-the-moment support for routines, de-escalation, and collaboration.</span>
-              <span class="advisor-status">The advisor is not ready yet</span>
+              <span class="advisor-name" data-i18n="classroomAide">Classroom Aide</span>
+              <span class="advisor-description" data-i18n="aideDescription">In-the-moment support for routines, de-escalation, and collaboration.</span>
+              <span class="advisor-status" data-i18n="notReady">The advisor is not ready yet</span>
             </span>
             <span class="card-arrow" aria-hidden="true">→</span>
           </button>
@@ -101,9 +101,9 @@
               <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2.5 20v-2.5A4.5 4.5 0 0 1 7 13h2a4.5 4.5 0 0 1 4.5 4.5V20M12 20v-2.5A4.5 4.5 0 0 1 16.5 13h1A4.5 4.5 0 0 1 22 17.5V20"/></svg>
             </span>
             <span class="advisor-content">
-              <span class="advisor-name">Older Sibling</span>
-              <span class="advisor-description">Age-appropriate support for siblings aged 10–18.</span>
-              <span class="advisor-status">The advisor is not ready yet</span>
+              <span class="advisor-name" data-i18n="olderSibling">Older Sibling</span>
+              <span class="advisor-description" data-i18n="siblingDescription">Age-appropriate support for siblings aged 10–18.</span>
+              <span class="advisor-status" data-i18n="notReady">The advisor is not ready yet</span>
             </span>
             <span class="card-arrow" aria-hidden="true">→</span>
           </button>
@@ -114,9 +114,9 @@
               <svg viewBox="0 0 24 24"><path d="M5 21V7l7-4 7 4v14M3 21h18M8 10h2m4 0h2m-8 4h2m4 0h2m-8 7v-3h8v3"/></svg>
             </span>
             <span class="advisor-content">
-              <span class="advisor-name">Administration</span>
-              <span class="advisor-description">Guidance for Israeli benefits, applications, and administrative processes.</span>
-              <span class="advisor-status">The advisor is not ready yet</span>
+              <span class="advisor-name" data-i18n="administration">Administration</span>
+              <span class="advisor-description" data-i18n="adminDescription">Guidance for Israeli benefits, applications, and administrative processes.</span>
+              <span class="advisor-status" data-i18n="notReady">The advisor is not ready yet</span>
             </span>
             <span class="card-arrow" aria-hidden="true">→</span>
           </button>
@@ -127,9 +127,9 @@
               <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/><path d="M8 12h2l1.2-3 2.1 6 1.2-3H16"/></svg>
             </span>
             <span class="advisor-content">
-              <span class="advisor-name">Parent Companion</span>
-              <span class="advisor-description">Empathy and practical perspective for the challenges parents face.</span>
-              <span class="advisor-status">The advisor is not ready yet</span>
+              <span class="advisor-name" data-i18n="parentCompanion">Parent Companion</span>
+              <span class="advisor-description" data-i18n="parentDescription">Empathy and practical perspective for the challenges parents face.</span>
+              <span class="advisor-status" data-i18n="notReady">The advisor is not ready yet</span>
             </span>
             <span class="card-arrow" aria-hidden="true">→</span>
           </button>
@@ -137,15 +137,15 @@
       </section>
 
       <section class="advisor-detail view" id="teacher-detail" hidden>
-        <button class="detail-back" type="button" id="detail-back">← All advisors</button>
+        <button class="detail-back" type="button" id="detail-back" data-i18n="allAdvisors">← All advisors</button>
         <div class="detail-header">
           <div class="detail-avatar" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H10a2 2 0 0 1 2 2v16H6.5A2.5 2.5 0 0 1 4 18.5v-13Zm16 0A2.5 2.5 0 0 0 17.5 3H14a2 2 0 0 0-2 2v16h5.5A2.5 2.5 0 0 0 20 18.5v-13Z"/><path d="M8 7h2m-2 4h2m4-4h2m-2 4h2"/></svg>
           </div>
           <div>
-            <p class="section-kicker">Teacher Guide</p>
-            <h1>Maya</h1>
-            <p>Practical, classroom-focused guidance for teachers supporting an autistic student.</p>
+            <p class="section-kicker" data-i18n="teacherGuide">Teacher Guide</p>
+            <h1 data-i18n="maya">Maya</h1>
+            <p data-i18n="detailDescription">Practical, classroom-focused guidance for teachers supporting an autistic student.</p>
           </div>
         </div>
 
@@ -156,10 +156,11 @@
         </div>
 
         <label class="content-search">
-          <span>Search Maya's guidance</span>
+          <span data-i18n="searchLabel">Search Maya's guidance</span>
           <input id="content-search" type="search" placeholder="Search a topic or question" autocomplete="off" />
         </label>
         <p class="search-status" id="search-status" aria-live="polite"></p>
+        <p class="translation-notice" id="translation-notice" hidden></p>
         <div class="category-list" id="category-list"></div>
       </section>
 
@@ -168,7 +169,7 @@
           <p class="section-kicker" id="other-kicker">Accessories</p>
           <h1 id="other-title">Accessories</h1>
           <p id="other-copy">Tools and supportive resources are being prepared.</p>
-          <button class="back-button" type="button" data-back>Back to advisors</button>
+          <button class="back-button" type="button" data-back data-i18n="backToAdvisors">Back to advisors</button>
         </div>
       </section>
     </main>
@@ -184,6 +185,6 @@
       </div>
     </div>
 
-    <script src="script.js?v=advisor-header-compact"></script>
+    <script src="script.js?v=hebrew-rtl-v1"></script>
   </body>
 </html>

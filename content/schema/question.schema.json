@@ -3,7 +3,7 @@
   "type": "array",
   "items": {
     "type": "object",
-    "required": ["id", "advisorId", "categoryId", "status", "featured", "sortOrder", "question", "keywords", "answerFile", "relatedAdvisors", "media"],
+    "required": ["id", "advisorId", "categoryId", "status", "featured", "sortOrder", "question", "keywords", "answerFiles", "relatedAdvisors", "media"],
     "properties": {
       "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
       "advisorId": { "type": "string" },
@@ -13,7 +13,25 @@
       "sortOrder": { "type": "integer", "minimum": 1 },
       "question": { "type": "object" },
       "keywords": { "type": "object" },
-      "answerFile": { "type": ["string", "null"] },
+      "translationStatus": {
+        "type": "object",
+        "properties": {
+          "en": { "enum": ["draft", "needs-human-review", "reviewed"] },
+          "he": { "enum": ["draft", "needs-human-review", "reviewed"] },
+          "ar": { "enum": ["draft", "needs-human-review", "reviewed"] }
+        },
+        "additionalProperties": false
+      },
+      "answerFiles": {
+        "type": "object",
+        "required": ["en"],
+        "properties": {
+          "en": { "type": "string" },
+          "he": { "type": "string" },
+          "ar": { "type": "string" }
+        },
+        "additionalProperties": false
+      },
       "relatedAdvisors": { "type": "array", "items": { "type": "string" } },
       "media": { "type": ["string", "null"] }
     }
