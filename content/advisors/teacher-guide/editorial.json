@@ -1,0 +1,13 @@
+{
+  "visibility": "private",
+  "purpose": "Internal review metadata. Do not include this file in public builds or search indexes.",
+  "entries": [
+    {
+      "questionId": "all",
+      "draftedAt": "2026-11-23",
+      "draftedBy": "AI-assisted draft",
+      "reviewStatus": "awaiting-expert-review",
+      "internalComments": "Answers are initial drafts for later expert, legal, policy, and localization review."
+    }
+  ]
+}
