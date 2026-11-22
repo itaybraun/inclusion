@@ -91,6 +91,12 @@ Chat is visible to communicate the future capability, but it may be disabled in 
 
 "Browse questions" should move or scroll to the question library.
 
+For the MVP, live chat should be represented by a compact round icon at the right side of the advisor header, not by a full-width or full-row button.
+
+- Clicking the icon should show "Not ready yet."
+- The icon may use a chat bubble or avatar message symbol.
+- The advisor name and role should remain visible nearby.
+
 ### 3. Search
 
 A search field should be displayed above the question categories:
@@ -117,12 +123,19 @@ A search field should be displayed above the question categories:
 
 ### 4. Question Categories
 
-The advisor should present curated questions in expandable categories. Each category should show:
+On wide screens, the advisor should present curated questions with categories in a side navigation and questions in a dedicated panel.
+
+Each category should show:
 
 - Category name
 - Short category description
 - Number of available questions
-- An expand or collapse control
+- A selected state
+- A question count
+
+Selecting a category replaces the question panel content with that category's questions. Categories should not expand and show all questions on the page at once.
+
+On narrow screens, categories should become a compact horizontal list or a dropdown above the question panel.
 
 Questions should be displayed as natural, first-person or teacher-facing prompts.
 

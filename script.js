@@ -81,6 +81,7 @@ document.querySelector("[data-back]").addEventListener("click", () => {
 
 let teacherCategories = [];
 let teacherQuestions = [];
+let selectedCategoryId = "disclosure-and-privacy";
 
 function openDialog(card) {
   cards.forEach((item) => item.classList.remove("selected"));
@@ -142,10 +143,10 @@ function renderTeacherContent(query = "") {
   let matchCount = 0;
 
   list.innerHTML = "";
-  teacherCategories
+  const categoriesWithQuestions = teacherCategories
     .slice()
     .sort((a, b) => a.sortOrder - b.sortOrder)
-    .forEach((category) => {
+    .map((category) => {
       const questions = teacherQuestions
         .filter((question) => question.categoryId === category.id)
         .filter((question) => {
@@ -159,66 +160,96 @@ function renderTeacherContent(query = "") {
           return searchable.includes(needle);
         })
         .sort((a, b) => a.sortOrder - b.sortOrder);
-
-      if (!questions.length) return;
       matchCount += questions.length;
+      return { category, questions };
+    })
+    .filter((entry) => !needle || entry.questions.length);
 
-      const categoryElement = document.createElement("details");
-      categoryElement.className = "category";
-      categoryElement.open = Boolean(needle);
+  if (!categoriesWithQuestions.length) {
+    status.textContent = "0 matching questions";
+    list.innerHTML = '<p class="answer-panel">No matching questions found. Try a shorter topic.</p>';
+    return;
+  }
 
-      const summary = document.createElement("summary");
-      summary.textContent = `${category.name.en} (${questions.length})`;
+  if (needle && !categoriesWithQuestions.some((entry) => entry.category.id === selectedCategoryId)) {
+    selectedCategoryId = categoriesWithQuestions[0].category.id;
+  }
+  if (!needle && !categoriesWithQuestions.some((entry) => entry.category.id === selectedCategoryId)) {
+    selectedCategoryId = categoriesWithQuestions[0].category.id;
+  }
 
-      const description = document.createElement("p");
-      description.className = "category-description";
-      description.textContent = category.description.en;
+  const sidebar = document.createElement("nav");
+  sidebar.className = "category-sidebar";
+  sidebar.setAttribute("aria-label", "Question categories");
 
-      const questionList = document.createElement("div");
-      questionList.className = "question-list";
-
-      questions.forEach((question) => {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "question-button";
-        button.innerHTML = `<span>${escapeHtml(question.question.en)}</span><span aria-hidden="true">→</span>`;
-
-        const answer = document.createElement("div");
-        answer.className = "answer-panel";
-        answer.hidden = true;
-
-        button.addEventListener("click", async () => {
-          const wasHidden = answer.hidden;
-          document.querySelectorAll(".answer-panel").forEach((panel) => {
-            panel.hidden = true;
-          });
-          if (!wasHidden) return;
-
-          answer.hidden = false;
-          answer.textContent = "Loading answer…";
-          try {
-            const response = await fetch(`content/advisors/teacher-guide/${question.answerFile}`);
-            if (!response.ok) throw new Error("Answer unavailable");
-            const markdown = await response.text();
-            answer.innerHTML = renderMarkdown(markdown);
-          } catch (error) {
-            answer.textContent = "This answer is not available yet.";
-          }
-        });
-
-        questionList.append(button, answer);
-      });
-
-      categoryElement.append(summary, description, questionList);
-      list.append(categoryElement);
+  categoriesWithQuestions.forEach(({ category, questions }) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "category-button";
+    if (category.id === selectedCategoryId) button.classList.add("selected");
+    button.setAttribute("aria-pressed", String(category.id === selectedCategoryId));
+    button.innerHTML = `<span>${escapeHtml(category.name.en)}</span><span class="category-count">${questions.length}</span>`;
+    button.addEventListener("click", () => {
+      selectedCategoryId = category.id;
+      renderTeacherContent(document.querySelector("#content-search").value);
     });
+    sidebar.append(button);
+  });
+
+  const selected = categoriesWithQuestions.find(
+    (entry) => entry.category.id === selectedCategoryId
+  ) || categoriesWithQuestions[0];
+  selectedCategoryId = selected.category.id;
+
+  const panel = document.createElement("section");
+  panel.className = "question-panel";
+  panel.innerHTML = `
+    <div class="question-panel-heading">
+      <h2>${escapeHtml(selected.category.name.en)}</h2>
+      <p>${escapeHtml(selected.category.description.en)}</p>
+    </div>
+  `;
+
+  const questionList = document.createElement("div");
+  questionList.className = "question-list";
+
+  selected.questions.forEach((question) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "question-button";
+    button.innerHTML = `<span>${escapeHtml(question.question.en)}</span><span aria-hidden="true">→</span>`;
+
+    const answer = document.createElement("div");
+    answer.className = "answer-panel";
+    answer.hidden = true;
+
+    button.addEventListener("click", async () => {
+      const wasHidden = answer.hidden;
+      panel.querySelectorAll(".answer-panel").forEach((item) => {
+        item.hidden = true;
+      });
+      if (!wasHidden) return;
+
+      answer.hidden = false;
+      answer.textContent = "Loading answer…";
+      try {
+        const response = await fetch(`content/advisors/teacher-guide/${question.answerFile}`);
+        if (!response.ok) throw new Error("Answer unavailable");
+        answer.innerHTML = renderMarkdown(await response.text());
+      } catch (error) {
+        answer.textContent = "This answer is not available yet.";
+      }
+    });
+
+    questionList.append(button, answer);
+  });
+
+  panel.append(questionList);
+  list.append(sidebar, panel);
 
   status.textContent = needle
     ? `${matchCount} matching question${matchCount === 1 ? "" : "s"}`
     : "";
-  if (needle && !matchCount) {
-    list.innerHTML = '<p class="answer-panel">No matching questions found. Try a shorter topic.</p>';
-  }
 }
 
 function escapeHtml(value) {
@@ -281,6 +312,14 @@ document.querySelector("#content-search").addEventListener("input", (event) => {
   renderTeacherContent(event.target.value);
 });
 
+document.querySelector(".chat-icon-button").addEventListener("click", () => {
+  dialogTitle.textContent = "Maya";
+  dialogDescription.textContent = "Not ready yet";
+  dialog.querySelector(".dialog-primary").textContent = "Close";
+  dialog.hidden = false;
+  dialog.querySelector(".dialog-close").focus();
+});
+
 cards.forEach((card) => {
   card.addEventListener("click", () => openDialog(card));
 });
@@ -289,6 +328,9 @@ document.querySelectorAll("[data-close-dialog]").forEach((control) => {
   control.addEventListener("click", () => {
     dialog.hidden = true;
   });
+});
+document.querySelector(".dialog-primary").addEventListener("click", () => {
+  dialog.hidden = true;
 });
 
 document.addEventListener("keydown", (event) => {
