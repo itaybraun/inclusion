@@ -68,6 +68,8 @@ The header should contain:
 - Advisor identity color
 - An optional "About this advisor" scope link
 
+The advisor detail page should keep its introduction compact so search and questions appear high on the first screen. Use minimal top padding and tight spacing between the back link, identity block, search field, and question panel.
+
 Example:
 
 > **Maya**

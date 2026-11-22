@@ -448,33 +448,38 @@ main {
   color: var(--muted);
   font-weight: 700;
 }
+.advisor-detail {
+  position: relative;
+  margin-top: -28px;
+}
 .detail-header {
   display: flex;
   align-items: center;
-  gap: 18px;
-  margin: 28px 0 20px;
+  gap: 14px;
+  margin: 12px 0 14px;
 }
 .detail-avatar {
-  width: 78px;
-  height: 78px;
+  width: 64px;
+  height: 64px;
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  border-radius: 22px;
+  border-radius: 18px;
   background: color-mix(in srgb, var(--teacher) 13%, white);
   color: var(--teacher);
 }
 .detail-avatar svg {
-  width: 42px;
-  height: 42px;
+  width: 34px;
+  height: 34px;
   fill: currentColor;
   stroke: white;
   stroke-width: 1.2;
 }
 .detail-header h1 {
-  margin: 0 0 4px;
+  margin: 0 0 2px;
   font-family: "Manrope", sans-serif;
-  font-size: 36px;
+  font-size: 32px;
+  line-height: 1.1;
 }
 .detail-header p:not(.section-kicker) {
   margin: 0;
@@ -484,7 +489,7 @@ main {
 .detail-actions {
   position: absolute;
   right: 5%;
-  top: 118px;
+  top: 0;
   margin: 0;
 }
 .chat-icon-button {
@@ -515,14 +520,14 @@ main {
 .content-search {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 5px;
   max-width: 520px;
   color: var(--ink);
   font-size: 13px;
   font-weight: 700;
 }
 .content-search input {
-  height: 46px;
+  height: 42px;
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 0 14px;
@@ -531,10 +536,13 @@ main {
   font: inherit;
 }
 .search-status {
-  min-height: 18px;
-  margin: 6px 0 8px;
+  min-height: 0;
+  margin: 0;
   color: var(--muted);
   font-size: 13px;
+}
+.search-status:not(:empty) {
+  margin: 4px 0 6px;
 }
 .category-list {
   display: grid;
@@ -705,13 +713,13 @@ button:focus-visible, a:focus-visible {
   .nav-link { padding: 12px 0 9px; }
   .language-wrap { grid-column: 2; grid-row: 1; }
 
-  main { padding-top: 38px; }
+  main { padding-top: 28px; }
   .advisor-grid { grid-template-columns: repeat(2, 1fr); }
   .advisor-card, .advisor-card:nth-child(4), .advisor-card:nth-child(5) {
     grid-column: span 1;
   }
   .advisor-card:last-child { grid-column: 1 / -1; max-width: calc(50% - 8px); }
-  .detail-actions { right: 5%; top: 112px; }
+  .detail-actions { right: 0; top: 0; }
 }
 
 @media (max-width: 620px) {
@@ -719,7 +727,7 @@ button:focus-visible, a:focus-visible {
   .brand img { width: 42px; height: 42px; }
   .top-nav { gap: 10px; overflow-x: auto; }
   .nav-link { flex: 0 0 auto; font-size: 14px; }
-  main { width: calc(100% - 32px); padding-top: 30px; }
+  main { width: calc(100% - 32px); padding-top: 22px; }
   .intro { margin-bottom: 34px; }
   .intro h1 { font-size: 38px; }
   .section-heading { align-items: start; }
@@ -730,7 +738,7 @@ button:focus-visible, a:focus-visible {
     max-width: none;
     min-height: 170px;
   }
-  .detail-actions { top: 94px; right: 16px; }
+  .detail-actions { top: 0; right: 0; }
   .chat-icon-button { width: 46px; height: 46px; }
   .category-list { grid-template-columns: 1fr; }
   .category-sidebar {
