@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f8f6" />
+    <title>Inclusion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Inclusion home">
+        <img src="product/assets/inclusion-icon.png" alt="" />
+        <span>Inclusion</span>
+      </a>
+
+      <nav class="top-nav" aria-label="Main navigation">
+        <button class="nav-link active" type="button" data-view="advisors">Advisors</button>
+        <button class="nav-link" type="button" data-view="accessories">Accessories</button>
+        <button class="nav-link" type="button" data-view="books">Books</button>
+        <button class="nav-link" type="button" data-view="about">About us</button>
+      </nav>
+
+      <div class="language-wrap">
+        <button class="language-button" type="button" aria-haspopup="listbox" aria-expanded="false">
+          <span class="language-code">EN</span>
+          <svg aria-hidden="true" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4" /></svg>
+        </button>
+        <div class="language-menu" role="listbox" aria-label="Choose language">
+          <button class="language-option selected" type="button" role="option" aria-selected="true" data-language="English" data-code="EN">
+            <span>English</span><span class="check">✓</span>
+          </button>
+          <button class="language-option" type="button" role="option" aria-selected="false" data-language="Hebrew" data-code="HE">
+            <span>Hebrew</span><span class="coming-soon">Soon</span>
+          </button>
+          <button class="language-option" type="button" role="option" aria-selected="false" data-language="Arabic" data-code="AR">
+            <span>Arabic</span><span class="coming-soon">Soon</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="advisors-view view active" id="advisors-view">
+        <div class="intro">
+          <p class="eyebrow">Support for every part of the journey</p>
+          <h1>Practical guidance for your child, family, and school</h1>
+          <p class="intro-copy">Choose a dedicated advisor for classroom support, family support, or administrative guidance.</p>
+        </div>
+
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Advisors</p>
+            <h2>Who would you like to speak with?</h2>
+          </div>
+          <div class="active-advisor" aria-live="polite" hidden>
+            <span class="active-dot"></span>
+            <span>Selected: <strong id="active-advisor-name"></strong></span>
+          </div>
+        </div>
+
+        <div class="advisor-grid">
+          <button class="advisor-card teacher" type="button" data-advisor="Teacher Guide" data-description="Practical classroom guidance for situations, routines, and inclusion." aria-label="Choose Teacher Guide">
+            <span class="card-accent"></span>
+            <span class="advisor-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H10a2 2 0 0 1 2 2v16H6.5A2.5 2.5 0 0 1 4 18.5v-13Zm16 0A2.5 2.5 0 0 0 17.5 3H14a2 2 0 0 0-2 2v16h5.5A2.5 2.5 0 0 0 20 18.5v-13Z"/><path d="M8 7h2m-2 4h2m4-4h2m-2 4h2"/></svg>
+            </span>
+            <span class="advisor-content">
+              <span class="advisor-name">Teacher Guide</span>
+              <span class="advisor-description">Practical classroom guidance for situations, routines, and inclusion.</span>
+            </span>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="advisor-card aide" type="button" data-advisor="Classroom Aide" data-description="In-the-moment support for routines, de-escalation, and collaboration." aria-label="Choose Classroom Aide">
+            <span class="card-accent"></span>
+            <span class="advisor-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2"/><path d="M3.5 20v-2.2A5.8 5.8 0 0 1 9.3 12h.4A5.3 5.3 0 0 1 15 17.3V20m2-6v6m-2-3h4"/></svg>
+            </span>
+            <span class="advisor-content">
+              <span class="advisor-name">Classroom Aide</span>
+              <span class="advisor-description">In-the-moment support for routines, de-escalation, and collaboration.</span>
+            </span>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="advisor-card sibling" type="button" data-advisor="Older Sibling" data-description="Age-appropriate support for siblings aged 10–18." aria-label="Choose Older Sibling">
+            <span class="card-accent"></span>
+            <span class="advisor-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2.5 20v-2.5A4.5 4.5 0 0 1 7 13h2a4.5 4.5 0 0 1 4.5 4.5V20M12 20v-2.5A4.5 4.5 0 0 1 16.5 13h1A4.5 4.5 0 0 1 22 17.5V20"/></svg>
+            </span>
+            <span class="advisor-content">
+              <span class="advisor-name">Older Sibling</span>
+              <span class="advisor-description">Age-appropriate support for siblings aged 10–18.</span>
+            </span>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="advisor-card administration" type="button" data-advisor="Administration" data-description="Help navigating Israeli benefits, applications, and administrative processes." aria-label="Choose Administration">
+            <span class="card-accent"></span>
+            <span class="advisor-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 21V7l7-4 7 4v14M3 21h18M8 10h2m4 0h2m-8 4h2m4 0h2m-8 7v-3h8v3"/></svg>
+            </span>
+            <span class="advisor-content">
+              <span class="advisor-name">Administration</span>
+              <span class="advisor-description">Guidance for Israeli benefits, applications, and administrative processes.</span>
+            </span>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="advisor-card parent" type="button" data-advisor="Parent Companion" data-description="Empathy and practical perspective for the challenges parents face." aria-label="Choose Parent Companion">
+            <span class="card-accent"></span>
+            <span class="advisor-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/><path d="M8 12h2l1.2-3 2.1 6 1.2-3H16"/></svg>
+            </span>
+            <span class="advisor-content">
+              <span class="advisor-name">Parent Companion</span>
+              <span class="advisor-description">Empathy and practical perspective for the challenges parents face.</span>
+            </span>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="content-view view" id="other-view" hidden>
+        <div class="empty-state">
+          <p class="section-kicker" id="other-kicker">Accessories</p>
+          <h1 id="other-title">Accessories</h1>
+          <p id="other-copy">Tools and supportive resources are being prepared.</p>
+          <button class="back-button" type="button" data-back>Back to advisors</button>
+        </div>
+      </section>
+    </main>
+
+    <div class="advisor-dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" hidden>
+      <div class="dialog-backdrop" data-close-dialog></div>
+      <div class="dialog-panel">
+        <button class="dialog-close" type="button" aria-label="Close" data-close-dialog>×</button>
+        <p class="dialog-kicker">Selected advisor</p>
+        <h2 id="dialog-title"></h2>
+        <p id="dialog-description"></p>
+        <button class="dialog-primary" type="button">Start conversation</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
