@@ -10,6 +10,7 @@ const activeAdvisorName = document.querySelector("#active-advisor-name");
 const dialog = document.querySelector(".advisor-dialog");
 const dialogTitle = document.querySelector("#dialog-title");
 const dialogDescription = document.querySelector("#dialog-description");
+const teacherDetail = document.querySelector("#teacher-detail");
 
 languageButton.addEventListener("click", () => {
   const open = languageMenu.classList.toggle("open");
@@ -58,6 +59,7 @@ navLinks.forEach((link) => {
 
     if (link.dataset.view === "advisors") {
       advisorsView.hidden = false;
+      teacherDetail.hidden = true;
       otherView.hidden = true;
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
@@ -68,6 +70,7 @@ navLinks.forEach((link) => {
     document.querySelector("#other-title").textContent = copy.title;
     document.querySelector("#other-copy").textContent = copy.copy;
     advisorsView.hidden = true;
+    teacherDetail.hidden = true;
     otherView.hidden = false;
   });
 });
@@ -75,6 +78,9 @@ navLinks.forEach((link) => {
 document.querySelector("[data-back]").addEventListener("click", () => {
   document.querySelector('[data-view="advisors"]').click();
 });
+
+let teacherCategories = [];
+let teacherQuestions = [];
 
 function openDialog(card) {
   cards.forEach((item) => item.classList.remove("selected"));
@@ -87,11 +93,193 @@ function openDialog(card) {
   activeAdvisor.hidden = false;
   activeAdvisor.style.setProperty("--active-color", advisorColor);
   activeAdvisorName.textContent = advisorName;
-  dialogTitle.textContent = advisorName;
-  dialogDescription.textContent = advisorDescription;
+
+  if (card.dataset.status === "ready") {
+    showTeacherDetail();
+    return;
+  }
+
+  dialogTitle.textContent = `${card.dataset.friendlyName} / ${advisorName}`;
+  dialogDescription.textContent = "The advisor is not ready yet.";
+  dialog.querySelector(".dialog-primary").textContent = "Not available";
   dialog.hidden = false;
   dialog.querySelector(".dialog-close").focus();
 }
+
+async function showTeacherDetail() {
+  advisorsView.hidden = true;
+  otherView.hidden = true;
+  teacherDetail.hidden = false;
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  if (!teacherCategories.length) {
+    await loadTeacherContent();
+  }
+  renderTeacherContent();
+}
+
+async function loadTeacherContent() {
+  const base = "content/advisors/teacher-guide/";
+  const [categoriesResponse, questionsResponse] = await Promise.all([
+    fetch(`${base}categories.json`),
+    fetch(`${base}questions.json`)
+  ]);
+
+  if (!categoriesResponse.ok || !questionsResponse.ok) {
+    document.querySelector("#category-list").innerHTML =
+      '<p class="answer-panel">The advisor content could not be loaded.</p>';
+    return;
+  }
+
+  teacherCategories = await categoriesResponse.json();
+  teacherQuestions = await questionsResponse.json();
+}
+
+function renderTeacherContent(query = "") {
+  const list = document.querySelector("#category-list");
+  const status = document.querySelector("#search-status");
+  const needle = query.trim().toLowerCase();
+  let matchCount = 0;
+
+  list.innerHTML = "";
+  teacherCategories
+    .slice()
+    .sort((a, b) => a.sortOrder - b.sortOrder)
+    .forEach((category) => {
+      const questions = teacherQuestions
+        .filter((question) => question.categoryId === category.id)
+        .filter((question) => {
+          if (!needle) return true;
+          const searchable = [
+            question.question.en,
+            category.name.en,
+            category.description.en,
+            ...(question.keywords.en || [])
+          ].join(" ").toLowerCase();
+          return searchable.includes(needle);
+        })
+        .sort((a, b) => a.sortOrder - b.sortOrder);
+
+      if (!questions.length) return;
+      matchCount += questions.length;
+
+      const categoryElement = document.createElement("details");
+      categoryElement.className = "category";
+      categoryElement.open = Boolean(needle);
+
+      const summary = document.createElement("summary");
+      summary.textContent = `${category.name.en} (${questions.length})`;
+
+      const description = document.createElement("p");
+      description.className = "category-description";
+      description.textContent = category.description.en;
+
+      const questionList = document.createElement("div");
+      questionList.className = "question-list";
+
+      questions.forEach((question) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "question-button";
+        button.innerHTML = `<span>${escapeHtml(question.question.en)}</span><span aria-hidden="true">→</span>`;
+
+        const answer = document.createElement("div");
+        answer.className = "answer-panel";
+        answer.hidden = true;
+
+        button.addEventListener("click", async () => {
+          const wasHidden = answer.hidden;
+          document.querySelectorAll(".answer-panel").forEach((panel) => {
+            panel.hidden = true;
+          });
+          if (!wasHidden) return;
+
+          answer.hidden = false;
+          answer.textContent = "Loading answer…";
+          try {
+            const response = await fetch(`content/advisors/teacher-guide/${question.answerFile}`);
+            if (!response.ok) throw new Error("Answer unavailable");
+            const markdown = await response.text();
+            answer.innerHTML = renderMarkdown(markdown);
+          } catch (error) {
+            answer.textContent = "This answer is not available yet.";
+          }
+        });
+
+        questionList.append(button, answer);
+      });
+
+      categoryElement.append(summary, description, questionList);
+      list.append(categoryElement);
+    });
+
+  status.textContent = needle
+    ? `${matchCount} matching question${matchCount === 1 ? "" : "s"}`
+    : "";
+  if (needle && !matchCount) {
+    list.innerHTML = '<p class="answer-panel">No matching questions found. Try a shorter topic.</p>';
+  }
+}
+
+function escapeHtml(value) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
+function renderMarkdown(markdown) {
+  const content = markdown.replace(/^---[\s\S]*?---\s*/, "");
+  const lines = content.split("\n");
+  let html = "";
+  let listOpen = false;
+
+  const closeList = () => {
+    if (listOpen) {
+      html += "</ul>";
+      listOpen = false;
+    }
+  };
+
+  lines.forEach((line) => {
+    if (!line.trim()) return;
+    if (line.startsWith("## ")) {
+      closeList();
+      html += `<h2>${escapeHtml(line.slice(3))}</h2>`;
+    } else if (line.startsWith("### ")) {
+      closeList();
+      html += `<h3>${escapeHtml(line.slice(4))}</h3>`;
+    } else if (line.startsWith("- ")) {
+      if (!listOpen) {
+        html += "<ul>";
+        listOpen = true;
+      }
+      html += `<li>${escapeInlineMarkdown(line.slice(2))}</li>`;
+    } else {
+      closeList();
+      html += `<p>${escapeInlineMarkdown(line)}</p>`;
+    }
+  });
+  closeList();
+  return html;
+}
+
+function escapeInlineMarkdown(value) {
+  const escaped = escapeHtml(value)
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+  return escaped;
+}
+
+document.querySelector("#detail-back").addEventListener("click", () => {
+  teacherDetail.hidden = true;
+  advisorsView.hidden = false;
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+document.querySelector("#content-search").addEventListener("input", (event) => {
+  renderTeacherContent(event.target.value);
+});
 
 cards.forEach((card) => {
   card.addEventListener("click", () => openDialog(card));

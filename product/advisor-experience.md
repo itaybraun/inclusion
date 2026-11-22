@@ -6,6 +6,18 @@ The advisor experience lets a user explore a specific advisor and find practical
 
 Live chat is planned for a later phase and is not available in the MVP.
 
+## Advisor Readiness
+
+The MVP should expose advisor availability explicitly:
+
+- Teacher Guide: ready for browsing curated expert-draft questions and answers.
+- Classroom Aide: not ready yet.
+- Older Sibling: not ready yet.
+- Administration: not ready yet.
+- Parent Companion: not ready yet.
+
+Cards for not-ready advisors remain visible. They must not open a chat or route to missing content.
+
 ## Advisor Identity
 
 Every advisor has two names:

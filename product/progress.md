@@ -9,6 +9,7 @@
 - [x] Define the reusable advisor detail experience, search, chat state, and podcast behavior.
 - [x] Plan the multilingual, expert-authored content repository and private review metadata.
 - [x] Draft 28 English answers for Maya / Teacher Guide; expert and policy review remains pending.
+- [ ] Implement and visually test the Maya / Teacher Guide content page.
 - [ ] Build the first-page UI.
 - [ ] Define safety and crisis escalation behavior.
 - [ ] Define the shared child-profile consent model.

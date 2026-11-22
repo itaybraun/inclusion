@@ -86,6 +86,16 @@ The advisor's face and identity color should appear in the advisor card and thro
 
 The Teacher Guide should remain the clearest recommended starting point for initial user testing.
 
+### Advisor readiness
+
+Each advisor must expose an explicit readiness state:
+
+- The Teacher Guide is the only advisor whose content is available in the MVP.
+- Cards for unready advisors remain visible for future discoverability.
+- Unready cards show "The advisor is not ready yet."
+- Unready cards must not open chat or imply that content is available.
+- Selecting an unready advisor should open an informational state, not a broken page.
+
 ### 4. Main Navigation
 
 The main menu should expose four primary destinations:
