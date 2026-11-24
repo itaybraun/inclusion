@@ -44,3 +44,4 @@ When an answer is longer than its available reading area, scroll only the answer
 - Bound the answer body's height to the available viewport and allow it to scroll independently.
 - Keep the selected question outside the scroll area so it remains visible.
 - Contain scroll behavior at the answer boundary and support keyboard scrolling.
+- Use the same inner-scroll behavior on narrow screens; no separate mobile scroll model is required for this iteration.
