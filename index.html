@@ -112,26 +112,29 @@
       </section>
 
       <section class="advisor-detail view" id="teacher-detail" hidden>
-        <button class="detail-back" type="button" id="detail-back" data-i18n="allAdvisors">← All advisors</button>
-        <div class="detail-header">
-          <div class="detail-avatar" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H10a2 2 0 0 1 2 2v16H6.5A2.5 2.5 0 0 1 4 18.5v-13Zm16 0A2.5 2.5 0 0 0 17.5 3H14a2 2 0 0 0-2 2v16h5.5A2.5 2.5 0 0 0 20 18.5v-13Z"/><path d="M8 7h2m-2 4h2m4-4h2m-2 4h2"/></svg>
+        <div class="detail-toolbar">
+          <div class="detail-header">
+            <div class="detail-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H10a2 2 0 0 1 2 2v16H6.5A2.5 2.5 0 0 1 4 18.5v-13Zm16 0A2.5 2.5 0 0 0 17.5 3H14a2 2 0 0 0-2 2v16h5.5A2.5 2.5 0 0 0 20 18.5v-13Z"/><path d="M8 7h2m-2 4h2m4-4h2m-2 4h2"/></svg>
+            </div>
+            <div class="detail-heading">
+              <h1><span data-i18n="maya">Maya</span><span class="detail-title-separator"> - </span><span class="detail-role" data-i18n="teacherGuide">Teacher Guide</span></h1>
+              <p data-i18n="detailDescription">Practical, classroom-focused guidance for teachers supporting an autistic student.</p>
+            </div>
           </div>
-          <div>
-            <p class="section-kicker" data-i18n="teacherGuide">Teacher Guide</p>
-            <h1 data-i18n="maya">Maya</h1>
-            <p data-i18n="detailDescription">Practical, classroom-focused guidance for teachers supporting an autistic student.</p>
+          <div class="detail-actions">
+            <button class="detail-back" type="button" id="detail-back" aria-label="Back to advisors" title="Back to advisors">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z"/></svg>
+              <span class="sr-only" data-i18n="backToAdvisors">Back to advisors</span>
+            </button>
+            <button class="chat-icon-button" type="button" aria-label="Chat with Maya, not ready yet" title="Chat with Maya — Not ready yet">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H8l-5 2 1.5-5A8 8 0 1 1 21 12Z"/><circle cx="9" cy="12" r=".8"/><circle cx="12" cy="12" r=".8"/><circle cx="15" cy="12" r=".8"/></svg>
+            </button>
           </div>
-        </div>
-
-        <div class="detail-actions">
-          <button class="chat-icon-button" type="button" aria-label="Chat with Maya, not ready yet" title="Chat with Maya — Not ready yet">
-            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H8l-5 2 1.5-5A8 8 0 1 1 21 12Z"/><circle cx="9" cy="12" r=".8"/><circle cx="12" cy="12" r=".8"/><circle cx="15" cy="12" r=".8"/></svg>
-          </button>
         </div>
 
         <label class="content-search">
-          <span data-i18n="searchLabel">Search Maya's guidance</span>
+          <span class="sr-only" data-i18n="searchLabel">Search Maya's guidance</span>
           <input id="content-search" type="search" placeholder="Search a topic or question" autocomplete="off" />
         </label>
         <p class="search-status" id="search-status" aria-live="polite"></p>

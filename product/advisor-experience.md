@@ -55,7 +55,7 @@ The advisor's name must always accompany the color. Color must never be the only
 
 ### 1. Advisor Header
 
-The header should contain:
+The compact header should contain:
 
 - Advisor face
 - Friendly name
@@ -63,6 +63,8 @@ The header should contain:
 - One-sentence purpose
 - Advisor identity color
 - An optional "About this advisor" scope link
+
+Place the friendly name and role together on one line (for example, "Maya — Teacher Guide"). Align an icon-only back-to-advisors control and the chat icon opposite the identity on the same row. Do not put an "All advisors" text link on its own row.
 
 The advisor detail page should keep its introduction compact so search and questions appear high on the first screen. Use minimal top padding and tight spacing between the back link, identity block, search field, and question panel.
 
@@ -118,6 +120,7 @@ A search field should be displayed above the question categories:
 - English search first
 - Hebrew and Arabic search after localization
 - Avoid relying on AI retrieval; search curated question metadata and published answers
+- Keep the search label available to assistive technology without displaying a separate label above the input.
 
 ### 4. Question Categories
 

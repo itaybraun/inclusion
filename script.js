@@ -35,7 +35,6 @@ const uiText = {
     ari: "Ari",
     asdDescription: "Clear, school-relevant information about autism, communication, sensory needs, strengths, and inclusion.",
     notReady: "The advisor is not ready yet",
-    allAdvisors: "← All advisors",
     maya: "Maya",
     detailDescription: "Practical, classroom-focused guidance for teachers supporting an autistic student.",
     searchLabel: "Search Maya's guidance",
@@ -76,7 +75,6 @@ const uiText = {
     ari: "ארי",
     asdDescription: "מידע ברור ורלוונטי לבית הספר על אוטיזם, תקשורת, צרכים חושיים, חוזקות והכלה.",
     notReady: "התוכן עדיין לא מוכן",
-    allAdvisors: "כל היועצים ←",
     maya: "מאיה",
     detailDescription: "הכוונה מעשית למורים התומכים בתלמידים אוטיסטים.",
     searchLabel: "חיפוש בהכוונה של מאיה",
@@ -160,6 +158,8 @@ function applyLanguage(language) {
   });
 
   document.querySelector("#content-search").placeholder = text.searchPlaceholder;
+  document.querySelector("#detail-back").title = text.backToAdvisors;
+  document.querySelector("#detail-back").setAttribute("aria-label", text.backToAdvisors);
   document.querySelector(".chat-icon-button").title = `${language === "he" ? "שיחה עם מאיה" : "Chat with Maya"} — ${text.chatNotReady}`;
   document.querySelector(".chat-icon-button").setAttribute(
     "aria-label",
