@@ -11,9 +11,13 @@ const dialog = document.querySelector(".advisor-dialog");
 const dialogTitle = document.querySelector("#dialog-title");
 const dialogDescription = document.querySelector("#dialog-description");
 const teacherDetail = document.querySelector("#teacher-detail");
+const ariCard = document.querySelector('.advisor-card[data-content-id="asd-guide"]');
+const ariDemoExpiresAt = Date.parse("2026-11-26T23:10:06Z");
 let currentLanguage = "en";
-let teacherCategories = [];
-let teacherQuestions = [];
+let advisorCategories = [];
+let advisorQuestions = [];
+let loadedAdvisorId = "";
+let currentAdvisorId = "teacher-guide";
 let selectedCategoryId = "disclosure-and-privacy";
 
 const uiText = {
@@ -38,6 +42,11 @@ const uiText = {
     maya: "Maya",
     detailDescription: "Practical, classroom-focused guidance for teachers supporting an autistic student.",
     searchLabel: "Search Maya's guidance",
+    ariSearchLabel: "Search Ari's guidance",
+    demoNotice: "Temporary demo through Nov 27, 2026 at 01:10 (UTC+02:00). Ari's questions are drafts and have not been expert-reviewed. Only the first five have answer drafts; answers may be incomplete or inaccurate.",
+    ariAnswerPending: "An answer for this question has not been prepared yet. This demo includes answer drafts for the first five questions only.",
+    loadingQuestions: "Loading questions…",
+    contentUnavailable: "The advisor content could not be loaded.",
     searchPlaceholder: "Search a topic or question",
     translatedNotice: "",
     noResults: "No matching questions found. Try a shorter topic.",
@@ -78,6 +87,11 @@ const uiText = {
     maya: "מאיה",
     detailDescription: "הכוונה מעשית למורים התומכים בתלמידים אוטיסטים.",
     searchLabel: "חיפוש בהכוונה של מאיה",
+    ariSearchLabel: "חיפוש בהכוונה של ארי",
+    demoNotice: "הדגמה זמנית עד 27 בנובמבר 2026 בשעה 01:10 (UTC+02:00). השאלות של ארי הן טיוטות שלא עברו בדיקת מומחה. רק לחמש הראשונות יש טיוטות תשובה; התשובות עשויות להיות חלקיות או לא מדויקות.",
+    ariAnswerPending: "תשובה לשאלה זו עדיין לא הוכנה. בהדגמה זו קיימות טיוטות תשובה לחמש השאלות הראשונות בלבד.",
+    loadingQuestions: "השאלות נטענות…",
+    contentUnavailable: "לא ניתן לטעון את תוכן המדריך.",
     searchPlaceholder: "חיפוש לפי נושא או שאלה",
     translatedNotice: "זו תצוגת עברית ראשונית. רק שאלות ותשובות שתורגמו מוצגות; התרגום עדיין דורש עריכה ובדיקה.",
     noResults: "לא נמצאו שאלות. נסו לחפש מונח קצר יותר.",
@@ -160,11 +174,6 @@ function applyLanguage(language) {
   document.querySelector("#content-search").placeholder = text.searchPlaceholder;
   document.querySelector("#detail-back").title = text.backToAdvisors;
   document.querySelector("#detail-back").setAttribute("aria-label", text.backToAdvisors);
-  document.querySelector(".chat-icon-button").title = `${language === "he" ? "שיחה עם מאיה" : "Chat with Maya"} — ${text.chatNotReady}`;
-  document.querySelector(".chat-icon-button").setAttribute(
-    "aria-label",
-    `${language === "he" ? "שיחה עם מאיה" : "Chat with Maya"}, ${text.chatNotReady}`
-  );
   document.querySelector("#translation-notice").textContent = text.translatedNotice;
   document.querySelector("#translation-notice").hidden = !text.translatedNotice;
   document.querySelector(".dialog-kicker").textContent = text.selectedAdvisor;
@@ -177,7 +186,8 @@ function applyLanguage(language) {
     document.querySelector("#other-title").textContent = title;
     document.querySelector("#other-copy").textContent = copy;
   }
-  if (teacherQuestions.length) renderTeacherContent(document.querySelector("#content-search").value);
+  if (selectedCard && !teacherDetail.hidden) updateAdvisorDetails(selectedCard);
+  if (advisorQuestions.length) renderAdvisorContent(document.querySelector("#content-search").value);
 }
 
 languageButton.addEventListener("click", () => {
@@ -252,7 +262,7 @@ function openDialog(card) {
   activeAdvisorName.textContent = `${friendlyName} / ${uiText[currentLanguage][roleKey]}`;
 
   if (card.dataset.status === "ready") {
-    showTeacherDetail();
+    showAdvisorDetail(card);
     return;
   }
 
@@ -264,49 +274,91 @@ function openDialog(card) {
   dialog.querySelector(".dialog-close").focus();
 }
 
-async function showTeacherDetail() {
+async function showAdvisorDetail(card) {
+  currentAdvisorId = card.dataset.contentId;
+  selectedCategoryId = "";
+  updateAdvisorDetails(card);
+  document.querySelector("#category-list").textContent = uiText[currentLanguage].loadingQuestions;
+  document.querySelector("#search-status").textContent = "";
   advisorsView.hidden = true;
   otherView.hidden = true;
   teacherDetail.hidden = false;
   window.scrollTo({ top: 0, behavior: "smooth" });
 
-  if (!teacherCategories.length) {
-    await loadTeacherContent();
+  if (loadedAdvisorId !== currentAdvisorId && !(await loadAdvisorContent(currentAdvisorId))) {
+    return;
   }
-  renderTeacherContent();
+  selectedCategoryId = advisorCategories[0]?.id || "";
+  renderAdvisorContent();
 }
 
-async function loadTeacherContent() {
-  const base = "content/advisors/teacher-guide/";
+function updateAdvisorDetails(card) {
+  const isAri = card.dataset.contentId === "asd-guide";
+  const roleKey = isAri ? "asdGuide" : "teacherGuide";
+  const nameKey = card.dataset.friendlyName === "Ari" ? "ari" : "maya";
+  const text = uiText[currentLanguage];
+  const friendlyName = text[nameKey];
+  const avatar = document.querySelector("#detail-avatar");
+  const icon = card.querySelector(".advisor-icon svg");
+
+  currentAdvisorId = card.dataset.contentId;
+  teacherDetail.dataset.advisorId = currentAdvisorId;
+  teacherDetail.style.setProperty(
+    "--advisor-color",
+    getComputedStyle(card).getPropertyValue("--advisor-color").trim()
+  );
+  document.querySelector("#detail-friendly-name").textContent = friendlyName;
+  document.querySelector("#detail-role").textContent = text[roleKey];
+  document.querySelector("#detail-description").textContent = text[isAri ? "asdDescription" : "detailDescription"];
+  document.querySelector("#detail-search-label").textContent = text[isAri ? "ariSearchLabel" : "searchLabel"];
+  document.querySelector(".chat-icon-button").title = `${currentLanguage === "he" ? `שיחה עם ${friendlyName}` : `Chat with ${friendlyName}`} — ${text.chatNotReady}`;
+  document.querySelector(".chat-icon-button").setAttribute(
+    "aria-label",
+    `${currentLanguage === "he" ? `שיחה עם ${friendlyName}` : `Chat with ${friendlyName}`}, ${text.chatNotReady}`
+  );
+  avatar.replaceChildren(icon.cloneNode(true));
+  avatar.classList.toggle("asd-guide", isAri);
+
+  const demoNotice = document.querySelector("#demo-notice");
+  demoNotice.textContent = isAri ? text.demoNotice : "";
+  demoNotice.hidden = !isAri;
+}
+
+async function loadAdvisorContent(advisorId) {
+  const base = `content/advisors/${advisorId}/`;
   const [categoriesResponse, questionsResponse] = await Promise.all([
-    fetch(`${base}categories.json?v=hebrew-rtl-v1`),
-    fetch(`${base}questions.json?v=hebrew-rtl-v1`)
+    fetch(`${base}categories.json?v=ari-demo-v1`),
+    fetch(`${base}questions.json?v=ari-demo-v1`)
   ]);
 
   if (!categoriesResponse.ok || !questionsResponse.ok) {
-    document.querySelector("#category-list").innerHTML =
-      '<p class="answer-panel">The advisor content could not be loaded.</p>';
-    return;
+    document.querySelector("#category-list").textContent = uiText[currentLanguage].contentUnavailable;
+    return false;
   }
 
-  teacherCategories = await categoriesResponse.json();
-  teacherQuestions = await questionsResponse.json();
+  advisorCategories = await categoriesResponse.json();
+  advisorQuestions = await questionsResponse.json();
+  loadedAdvisorId = advisorId;
+  return true;
 }
 
-function renderTeacherContent(query = "") {
+function renderAdvisorContent(query = "") {
   const list = document.querySelector("#category-list");
   const status = document.querySelector("#search-status");
   const needle = query.trim().toLowerCase();
   let matchCount = 0;
 
   list.innerHTML = "";
-  const categoriesWithQuestions = teacherCategories
+  const categoriesWithQuestions = advisorCategories
     .slice()
     .sort((a, b) => a.sortOrder - b.sortOrder)
     .map((category) => {
-      const questions = teacherQuestions
+      const questions = advisorQuestions
         .filter((question) => question.categoryId === category.id)
-        .filter((question) => question.question[currentLanguage] && question.answerFiles?.[currentLanguage])
+        .filter((question) => {
+          const hasAnswer = Boolean(question.answerFiles?.[currentLanguage]);
+          return question.question[currentLanguage] && (hasAnswer || currentAdvisorId === "asd-guide");
+        })
         .filter((question) => {
           if (!needle) return true;
           const searchable = [
@@ -349,7 +401,7 @@ function renderTeacherContent(query = "") {
     button.innerHTML = `<span>${escapeHtml(category.name[currentLanguage])}</span><span class="category-count">${questions.length}</span>`;
     button.addEventListener("click", () => {
       selectedCategoryId = category.id;
-      renderTeacherContent(document.querySelector("#content-search").value);
+      renderAdvisorContent(document.querySelector("#content-search").value);
     });
     sidebar.append(button);
   });
@@ -435,9 +487,15 @@ function renderTeacherContent(query = "") {
       button.setAttribute("aria-expanded", "true");
       answer.hidden = false;
       answer.scrollTop = 0;
+      const answerFile = question.answerFiles?.[currentLanguage];
+      if (!answerFile && currentAdvisorId === "asd-guide") {
+        answer.textContent = uiText[currentLanguage].ariAnswerPending;
+        return;
+      }
+
       answer.textContent = uiText[currentLanguage].loadingAnswer;
       try {
-        const response = await fetch(`content/advisors/teacher-guide/${question.answerFiles[currentLanguage]}?v=hebrew-rtl-v1`);
+        const response = await fetch(`content/advisors/${currentAdvisorId}/${answerFile}?v=ari-demo-v1`);
         if (!response.ok) throw new Error("Answer unavailable");
         answer.innerHTML = renderMarkdown(await response.text());
       } catch (error) {
@@ -506,6 +564,41 @@ function escapeInlineMarkdown(value) {
   return escaped;
 }
 
+function ariDemoIsAvailable() {
+  return Date.now() < ariDemoExpiresAt;
+}
+
+function updateAriDemoAvailability() {
+  const isAvailable = ariDemoIsAvailable();
+  ariCard.dataset.status = isAvailable ? "ready" : "not-ready";
+  ariCard.classList.toggle("ready", isAvailable);
+  ariCard.classList.toggle("not-ready", !isAvailable);
+  ariCard.querySelector(".advisor-status").hidden = isAvailable;
+
+  const text = uiText[currentLanguage];
+  ariCard.setAttribute(
+    "aria-label",
+    isAvailable
+      ? currentLanguage === "he" ? `פתיחת ${text.ari}, ${text.asdGuide}` : `Open ${text.ari}, ${text.asdGuide}`
+      : `${text.ari}, ${text.asdGuide}, ${text.notReady}`
+  );
+
+  if (!isAvailable && currentAdvisorId === "asd-guide" && !teacherDetail.hidden) {
+    window.location.reload();
+  }
+}
+
+updateAriDemoAvailability();
+if (ariDemoIsAvailable()) {
+  window.setTimeout(
+    updateAriDemoAvailability,
+    Math.max(0, ariDemoExpiresAt - Date.now()) + 50
+  );
+}
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) updateAriDemoAvailability();
+});
+
 document.querySelector("#detail-back").addEventListener("click", () => {
   teacherDetail.hidden = true;
   advisorsView.hidden = false;
@@ -513,11 +606,14 @@ document.querySelector("#detail-back").addEventListener("click", () => {
 });
 
 document.querySelector("#content-search").addEventListener("input", (event) => {
-  renderTeacherContent(event.target.value);
+  renderAdvisorContent(event.target.value);
 });
 
 document.querySelector(".chat-icon-button").addEventListener("click", () => {
-  dialogTitle.textContent = uiText[currentLanguage].maya;
+  const text = uiText[currentLanguage];
+  const nameKey = currentAdvisorId === "asd-guide" ? "ari" : "maya";
+  const roleKey = currentAdvisorId === "asd-guide" ? "asdGuide" : "teacherGuide";
+  dialogTitle.textContent = `${text[nameKey]} / ${text[roleKey]}`;
   dialogDescription.textContent = uiText[currentLanguage].chatNotReady;
   dialog.querySelector(".dialog-primary").textContent = uiText[currentLanguage].close;
   dialog.hidden = false;

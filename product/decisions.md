@@ -14,7 +14,11 @@ Inclusion will focus its initial product and content on supporting autistic stud
 2. **Daniel — Classroom Aide:** In-the-moment classroom support and collaboration with the teacher.
 3. **Ari — ASD Guide:** General, educational information about autism relevant to school teams and families.
 
-The Teacher Guide is the only advisor with a question-and-answer library currently available. Classroom Aide and ASD Guide remain visible as "The advisor is not ready yet" until their expert content is prepared.
+The Teacher Guide is the only advisor with a reviewed question-and-answer library. Classroom Aide and ASD Guide remain not ready by default until their expert content is prepared, except for the time-limited ASD Guide development demo below.
+
+### Temporary ASD Guide development demo
+
+For 48 hours, through 2026-11-27 01:10 (UTC+02:00), Ari is temporarily available in the development demo. All 35 English and Hebrew questions are shown; only the first five questions have answer drafts in English and Hebrew. The advisor page must visibly warn that the content is unreviewed and may be inaccurate, and questions without answers must say so. When the demo expires, Ari returns to "The advisor is not ready yet." This temporary preview does not change the draft or expert-review status of the content.
 
 ### Removed from the current product scope
 

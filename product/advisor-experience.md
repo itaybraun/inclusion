@@ -12,7 +12,7 @@ The MVP should expose advisor availability explicitly:
 
 - Teacher Guide: ready for browsing curated expert-draft questions and answers.
 - Classroom Aide: not ready yet.
-- ASD Guide: not ready yet.
+- ASD Guide: not ready by default. A temporary development demo through 2026-11-27 01:10 (UTC+02:00) exposes all 35 questions and the first five bilingual answer drafts with a clear unreviewed-content notice. Questions without an answer show an explicit not-yet-prepared message. After expiry, Ari returns to not ready.
 
 Cards for not-ready advisors remain visible. They must not open a chat or route to missing content.
 

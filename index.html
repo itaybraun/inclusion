@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=category-heading-color-v1" />
+    <link rel="stylesheet" href="styles.css?v=ari-demo-v1" />
   </head>
   <body>
     <header class="site-header">
@@ -69,7 +69,7 @@
         </div>
 
         <div class="advisor-grid">
-          <button class="advisor-card teacher ready" type="button" data-advisor="Teacher Guide" data-friendly-name="Maya" data-status="ready" data-description="Practical classroom guidance for situations, routines, and inclusion." aria-label="Open Maya, Teacher Guide">
+          <button class="advisor-card teacher ready" type="button" data-advisor="Teacher Guide" data-content-id="teacher-guide" data-friendly-name="Maya" data-status="ready" data-description="Practical classroom guidance for situations, routines, and inclusion." aria-label="Open Maya, Teacher Guide">
             <span class="card-accent"></span>
             <span class="advisor-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H10a2 2 0 0 1 2 2v16H6.5A2.5 2.5 0 0 1 4 18.5v-13Zm16 0A2.5 2.5 0 0 0 17.5 3H14a2 2 0 0 0-2 2v16h5.5A2.5 2.5 0 0 0 20 18.5v-13Z"/><path d="M8 7h2m-2 4h2m4-4h2m-2 4h2"/></svg>
@@ -95,7 +95,7 @@
             <span class="card-arrow" aria-hidden="true">→</span>
           </button>
 
-          <button class="advisor-card general not-ready" type="button" data-advisor="ASD Guide" data-friendly-name="Ari" data-status="not-ready" data-description="Clear, school-relevant information about autism, communication, sensory needs, strengths, and inclusion." aria-label="ASD Guide, not ready yet">
+          <button class="advisor-card general not-ready" type="button" data-advisor="ASD Guide" data-content-id="asd-guide" data-friendly-name="Ari" data-status="not-ready" data-description="Clear, school-relevant information about autism, communication, sensory needs, strengths, and inclusion." aria-label="ASD Guide, not ready yet">
             <span class="card-accent"></span>
             <span class="advisor-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 0 1 4.8 1c0 1.8-2.4 2.2-2.4 4"/><path d="M12 17.5h.01"/></svg>
@@ -114,12 +114,12 @@
       <section class="advisor-detail view" id="teacher-detail" hidden>
         <div class="detail-toolbar">
           <div class="detail-header">
-            <div class="detail-avatar" aria-hidden="true">
+            <div class="detail-avatar" id="detail-avatar" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H10a2 2 0 0 1 2 2v16H6.5A2.5 2.5 0 0 1 4 18.5v-13Zm16 0A2.5 2.5 0 0 0 17.5 3H14a2 2 0 0 0-2 2v16h5.5A2.5 2.5 0 0 0 20 18.5v-13Z"/><path d="M8 7h2m-2 4h2m4-4h2m-2 4h2"/></svg>
             </div>
             <div class="detail-heading">
-              <h1><span data-i18n="maya">Maya</span><span class="detail-title-separator"> - </span><span class="detail-role" data-i18n="teacherGuide">Teacher Guide</span></h1>
-              <p data-i18n="detailDescription">Practical, classroom-focused guidance for teachers supporting an autistic student.</p>
+              <h1><span id="detail-friendly-name" data-i18n="maya">Maya</span><span class="detail-title-separator"> - </span><span class="detail-role" id="detail-role" data-i18n="teacherGuide">Teacher Guide</span></h1>
+              <p id="detail-description" data-i18n="detailDescription">Practical, classroom-focused guidance for teachers supporting an autistic student.</p>
             </div>
           </div>
           <div class="detail-actions">
@@ -134,10 +134,11 @@
         </div>
 
         <label class="content-search">
-          <span class="sr-only" data-i18n="searchLabel">Search Maya's guidance</span>
+          <span class="sr-only" id="detail-search-label" data-i18n="searchLabel">Search Maya's guidance</span>
           <input id="content-search" type="search" placeholder="Search a topic or question" autocomplete="off" />
         </label>
         <p class="search-status" id="search-status" aria-live="polite"></p>
+        <p class="demo-notice" id="demo-notice" role="status" hidden></p>
         <p class="translation-notice" id="translation-notice" hidden></p>
         <div class="category-list" id="category-list"></div>
       </section>
@@ -163,6 +164,6 @@
       </div>
     </div>
 
-    <script src="script.js?v=answer-inner-scroll-v1"></script>
+    <script src="script.js?v=ari-demo-v1"></script>
   </body>
 </html>

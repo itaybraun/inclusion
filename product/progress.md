@@ -11,7 +11,8 @@
 - [x] Plan the multilingual, expert-authored content repository and private review metadata.
 - [x] Draft 28 English answers for Maya / Teacher Guide; expert and policy review remains pending.
 - [x] Add an eight-question Hebrew translation preview with RTL layout and language-specific answer files.
-- [x] Catalog 35 ASD Guide questions in English and Hebrew; draft bilingual answers for the first five. Expert review remains pending, and Ari stays unavailable.
+- [x] Catalog 35 ASD Guide questions in English and Hebrew; draft bilingual answers for the first five. Expert review remains pending.
+- [x] Enable a 48-hour development demo of Ari's full question catalog; display a draft warning and return Ari to not ready after expiry.
 - [x] Implement and visually test the Maya / Teacher Guide content page.
 - [x] Build the first-page UI.
 - [ ] Define safety and crisis escalation behavior.

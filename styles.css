@@ -15,7 +15,7 @@ html[dir="rtl"] .brand { direction: rtl; }
 html[dir="rtl"] .advisor-card { direction: rtl; text-align: right; }
 html[dir="rtl"] .card-accent { right: 0; left: auto; }
 html[dir="rtl"] .category-button { text-align: right; }
-html[dir="rtl"] .category-button.selected { box-shadow: inset -3px 0 0 var(--teacher); }
+html[dir="rtl"] .category-button.selected { box-shadow: inset -3px 0 0 var(--advisor-color); }
 html[dir="rtl"] .question-button { text-align: right; }
 html[dir="rtl"] .question-button .question-arrow { margin-right: 12px; margin-left: 0; }
 html[dir="rtl"] .dialog-close { right: auto; left: 14px; }
@@ -481,10 +481,11 @@ main {
 }
 .detail-back:hover,
 .detail-back:focus-visible {
-  border-color: color-mix(in srgb, var(--teacher) 45%, var(--line));
+  border-color: color-mix(in srgb, var(--advisor-color) 45%, var(--line));
   background: #fbfaf7;
 }
 .advisor-detail {
+  --advisor-color: var(--teacher);
   position: relative;
   margin-top: -28px;
 }
@@ -508,8 +509,8 @@ main {
   display: grid;
   place-items: center;
   border-radius: 18px;
-  background: color-mix(in srgb, var(--teacher) 13%, white);
-  color: var(--teacher);
+  background: color-mix(in srgb, var(--advisor-color) 13%, white);
+  color: var(--advisor-color);
 }
 .detail-avatar svg {
   width: 30px;
@@ -517,6 +518,10 @@ main {
   fill: currentColor;
   stroke: white;
   stroke-width: 1.2;
+}
+.detail-avatar.asd-guide svg {
+  fill: none;
+  stroke: currentColor;
 }
 .detail-header h1 {
   margin: 0 0 2px;
@@ -528,7 +533,7 @@ main {
   color: var(--muted);
 }
 .detail-role {
-  color: var(--teacher);
+  color: var(--advisor-color);
   font-size: 0.62em;
 }
 .detail-header p:not(.section-kicker) {
@@ -549,7 +554,7 @@ main {
   border: 1px solid var(--line);
   border-radius: 50%;
   background: var(--surface);
-  color: var(--teacher);
+  color: var(--advisor-color);
   box-shadow: 0 8px 20px rgba(38, 48, 44, 0.08);
 }
 .chat-icon-button svg {
@@ -563,7 +568,7 @@ main {
 }
 .chat-icon-button:hover,
 .chat-icon-button:focus-visible {
-  border-color: color-mix(in srgb, var(--teacher) 45%, var(--line));
+  border-color: color-mix(in srgb, var(--advisor-color) 45%, var(--line));
   background: #fbfaf7;
 }
 .content-search {
@@ -596,7 +601,7 @@ main {
 }
 .translation-notice {
   margin: 8px 0 12px;
-  border-inline-start: 3px solid var(--teacher);
+  border-inline-start: 3px solid var(--advisor-color);
   padding: 8px 12px;
   background: #fbfaf7;
   color: var(--muted);
@@ -604,6 +609,17 @@ main {
   line-height: 1.5;
 }
 .translation-notice[hidden] { display: none; }
+.demo-notice {
+  margin: 8px 0 12px;
+  border-inline-start: 3px solid var(--advisor-color);
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: #f5f2f9;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.demo-notice[hidden] { display: none; }
 .category-list {
   display: grid;
   grid-template-columns: 230px minmax(0, 1fr);
@@ -638,10 +654,10 @@ main {
 .category-button.selected {
   background: #fbfaf7;
   color: var(--ink);
-  box-shadow: inset 3px 0 0 var(--teacher);
+  box-shadow: inset 3px 0 0 var(--advisor-color);
 }
 .category-count {
-  color: var(--teacher);
+  color: var(--advisor-color);
   font-size: 12px;
 }
 .question-panel {
@@ -658,7 +674,7 @@ main {
 }
 .question-panel-heading h2 {
   margin: 0;
-  color: var(--teacher);
+  color: var(--advisor-color);
   font-size: 18px;
 }
 .question-panel-heading p {
@@ -679,14 +695,14 @@ main {
   justify-content: space-between;
   padding: 0 18px;
   cursor: pointer;
-  color: var(--teacher);
+  color: var(--advisor-color);
   font-weight: 700;
   list-style: none;
 }
 .category summary::-webkit-details-marker { display: none; }
 .category summary::after {
   content: "+";
-  color: var(--teacher);
+  color: var(--advisor-color);
   font-size: 20px;
 }
 .category[open] summary::after { content: "−"; }
@@ -716,7 +732,7 @@ main {
 .question-button:last-child { border-bottom: 0; }
 .question-button.selected,
 .question-button[aria-expanded="true"] {
-  color: var(--teacher);
+  color: var(--advisor-color);
   font-weight: 700;
 }
 .question-button .question-arrow {
@@ -725,7 +741,7 @@ main {
   color: inherit;
   font-size: 17px;
 }
-.question-button:hover { color: #9a6a20; }
+.question-button:hover { color: var(--advisor-color); }
 .answer-panel {
   max-height: min(60vh, 520px);
   overflow-y: auto;
@@ -739,7 +755,7 @@ main {
 }
 .answer-panel:empty { display: none; }
 .answer-panel:focus-visible {
-  outline: 2px solid color-mix(in srgb, var(--teacher) 60%, white);
+  outline: 2px solid color-mix(in srgb, var(--advisor-color) 60%, white);
   outline-offset: 2px;
 }
 .answer-panel h2, .answer-panel h3 {
