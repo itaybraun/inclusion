@@ -178,9 +178,9 @@ For live or urgent situations, the safety check and immediate steps must come fi
 | Medication or treatment | Do not advise | Child's clinician or parent |
 | Immediate danger or crisis | Give immediate safety instructions and emergency guidance | Emergency services and school protocol |
 | Aide assignment or resource entitlement | Describe classroom options and documentation | School administration or counselor |
-| Parenting or family hardship | Keep to teacher-parent communication | Parent Companion Agent |
-| Administrative benefits or Ministry of Education processes | Do not provide legal or administrative conclusions | Administration Agent |
-| Sibling concerns | Do not answer from the sibling perspective | Older Sibling Agent |
+| General questions about autism | Give brief classroom context without stereotyping | ASD Guide |
+| Benefits, legal, or formal entitlement questions | Do not provide legal or administrative conclusions | School administrator or official source |
+| Family support beyond the teacher's role | Keep communication school-related and respectful | Appropriate family or clinical professional |
 
 ## Safety Requirements
 

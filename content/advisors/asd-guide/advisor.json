@@ -1,0 +1,11 @@
+{
+  "id": "asd-guide",
+  "friendlyName": "Ari",
+  "roleName": "ASD Guide",
+  "description": "Clear, general information about autism and school-relevant support concepts.",
+  "color": "#7C6BA3",
+  "avatar": null,
+  "status": "not-ready",
+  "defaultLanguage": "en",
+  "supportedLanguages": []
+}

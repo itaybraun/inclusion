@@ -52,9 +52,9 @@
     <main>
       <section class="advisors-view view active" id="advisors-view">
         <div class="intro">
-          <p class="eyebrow" data-i18n="homeEyebrow">Support for every part of the journey</p>
-          <h1 data-i18n="homeTitle">Practical guidance for your child, family, and school</h1>
-          <p class="intro-copy" data-i18n="homeCopy">Choose a dedicated advisor for classroom support, family support, or administrative guidance.</p>
+          <p class="eyebrow" data-i18n="homeEyebrow">School-focused support</p>
+          <h1 data-i18n="homeTitle">Practical guidance for inclusive schools</h1>
+          <p class="intro-copy" data-i18n="homeCopy">Choose an advisor for classroom guidance or a general understanding of autism.</p>
         </div>
 
         <div class="section-heading">
@@ -64,7 +64,7 @@
           </div>
           <div class="active-advisor" aria-live="polite" hidden>
             <span class="active-dot"></span>
-            <span>Selected: <strong id="active-advisor-name"></strong></span>
+            <span><span data-i18n="selectedLabel">Selected:</span> <strong id="active-advisor-name"></strong></span>
           </div>
         </div>
 
@@ -95,40 +95,15 @@
             <span class="card-arrow" aria-hidden="true">→</span>
           </button>
 
-          <button class="advisor-card sibling not-ready" type="button" data-advisor="Older Sibling" data-friendly-name="Noa" data-status="not-ready" data-description="Age-appropriate support for siblings aged 10–18." aria-label="Older Sibling, not ready yet">
+          <button class="advisor-card general not-ready" type="button" data-advisor="ASD Guide" data-friendly-name="Ari" data-status="not-ready" data-description="Clear, school-relevant information about autism, communication, sensory needs, strengths, and inclusion." aria-label="ASD Guide, not ready yet">
             <span class="card-accent"></span>
             <span class="advisor-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2.5 20v-2.5A4.5 4.5 0 0 1 7 13h2a4.5 4.5 0 0 1 4.5 4.5V20M12 20v-2.5A4.5 4.5 0 0 1 16.5 13h1A4.5 4.5 0 0 1 22 17.5V20"/></svg>
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 0 1 4.8 1c0 1.8-2.4 2.2-2.4 4"/><path d="M12 17.5h.01"/></svg>
             </span>
             <span class="advisor-content">
-              <span class="advisor-name" data-i18n="olderSibling">Older Sibling</span>
-              <span class="advisor-description" data-i18n="siblingDescription">Age-appropriate support for siblings aged 10–18.</span>
-              <span class="advisor-status" data-i18n="notReady">The advisor is not ready yet</span>
-            </span>
-            <span class="card-arrow" aria-hidden="true">→</span>
-          </button>
-
-          <button class="advisor-card administration not-ready" type="button" data-advisor="Administration" data-friendly-name="Yael" data-status="not-ready" data-description="Help navigating Israeli benefits, applications, and administrative processes." aria-label="Administration, not ready yet">
-            <span class="card-accent"></span>
-            <span class="advisor-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M5 21V7l7-4 7 4v14M3 21h18M8 10h2m4 0h2m-8 4h2m4 0h2m-8 7v-3h8v3"/></svg>
-            </span>
-            <span class="advisor-content">
-              <span class="advisor-name" data-i18n="administration">Administration</span>
-              <span class="advisor-description" data-i18n="adminDescription">Guidance for Israeli benefits, applications, and administrative processes.</span>
-              <span class="advisor-status" data-i18n="notReady">The advisor is not ready yet</span>
-            </span>
-            <span class="card-arrow" aria-hidden="true">→</span>
-          </button>
-
-          <button class="advisor-card parent not-ready" type="button" data-advisor="Parent Companion" data-friendly-name="Lev" data-status="not-ready" data-description="Empathy and practical perspective for the challenges parents face." aria-label="Parent Companion, not ready yet">
-            <span class="card-accent"></span>
-            <span class="advisor-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/><path d="M8 12h2l1.2-3 2.1 6 1.2-3H16"/></svg>
-            </span>
-            <span class="advisor-content">
-              <span class="advisor-name" data-i18n="parentCompanion">Parent Companion</span>
-              <span class="advisor-description" data-i18n="parentDescription">Empathy and practical perspective for the challenges parents face.</span>
+              <span class="advisor-name" data-i18n="asdGuide">ASD Guide</span>
+              <span class="advisor-friendly-name" data-i18n="ari">Ari</span>
+              <span class="advisor-description" data-i18n="asdDescription">Clear, school-relevant information about autism, communication, sensory needs, strengths, and inclusion.</span>
               <span class="advisor-status" data-i18n="notReady">The advisor is not ready yet</span>
             </span>
             <span class="card-arrow" aria-hidden="true">→</span>

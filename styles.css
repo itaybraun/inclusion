@@ -7,9 +7,7 @@
   --brand: #355d55;
   --teacher: #d49a35;
   --aide: #28717a;
-  --sibling: #6f78a8;
-  --administration: #a15f52;
-  --parent: #7a8f67;
+  --asd: #7c6ba3;
 }
 
 html[dir="rtl"] .top-nav { direction: rtl; }
@@ -269,9 +267,6 @@ main {
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
-.advisor-card:nth-child(4) { grid-column: 2 / span 2; }
-.advisor-card:nth-child(5) { grid-column: 4 / span 2; }
-
 .advisor-card:hover,
 .advisor-card:focus-visible,
 .advisor-card.selected {
@@ -325,9 +320,7 @@ main {
 
 .advisor-card.teacher { --advisor-color: var(--teacher); }
 .advisor-card.aide { --advisor-color: var(--aide); }
-.advisor-card.sibling { --advisor-color: var(--sibling); }
-.advisor-card.administration { --advisor-color: var(--administration); }
-.advisor-card.parent { --advisor-color: var(--parent); }
+.advisor-card.general { --advisor-color: var(--asd); }
 
 .advisor-icon {
   width: 58px;
@@ -740,10 +733,10 @@ button:focus-visible, a:focus-visible {
 
   main { padding-top: 28px; }
   .advisor-grid { grid-template-columns: repeat(2, 1fr); }
-  .advisor-card, .advisor-card:nth-child(4), .advisor-card:nth-child(5) {
+  .advisor-card {
     grid-column: span 1;
   }
-  .advisor-card:last-child { grid-column: 1 / -1; max-width: calc(50% - 8px); }
+  .advisor-card:last-child { grid-column: 1 / -1; justify-self: center; max-width: calc(50% - 8px); }
   .detail-actions { right: 0; top: 0; }
   html[dir="rtl"] .detail-actions { right: auto; left: 0; }
 }
@@ -759,7 +752,7 @@ button:focus-visible, a:focus-visible {
   .section-heading { align-items: start; }
   .active-advisor { display: none !important; }
   .advisor-grid { grid-template-columns: 1fr; gap: 12px; }
-  .advisor-card, .advisor-card:nth-child(4), .advisor-card:nth-child(5), .advisor-card:last-child {
+  .advisor-card {
     grid-column: 1;
     max-width: none;
     min-height: 170px;

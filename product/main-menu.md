@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The main menu is the first screen users see. It should explain the Inclusion platform briefly, provide access to the five core agents, and make the main areas of the product discoverable.
+The main menu is the first screen users see. It should explain the school-focused Inclusion platform briefly, provide access to the three active advisors, and make the main areas of the product discoverable.
 
 The page should help a user answer one question quickly:
 
@@ -35,7 +35,7 @@ The introduction should be short and immediately understandable.
 
 **Proposed English copy:**
 
-> Inclusion helps families and the people around an autistic child understand difficult situations and take practical next steps. Choose an advisor for classroom support, family support, or administrative guidance.
+> Inclusion helps schools and families support autistic children with practical, role-specific guidance. Choose an advisor for classroom support or a general understanding of autism.
 
 The introduction must not imply diagnosis, therapy, or guaranteed outcomes.
 
@@ -43,7 +43,7 @@ The introduction must not imply diagnosis, therapy, or guaranteed outcomes.
 
 This section is the primary content of the main menu.
 
-All five core advisors should be visible on one page or within a simple responsive grid. With 5-6 agents, the layout should not require a large first-screen carousel or hidden pagination.
+All three active advisors should be visible together in a simple responsive grid.
 
 Each agent card should contain:
 
@@ -59,9 +59,7 @@ Each agent card should contain:
 | --- | --- |
 | Teacher Guide | Practical classroom guidance for teachers, situations, and inclusion. |
 | Classroom Aide Agent | In-the-moment support for routines, de-escalation, and classroom collaboration. |
-| Older Sibling Agent | Age-appropriate support for siblings aged 10-18. |
-| Administration Agent | Help navigating Israeli benefits, applications, and administrative processes. |
-| Parent Companion Agent | Empathy, encouragement, perspective, and practical next steps for parents. |
+| ASD Guide | Clear, general information about autism and school-relevant support. |
 
 ### Advisor identity
 
@@ -78,20 +76,19 @@ Each advisor should have:
 | --- | --- |
 | Teacher Guide | Maya |
 | Classroom Aide Agent | Daniel |
-| Older Sibling Agent | Noa |
-| Administration Agent | Yael |
-| Parent Companion Agent | Lev |
+| ASD Guide | Ari |
 
 The advisor's face and identity color should appear in the advisor card and throughout the advisor detail page. The friendly name may lead the interface, while the functional role remains visible for clarity.
 
-The Teacher Guide should remain the clearest recommended starting point for initial user testing.
+The Teacher Guide should remain the clearest starting point for initial user testing. ASD Guide content should address school teams and support understanding across the school community.
 
 ### Advisor readiness
 
 Each advisor must expose an explicit readiness state:
 
 - The Teacher Guide is the only advisor whose content is available in the MVP.
-- Cards for unready advisors remain visible for future discoverability.
+- Classroom Aide and ASD Guide content are not ready yet.
+- Cards for these unready advisors remain visible for future discoverability.
 - Unready cards show "The advisor is not ready yet."
 - Unready cards must not open chat or imply that content is available.
 - Selecting an unready advisor should open an informational state, not a broken page.
@@ -139,7 +136,7 @@ The language selector should show all three languages, but a not-yet-supported l
 - Hebrew must trigger right-to-left layout when implemented.
 - Arabic must trigger right-to-left layout when implemented.
 - Agent names and descriptions should be localized together; mixed-language cards are not acceptable.
-- Administration content must not be shown in an unsupported language.
+- Untranslated content must not be silently shown in another language.
 
 ## Layout
 
@@ -149,7 +146,7 @@ The language selector should show all three languages, but a not-yet-supported l
 - Brief introduction below the header
 - Primary navigation prominently visible
 - Agent cards in a maximum of 2-3 columns
-- All five core agents visible without a carousel
+- All three active advisors visible without a carousel
 
 ### Mobile
 
@@ -210,7 +207,7 @@ About us and educational resources are important but should not compete with age
 ## MVP Acceptance Criteria
 
 1. A first-time user immediately understands that the platform offers role-specific advisors.
-2. All five core agents are visible from the main menu.
+2. All three active advisors are visible from the main menu.
 3. Every agent card includes a name and short, accurate description.
 4. Selecting an agent opens or routes to a working agent experience.
 5. The page exposes Advisors, Accessories, Books, and About us.

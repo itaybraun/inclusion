@@ -22,21 +22,18 @@ const uiText = {
     navAccessories: "Accessories",
     navBooks: "Books",
     navAbout: "About us",
-    homeEyebrow: "Support for every part of the journey",
-    homeTitle: "Practical guidance for your child, family, and school",
-    homeCopy: "Choose a dedicated advisor for classroom support, family support, or administrative guidance.",
+    homeEyebrow: "School-focused support",
+    homeTitle: "Practical guidance for inclusive schools",
+    homeCopy: "Choose an advisor for classroom guidance or a general understanding of autism.",
     advisors: "Advisors",
     chooseAdvisor: "Who would you like to speak with?",
     teacherGuide: "Teacher Guide",
     teacherDescription: "Practical classroom guidance for situations, routines, and inclusion.",
     classroomAide: "Classroom Aide",
     aideDescription: "In-the-moment support for routines, de-escalation, and collaboration.",
-    olderSibling: "Older Sibling",
-    siblingDescription: "Age-appropriate support for siblings aged 10–18.",
-    administration: "Administration",
-    adminDescription: "Guidance for Israeli benefits, applications, and administrative processes.",
-    parentCompanion: "Parent Companion",
-    parentDescription: "Empathy and practical perspective for the challenges parents face.",
+    asdGuide: "ASD Guide",
+    ari: "Ari",
+    asdDescription: "Clear, school-relevant information about autism, communication, sensory needs, strengths, and inclusion.",
     notReady: "The advisor is not ready yet",
     allAdvisors: "← All advisors",
     maya: "Maya",
@@ -48,6 +45,7 @@ const uiText = {
     loadingAnswer: "Loading answer…",
     unavailableAnswer: "This answer is not available yet.",
     chatNotReady: "Not ready yet",
+    selectedLabel: "Selected:",
     selectedAdvisor: "Selected advisor",
     startConversation: "Start conversation",
     close: "Close",
@@ -57,7 +55,7 @@ const uiText = {
     other: {
       accessories: ["Accessories", "Tools and supportive resources are being prepared."],
       books: ["Books", "Approved educational books and reading resources will appear here."],
-      about: ["About Inclusion", "Inclusion connects families and the people around autistic children with role-specific, practical guidance."]
+      about: ["About Inclusion", "Inclusion helps schools and families support autistic children with practical, role-specific guidance."]
     }
   },
   he: {
@@ -65,22 +63,19 @@ const uiText = {
     navAccessories: "עזרים",
     navBooks: "ספרים",
     navAbout: "עלינו",
-    homeEyebrow: "תמיכה לאורך הדרך",
-    homeTitle: "הכוונה מעשית לילד, למשפחה ולצוות החינוכי",
-    homeCopy: "בחרו יועץ ייעודי לקבלת תמיכה בכיתה, תמיכה למשפחה או הכוונה בנושאים מנהליים.",
+    homeEyebrow: "הכוונה לצוותי חינוך",
+    homeTitle: "הכוונה מעשית לצוותים חינוכיים",
+    homeCopy: "בחרו מדריך להכוונה בכיתה או להבנה כללית של אוטיזם.",
     advisors: "יועצים",
     chooseAdvisor: "עם מי תרצו לדבר?",
     teacherGuide: "מדריך למורה",
     teacherDescription: "הכוונה מעשית למורים במצבים יומיומיים בכיתה, בשגרה ובהכלה.",
     classroomAide: "מדריך לסייעת ולסייע",
     aideDescription: "תמיכה בזמן אמת בשגרה, בהרגעה ובשיתוף פעולה בכיתה.",
-    olderSibling: "מדריך לאחים ואחיות",
-    siblingDescription: "תמיכה מותאמת גיל לאחים ולאחיות בגיל 10–18.",
-    administration: "מידע מנהלי",
-    adminDescription: "הכוונה לגבי זכויות, בקשות ותהליכים מנהליים בישראל.",
-    parentCompanion: "מלווה להורים",
-    parentDescription: "הקשבה, עידוד ונקודת מבט מעשית לאתגרים שהורים מתמודדים איתם.",
-    notReady: "היועץ עדיין לא מוכן",
+    asdGuide: "מדריך לאוטיזם",
+    ari: "ארי",
+    asdDescription: "מידע ברור ורלוונטי לבית הספר על אוטיזם, תקשורת, צרכים חושיים, חוזקות והכלה.",
+    notReady: "התוכן עדיין לא מוכן",
     allAdvisors: "כל היועצים ←",
     maya: "מאיה",
     detailDescription: "הכוונה מעשית למורים התומכים בתלמידים אוטיסטים.",
@@ -91,7 +86,8 @@ const uiText = {
     loadingAnswer: "התשובה נטענת…",
     unavailableAnswer: "התשובה עדיין אינה זמינה.",
     chatNotReady: "עדיין לא מוכן",
-    selectedAdvisor: "היועצת שנבחרה",
+    selectedLabel: "נבחר:",
+    selectedAdvisor: "המדריך שנבחר",
     startConversation: "התחלת שיחה",
     close: "סגירה",
     backToAdvisors: "חזרה ליועצים",
@@ -100,7 +96,7 @@ const uiText = {
     other: {
       accessories: ["עזרים", "כלים ומשאבים תומכים נמצאים בהכנה."],
       books: ["ספרים", "כאן יופיעו ספרים וחומרי קריאה חינוכיים שאושרו."],
-      about: ["על Inclusion", "Inclusion מחברת משפחות ואנשים המלווים ילדים אוטיסטים להכוונה מעשית המותאמת לתפקידם."]
+      about: ["על Inclusion", "Inclusion מסייעת לצוותי חינוך ולמשפחות לתמוך בילדים אוטיסטים בעזרת הכוונה מעשית המותאמת לתפקיד."]
     }
   }
 };
@@ -119,20 +115,30 @@ function applyLanguage(language) {
     const role = text[{
       "Teacher Guide": "teacherGuide",
       "Classroom Aide": "classroomAide",
-      "Older Sibling": "olderSibling",
-      Administration: "administration",
-      "Parent Companion": "parentCompanion"
+      "ASD Guide": "asdGuide"
     }[card.dataset.advisor]];
     const friendlyName = language === "he"
-      ? { Maya: "מאיה", Daniel: "דניאל", Noa: "נועה", Yael: "יעל", Lev: "לב" }[card.dataset.friendlyName]
+      ? { Maya: "מאיה", Daniel: "דניאל", Ari: "ארי" }[card.dataset.friendlyName]
       : card.dataset.friendlyName;
     card.setAttribute(
       "aria-label",
       card.dataset.status === "ready"
         ? language === "he" ? `פתיחת ${friendlyName}, ${role}` : `Open ${friendlyName}, ${role}`
-        : language === "he" ? `${role}, ${text.notReady}` : `${role}, ${text.notReady}`
+        : language === "he" ? `${friendlyName}, ${role}, ${text.notReady}` : `${friendlyName}, ${role}, ${text.notReady}`
     );
   });
+  const selectedCard = document.querySelector(".advisor-card.selected");
+  if (selectedCard) {
+    const roleKey = {
+      "Teacher Guide": "teacherGuide",
+      "Classroom Aide": "classroomAide",
+      "ASD Guide": "asdGuide"
+    }[selectedCard.dataset.advisor];
+    const friendlyName = language === "he"
+      ? { Maya: "מאיה", Daniel: "דניאל", Ari: "ארי" }[selectedCard.dataset.friendlyName]
+      : selectedCard.dataset.friendlyName;
+    activeAdvisorName.textContent = `${friendlyName} / ${text[roleKey]}`;
+  }
   document.querySelector(".top-nav").setAttribute(
     "aria-label",
     language === "he" ? "ניווט ראשי" : "Main navigation"
@@ -235,24 +241,22 @@ function openDialog(card) {
 
   activeAdvisor.hidden = false;
   activeAdvisor.style.setProperty("--active-color", advisorColor);
-  activeAdvisorName.textContent = advisorName;
+  const roleKey = {
+    "Teacher Guide": "teacherGuide",
+    "Classroom Aide": "classroomAide",
+    "ASD Guide": "asdGuide"
+  }[advisorName];
+  const friendlyName = currentLanguage === "he"
+    ? { Maya: "מאיה", Daniel: "דניאל", Ari: "ארי" }[card.dataset.friendlyName]
+    : card.dataset.friendlyName;
+  activeAdvisorName.textContent = `${friendlyName} / ${uiText[currentLanguage][roleKey]}`;
 
   if (card.dataset.status === "ready") {
     showTeacherDetail();
     return;
   }
 
-  const heRoles = {
-    "Classroom Aide": "מדריך לסייעת ולסייע",
-    "Older Sibling": "מדריך לאחים ואחיות",
-    Administration: "מידע מנהלי",
-    "Parent Companion": "מלווה להורים"
-  };
-  const heNames = { Daniel: "דניאל", Noa: "נועה", Yael: "יעל", Lev: "לב" };
-  const role = currentLanguage === "he" ? heRoles[advisorName] : advisorName;
-  const friendlyName = currentLanguage === "he"
-    ? heNames[card.dataset.friendlyName]
-    : card.dataset.friendlyName;
+  const role = uiText[currentLanguage][roleKey];
   dialogTitle.textContent = `${friendlyName} / ${role}`;
   dialogDescription.textContent = uiText[currentLanguage].notReady;
   dialog.querySelector(".dialog-primary").textContent = uiText[currentLanguage].close;

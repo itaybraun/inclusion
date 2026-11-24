@@ -40,9 +40,7 @@ content/
           answer-ar.md
           media.json
     classroom-aide/
-    older-sibling/
-    administration/
-    parent-companion/
+    asd-guide/
   glossary/
   schema/
 ```

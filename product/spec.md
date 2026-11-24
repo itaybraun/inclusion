@@ -2,7 +2,7 @@
 
 ## Product
 
-Inclusion is a knowledge-sharing platform connecting parents, educators, and professionals to promote understanding and inclusion of autistic children.
+Inclusion is a school-focused knowledge-sharing platform helping educators and school teams understand and include autistic students, in collaboration with their families.
 
 ## Purpose
 
@@ -10,7 +10,7 @@ Document product requirements, scope, decisions, and acceptance criteria here.
 
 ## Platform Concept
 
-Inclusion is an AI-agent platform that gives people supporting a child on the autism spectrum role-specific, practical guidance. The platform is designed around a dedicated avatar for each relevant role, with access to a shared understanding of the child where the parent has granted consent.
+Inclusion is a school-focused platform that gives teachers, classroom aides, and school teams role-specific, practical guidance about supporting autistic students. It also offers a general educational guide to autism. Where appropriate, school-facing advisors can use information shared with parental consent.
 
 The platform is not a substitute for clinicians, therapists, emergency services, or qualified professionals.
 
@@ -32,11 +32,11 @@ AI chat may later help users navigate this expert content or draft suggestions, 
 ## Core Principles
 
 1. **Role-specific guidance:** Each agent answers for the context and responsibilities of its user.
-2. **Child-aware context:** Agents share a parental-consented understanding of the child so guidance remains consistent across teachers, aides, siblings, and parents.
+2. **Child-aware context:** School-facing advisors use an appropriately scoped, parental-consented understanding of the student so guidance remains consistent across teachers and aides.
 3. **Safety and escalation:** Agents must identify emergencies and crisis indicators, avoid giving unsafe or diagnostic guidance, and direct users to appropriate professionals or services.
 4. **Clear boundaries:** Every agent must state when a request is outside its scope and route the user to the relevant agent or a professional.
 5. **Practical output:** Responses should be situation-based, understandable, and oriented toward immediate safe next steps.
-6. **Localization:** The platform must support relevant local rules, languages, and service pathways. Israeli administration information requires frequent maintenance and versioning.
+6. **Localization:** The platform must support relevant languages and school contexts. Hebrew and English are the initial languages; Arabic remains a later localization goal.
 
 ## Target Users
 
@@ -44,14 +44,13 @@ AI chat may later help users navigate this expert content or draft suggestions, 
 
 - **Elementary school teachers and subject teachers:** Need classroom-level guidance on behavior, communication, sensory needs, transitions, conflicts, and whether an aide is available.
 - **One-on-one classroom aides:** Need in-the-moment guidance on routines, de-escalation, participation, boundaries, and reporting.
-- **Older siblings aged 10-18:** Need age-appropriate support while the autistic sibling is approximately 6-10 years old.
-- **Parents:** Need both administrative guidance and emotional support.
+- **School support staff:** Need a clear, general understanding of autism and practical ways to support inclusion.
 
 ### Supporting stakeholders
 
+- Parents and guardians, as collaborators with the school
 - School administrators
 - Ministry of Education representatives
-- Municipality and tax-authority service providers
 - Clinicians and therapists
 
 ## Agents
@@ -112,81 +111,23 @@ AI chat may later help users navigate this expert content or draft suggestions, 
 - Does not act as a medical or behavioral clinician.
 - Refers significant, repeated, or unclear patterns to the responsible professional.
 
-### 3. Older Sibling Agent
+### 3. ASD Guide
 
-**Primary users:** Siblings aged 10-18.
-
-**Responsibilities:**
-
-- Explain the sibling's possible experiences and behavior in age-appropriate language.
-- Help siblings manage difficult moments.
-- Support healthy boundaries and help-seeking.
-- Address embarrassment, resentment, protectiveness, guilt, and concern.
-- Adapt tone and complexity to the sibling's age and maturity.
-
-**Required inputs:**
-
-- Sibling age
-- Relationship and household context
-- Situation or feeling to discuss
-- Any immediate safety concern
-
-**Boundaries:**
-
-- Does not provide therapy or replace a trusted adult or mental-health professional.
-- Protects private family and child information.
-- Escalates disclosures that indicate abuse, self-harm, or immediate danger.
-
-### 4. Administration Agent
-
-**Primary user:** Parents.
+**Primary users:** Teachers, classroom aides, and school support teams; families may use it as a shared educational reference.
 
 **Responsibilities:**
 
-- Explain applicable entitlements and benefits.
-- Cover tax authorities, municipality services, evaluation committees, and Ministry of Education processes.
-- Provide step-by-step application and submission guidance.
-- Summarize required documents and likely next steps.
-- Use current, sourced, and jurisdiction-specific information.
-
-**Required inputs:**
-
-- User location
-- Child age and relevant eligibility context
-- Benefit or process requested
-- Deadline or current application stage
-- Documents already available
+- Explain autism-related concepts in clear, respectful, non-stereotyping language.
+- Cover communication, sensory experiences, strengths, support needs, and inclusion in school.
+- Correct common misconceptions using reviewed, sourced content.
+- Help school staff understand how general information relates to classroom support.
 
 **Boundaries:**
 
-- Purely administrative; does not provide emotional or clinical advice.
-- Must identify the source and effective date for every rule or entitlement.
-- Must state when information may be outdated or requires official confirmation.
-- Does not submit applications or make legal representations unless an explicit approved workflow is added.
-
-### 5. Parent Companion Agent
-
-**Primary user:** Parents.
-
-**Responsibilities:**
-
-- Provide empathetic, encouraging, hope-oriented conversation.
-- Acknowledge hardship and normalize difficult feelings.
-- Offer perspective and practical next steps.
-- Help parents identify whether to involve a school, clinician, peer support, or emergency service.
-
-**Required inputs:**
-
-- Parent's concern or situation
-- Desired level of support
-- Any immediate safety concern
-
-**Boundaries:**
-
-- Does not diagnose or treat the child or parent.
-- Does not provide therapy.
-- Does not override clinical or professional advice.
-- Escalates crisis and self-harm indicators with clear local resources.
+- Provides general education, not individual diagnosis or clinical assessment.
+- Does not prescribe medication, therapy, or treatment.
+- Directs individual medical or diagnostic concerns to a qualified professional.
+- Defers classroom-specific implementation to the Teacher Guide or Classroom Aide advisor.
 
 ## Consistency Model
 
@@ -207,14 +148,12 @@ Agents must not expose or infer information outside their authorized scope. A pa
 - Provide a clear, direct escalation response and route to local emergency or professional resources.
 - Avoid diagnostic conclusions, prescriptive medical advice, unsafe restraint guidance, and guarantees of outcomes.
 - Make confidence and uncertainty visible when guidance is derived from uncertain or changing information.
-- Maintain an audit trail for sensitive administrative and safety decisions.
+- Maintain an audit trail for sensitive school, privacy, and safety decisions.
 
 ## Localization and Information Currency
 
-- The initial administrative scope should be Israeli services and processes.
-- Administration answers must cite authoritative sources and include the source date or last-verification date.
-- Rules and forms must be reviewed on a documented update cadence.
-- Content and speech quality must be tested in Hebrew and Arabic, with English available for comparison.
+- School-specific content should clearly state its applicable education context.
+- Content and speech quality must be tested in Hebrew and English; Arabic remains a later localization goal.
 - Product interfaces should support Hebrew right-to-left presentation.
 
 ## Example End-to-End Workflows
@@ -227,21 +166,12 @@ Agents must not expose or infer information outside their authorized scope. A pa
 4. Agent returns immediate, role-appropriate steps and escalation criteria.
 5. Agent suggests what to record or communicate to the aide or parent.
 
-### Parent administers a benefit
+### School staff asks a general autism question
 
-1. Parent opens the Administration Agent.
-2. Parent describes the benefit or application stage.
-3. Agent identifies location, eligibility context, documents, and deadlines.
-4. Agent provides a sourced checklist and step-by-step workflow.
-5. Agent directs the parent to official confirmation when the information is uncertain or changing.
-
-### Sibling asks for support
-
-1. Sibling enters or selects their age.
-2. The agent asks what happened or how the sibling feels.
-3. The agent responds with age-appropriate empathy and practical language.
-4. The agent encourages boundaries and a trusted adult where appropriate.
-5. The agent escalates self-harm or danger disclosures.
+1. The user opens the ASD Guide.
+2. The user browses or searches expert-reviewed educational content.
+3. The guide explains the concept, avoids stereotypes, and links to school-specific guidance where relevant.
+4. The guide refers individual diagnostic or treatment questions to a qualified professional.
 
 ## MVP Scope
 
@@ -249,29 +179,25 @@ The MVP should validate usefulness, safety, and agent role differentiation. The 
 
 - Teacher Guide
 - Classroom Aide Agent
-- Older Sibling Agent
-- Parent Companion Agent
+- ASD Guide
 - Basic shared child profile with parental consent
-- Hebrew and English conversational support
+- English content with a partial Hebrew preview
 - Text-first interface
 - Safety and professional escalation behavior
 - Product demo with recorded or controlled avatar conversations
 
 ## Deferred or Later
 
-- Full Administration Agent integration
-- Live government-data synchronization
-- Application submission on behalf of users
-- Arabic conversational quality if provider validation succeeds
+- Reconsideration of non-school-focused advisor concepts only through a future product decision
+- Arabic localization and conversational quality validation
 - Public availability for parents and investors
 - Live conversational avatars at scale
 
 ## Open Decisions
 
-- Which agent should lead initial implementation and content validation?
+- What should the initial ASD Guide categories and expert reviewers be?
 - Which interface modality should launch: text-first, text plus avatar, or live avatar?
 - How should consent and child-profile fields be represented and revoked?
-- What authoritative sources and update cadence should be used for Israeli administration?
 - Which local emergency and professional resources must be included?
 - What evidence and review process is required before a content answer is published?
 - What are the minimum accessibility, privacy, and safety requirements for the MVP?
@@ -282,3 +208,4 @@ The MVP should validate usefulness, safety, and agent role differentiation. The 
 - [Main Menu](main-menu.md)
 - [Advisor Experience](advisor-experience.md)
 - [Content Management](content-management.md)
+- [Product Decisions](decisions.md)

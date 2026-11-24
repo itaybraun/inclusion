@@ -627,9 +627,7 @@
         "חששות"
       ]
     },
-    "relatedAdvisors": [
-      "parent-companion"
-    ],
+    "relatedAdvisors": [],
     "media": null,
     "answerFiles": {
       "en": "questions/feedback-to-parents/answer.md",
@@ -681,9 +679,7 @@
         "contact"
       ]
     },
-    "relatedAdvisors": [
-      "parent-companion"
-    ],
+    "relatedAdvisors": [],
     "media": null,
     "answerFiles": {
       "en": "questions/parent-communication-frequency/answer.md"
@@ -769,10 +765,7 @@
         "referral"
       ]
     },
-    "relatedAdvisors": [
-      "parent-companion",
-      "administration"
-    ],
+    "relatedAdvisors": [],
     "media": null,
     "answerFiles": {
       "en": "questions/out-of-scope-questions/answer.md"

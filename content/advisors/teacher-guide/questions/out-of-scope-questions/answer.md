@@ -12,7 +12,7 @@ Maya can support classroom understanding and practical response. This advisor do
 - Use observable classroom concerns rather than a diagnosis.
 - Refer medical questions to the child's clinician.
 - Refer formal benefits or legal matters to the relevant professional.
-- Refer family emotional support to the Parent Companion.
+- For family emotional support beyond the school's role, encourage the family to connect with a trusted support person or qualified professional.
 
 ## What to avoid
 

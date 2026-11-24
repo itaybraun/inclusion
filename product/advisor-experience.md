@@ -12,9 +12,7 @@ The MVP should expose advisor availability explicitly:
 
 - Teacher Guide: ready for browsing curated expert-draft questions and answers.
 - Classroom Aide: not ready yet.
-- Older Sibling: not ready yet.
-- Administration: not ready yet.
-- Parent Companion: not ready yet.
+- ASD Guide: not ready yet.
 
 Cards for not-ready advisors remain visible. They must not open a chat or route to missing content.
 
@@ -51,9 +49,7 @@ The advisor's name must always accompany the color. Color must never be the only
 | --- | --- | --- |
 | Teacher Guide | Maya | Warm amber |
 | Classroom Aide Agent | Daniel | Teal |
-| Older Sibling Agent | Noa | Soft indigo |
-| Administration Agent | Yael | Muted terracotta |
-| Parent Companion Agent | Lev | Sage green |
+| ASD Guide | Ari | Muted plum |
 
 ## Advisor Detail Page Structure
 
@@ -165,9 +161,8 @@ When a question crosses another role's scope, the answer should link to that adv
 
 Examples:
 
-- Administrative questions refer to **Yael / Administration**
-- Parent communication or family hardship refers to **Lev / Parent Companion**
-- Sibling questions refer to **Noa / Older Sibling**
+- General autism-information questions can refer to **Ari / ASD Guide**.
+- Classroom-specific questions can refer to **Maya / Teacher Guide** or **Daniel / Classroom Aide**.
 
 ## Teacher Advisor Example Categories
 
