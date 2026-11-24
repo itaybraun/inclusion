@@ -107,6 +107,7 @@ A search field should be displayed above the question categories:
 - Search results replace or filter the category list
 - Search should match question titles, category names, and answer text
 - Search should not expose answers that contain restricted or unsafe guidance
+- Keep clear vertical space between the search field and the category/question panels below it.
 
 **Search states:**
 
@@ -135,6 +136,7 @@ Each category should show:
 - A question count
 
 Selecting a category replaces the question panel content with that category's questions. Categories should not expand and show all questions on the page at once.
+Show the selected category name in the question panel using the advisor's leading color.
 
 On narrow screens, categories should become a compact horizontal list or a dropdown above the question panel.
 

@@ -1,0 +1,642 @@
+[
+  {
+    "id": "what-is-autism",
+    "advisorId": "asd-guide",
+    "categoryId": "autism-basics",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 1,
+    "question": {
+      "en": "What is Autism Spectrum Disorder (ASD)?",
+      "he": "מהי הפרעה על הרצף האוטיסטי (ASD)?"
+    },
+    "keywords": {
+      "en": ["autism", "ASD", "neurodevelopment"],
+      "he": ["אוטיזם", "ASD", "נוירו-התפתחותי"]
+    },
+    "translationStatus": {
+      "en": "draft",
+      "he": "needs-human-review"
+    },
+    "answerFiles": {
+      "en": "questions/what-is-autism/answer.md",
+      "he": "questions/what-is-autism/answer-he.md"
+    },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "why-autism-spectrum",
+    "advisorId": "asd-guide",
+    "categoryId": "autism-basics",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 2,
+    "question": {
+      "en": "Why is autism called a spectrum?",
+      "he": "למה אוטיזם נקרא ספקטרום?"
+    },
+    "keywords": {
+      "en": ["spectrum", "support needs", "variation"],
+      "he": ["ספקטרום", "צרכי תמיכה", "שונות"]
+    },
+    "translationStatus": {
+      "en": "draft",
+      "he": "needs-human-review"
+    },
+    "answerFiles": {
+      "en": "questions/why-autism-spectrum/answer.md",
+      "he": "questions/why-autism-spectrum/answer-he.md"
+    },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "causes-of-autism",
+    "advisorId": "asd-guide",
+    "categoryId": "autism-basics",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 3,
+    "question": {
+      "en": "What causes autism?",
+      "he": "מה גורם לאוטיזם?"
+    },
+    "keywords": {
+      "en": ["causes", "genetics", "vaccines"],
+      "he": ["גורמים", "גנטיקה", "חיסונים"]
+    },
+    "translationStatus": {
+      "en": "draft",
+      "he": "needs-human-review"
+    },
+    "answerFiles": {
+      "en": "questions/causes-of-autism/answer.md",
+      "he": "questions/causes-of-autism/answer-he.md"
+    },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "autism-disability-or-difference",
+    "advisorId": "asd-guide",
+    "categoryId": "autism-basics",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 4,
+    "question": {
+      "en": "Is autism a disability or a different way of experiencing the world?",
+      "he": "האם אוטיזם הוא מוגבלות או דרך שונה לחוות את העולם?"
+    },
+    "keywords": {
+      "en": ["disability", "neurotype", "identity"],
+      "he": ["מוגבלות", "מגוון נוירולוגי", "זהות"]
+    },
+    "translationStatus": {
+      "en": "draft",
+      "he": "needs-human-review"
+    },
+    "answerFiles": {
+      "en": "questions/autism-disability-or-difference/answer.md",
+      "he": "questions/autism-disability-or-difference/answer-he.md"
+    },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "common-autism-characteristics",
+    "advisorId": "asd-guide",
+    "categoryId": "autism-basics",
+    "status": "draft",
+    "featured": true,
+    "sortOrder": 5,
+    "question": {
+      "en": "What are the common characteristics of autism?",
+      "he": "מהם המאפיינים הנפוצים של אוטיזם?"
+    },
+    "keywords": {
+      "en": ["characteristics", "communication", "sensory", "interests"],
+      "he": ["מאפיינים", "תקשורת", "חושים", "תחומי עניין"]
+    },
+    "translationStatus": {
+      "en": "draft",
+      "he": "needs-human-review"
+    },
+    "answerFiles": {
+      "en": "questions/common-autism-characteristics/answer.md",
+      "he": "questions/common-autism-characteristics/answer-he.md"
+    },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "autistic-people-intelligence",
+    "advisorId": "asd-guide",
+    "categoryId": "autism-basics",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 6,
+    "question": {
+      "en": "Are autistic people smarter than others?",
+      "he": "האם אנשים אוטיסטים חכמים יותר מאנשים אחרים?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "autistic-emotions",
+    "advisorId": "asd-guide",
+    "categoryId": "autism-basics",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 7,
+    "question": {
+      "en": "Do autistic people feel emotions differently?",
+      "he": "האם אנשים אוטיסטים חווים רגשות באופן שונה?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "autistic-children-friendship",
+    "advisorId": "asd-guide",
+    "categoryId": "autism-basics",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 8,
+    "question": {
+      "en": "Are autistic children less interested in friendships?",
+      "he": "האם ילדים אוטיסטים מתעניינים פחות בחברויות?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "recognize-autism-by-appearance",
+    "advisorId": "asd-guide",
+    "categoryId": "autism-basics",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 9,
+    "question": {
+      "en": "Can you recognize autism just by looking at someone?",
+      "he": "האם אפשר לזהות אוטיזם רק לפי מראה חיצוני?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "autistic-world-perception",
+    "advisorId": "asd-guide",
+    "categoryId": "autistic-experience",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 1,
+    "question": {
+      "en": "How do autistic children perceive the world?",
+      "he": "איך ילדים אוטיסטים תופסים את העולם?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "sensory-processing",
+    "advisorId": "asd-guide",
+    "categoryId": "autistic-experience",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 2,
+    "question": {
+      "en": "What is sensory processing?",
+      "he": "מהו עיבוד חושי?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "everyday-situations-overwhelming",
+    "advisorId": "asd-guide",
+    "categoryId": "autistic-experience",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 3,
+    "question": {
+      "en": "Why can everyday situations be overwhelming?",
+      "he": "למה מצבים יומיומיים עלולים להיות מציפים?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "autism-communication",
+    "advisorId": "asd-guide",
+    "categoryId": "autistic-experience",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 4,
+    "question": {
+      "en": "How does autism affect communication?",
+      "he": "איך אוטיזם משפיע על תקשורת?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "social-cues",
+    "advisorId": "asd-guide",
+    "categoryId": "autistic-experience",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 5,
+    "question": {
+      "en": "Why can social cues be difficult to understand?",
+      "he": "למה לפעמים קשה להבין רמזים חברתיים?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "autistic-children-want-friends",
+    "advisorId": "asd-guide",
+    "categoryId": "autistic-experience",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 6,
+    "question": {
+      "en": "Do autistic children want friends?",
+      "he": "האם ילדים אוטיסטים רוצים חברים?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "special-interests",
+    "advisorId": "asd-guide",
+    "categoryId": "autistic-experience",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 7,
+    "question": {
+      "en": "What are special interests?",
+      "he": "מהם תחומי עניין מיוחדים?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "changes-and-transitions",
+    "advisorId": "asd-guide",
+    "categoryId": "autistic-experience",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 8,
+    "question": {
+      "en": "Why are changes and transitions difficult?",
+      "he": "למה שינויים ומעברים עלולים להיות קשים?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "functioning-labels",
+    "advisorId": "asd-guide",
+    "categoryId": "abilities-and-support-needs",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 1,
+    "question": {
+      "en": "What do \"high-functioning\" and \"medium-functioning\" mean?",
+      "he": "מה פירוש המונחים \"תפקוד גבוה\" ו\"תפקוד בינוני\"?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "abilities-vs-support-needs",
+    "advisorId": "asd-guide",
+    "categoryId": "abilities-and-support-needs",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 2,
+    "question": {
+      "en": "What is the difference between abilities and support needs?",
+      "he": "מה ההבדל בין יכולות לבין צרכי תמיכה?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "autism-support-levels",
+    "advisorId": "asd-guide",
+    "categoryId": "abilities-and-support-needs",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 3,
+    "question": {
+      "en": "What are the three levels of autism?",
+      "he": "מהן שלוש רמות האוטיזם?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "academically-successful-support-needs",
+    "advisorId": "asd-guide",
+    "categoryId": "abilities-and-support-needs",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 4,
+    "question": {
+      "en": "Can an academically successful child have significant support needs?",
+      "he": "האם ילד שמצליח בלימודים יכול להזדקק לתמיכה משמעותית?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "strengths-and-daily-task-challenges",
+    "advisorId": "asd-guide",
+    "categoryId": "abilities-and-support-needs",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 5,
+    "question": {
+      "en": "Why can a child be excellent at some things but struggle with everyday tasks?",
+      "he": "למה ילד יכול להצטיין בדברים מסוימים ולהתקשות במשימות יומיומיות?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "support-needs-vary-by-situation",
+    "advisorId": "asd-guide",
+    "categoryId": "abilities-and-support-needs",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 6,
+    "question": {
+      "en": "Can support needs change depending on the situation?",
+      "he": "האם צרכי התמיכה יכולים להשתנות בהתאם למצב?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "meltdowns-and-shutdowns",
+    "advisorId": "asd-guide",
+    "categoryId": "emotions-and-behavior",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 1,
+    "question": {
+      "en": "What are meltdowns and shutdowns?",
+      "he": "מהן תגובות הצפה (meltdown) והסתגרות (shutdown)?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "emotional-dysregulation",
+    "advisorId": "asd-guide",
+    "categoryId": "emotions-and-behavior",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 2,
+    "question": {
+      "en": "What is emotional dysregulation?",
+      "he": "מהי דיסרגולציה רגשית (קושי בוויסות רגשי)?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "stimming",
+    "advisorId": "asd-guide",
+    "categoryId": "emotions-and-behavior",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 3,
+    "question": {
+      "en": "What is stimming, and why is it important?",
+      "he": "מהו סטימינג, ולמה הוא חשוב?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "masking",
+    "advisorId": "asd-guide",
+    "categoryId": "emotions-and-behavior",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 4,
+    "question": {
+      "en": "What is masking?",
+      "he": "מהי הסוואה (masking)?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "school-and-home-behavior",
+    "advisorId": "asd-guide",
+    "categoryId": "emotions-and-behavior",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 5,
+    "question": {
+      "en": "Why might an autistic child behave differently at school and at home?",
+      "he": "למה ילד אוטיסט עשוי להתנהג אחרת בבית הספר ובבית?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "neurodiversity",
+    "advisorId": "asd-guide",
+    "categoryId": "neurodiversity-and-approaches",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 1,
+    "question": {
+      "en": "What is neurodiversity?",
+      "he": "מהו מגוון נוירולוגי (neurodiversity)?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "ableism",
+    "advisorId": "asd-guide",
+    "categoryId": "neurodiversity-and-approaches",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 2,
+    "question": {
+      "en": "What is ableism?",
+      "he": "מהי אפליה על רקע מוגבלות (ableism)?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "autistic-child-or-child-with-autism",
+    "advisorId": "asd-guide",
+    "categoryId": "neurodiversity-and-approaches",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 3,
+    "question": {
+      "en": "Should we say \"autistic child\" or \"child with autism\"?",
+      "he": "האם נכון לומר \"ילד אוטיסט\" או \"ילד עם אוטיזם\"?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "autism-affirming-approach",
+    "advisorId": "asd-guide",
+    "categoryId": "neurodiversity-and-approaches",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 4,
+    "question": {
+      "en": "What is the autism-affirming approach?",
+      "he": "מהי גישה המאשרת ומכבדת אוטיזם (autism-affirming)?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "aba",
+    "advisorId": "asd-guide",
+    "categoryId": "neurodiversity-and-approaches",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 5,
+    "question": {
+      "en": "What is ABA?",
+      "he": "מהי שיטת ABA?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "change-behavior-or-support-development",
+    "advisorId": "asd-guide",
+    "categoryId": "neurodiversity-and-approaches",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 6,
+    "question": {
+      "en": "Should autism interventions aim to change autistic behaviors or support the child's development?",
+      "he": "האם התערבויות באוטיזם צריכות לשנות התנהגויות אוטיסטיות או לתמוך בהתפתחות הילד?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  },
+  {
+    "id": "nothing-about-us-without-us",
+    "advisorId": "asd-guide",
+    "categoryId": "neurodiversity-and-approaches",
+    "status": "draft",
+    "featured": false,
+    "sortOrder": 7,
+    "question": {
+      "en": "What does \"Nothing About Us Without Us\" mean?",
+      "he": "מה פירוש המשפט \"שום דבר עלינו בלעדינו\"?"
+    },
+    "keywords": { "en": [], "he": [] },
+    "translationStatus": { "en": "draft", "he": "needs-human-review" },
+    "answerFiles": { "en": "" },
+    "relatedAdvisors": [],
+    "media": null
+  }
+]

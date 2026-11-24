@@ -1,0 +1,62 @@
+[
+  {
+    "id": "autism-basics",
+    "name": {
+      "en": "Autism Basics",
+      "he": "יסודות האוטיזם"
+    },
+    "description": {
+      "en": "Foundational questions about autism, its characteristics, causes, and common misconceptions.",
+      "he": "שאלות בסיסיות על אוטיזם, מאפייניו, הגורמים לו ותפיסות שגויות נפוצות."
+    },
+    "sortOrder": 1
+  },
+  {
+    "id": "autistic-experience",
+    "name": {
+      "en": "The Autistic Experience",
+      "he": "החוויה האוטיסטית"
+    },
+    "description": {
+      "en": "How autistic children may experience communication, sensory information, relationships, and change.",
+      "he": "כיצד ילדים אוטיסטים עשויים לחוות תקשורת, מידע חושי, קשרים ושינויים."
+    },
+    "sortOrder": 2
+  },
+  {
+    "id": "abilities-and-support-needs",
+    "name": {
+      "en": "Abilities & Support Needs",
+      "he": "יכולות וצרכי תמיכה"
+    },
+    "description": {
+      "en": "Individual strengths, abilities, and support needs across settings and situations.",
+      "he": "חוזקות, יכולות וצרכי תמיכה אישיים במצבים ובסביבות שונות."
+    },
+    "sortOrder": 3
+  },
+  {
+    "id": "emotions-and-behavior",
+    "name": {
+      "en": "Emotions & Behavior",
+      "he": "רגשות והתנהגות"
+    },
+    "description": {
+      "en": "Understanding distress, regulation, repetitive behaviors, and differences across settings.",
+      "he": "הבנת מצוקה, ויסות, התנהגויות חוזרות והבדלים בין סביבות."
+    },
+    "sortOrder": 4
+  },
+  {
+    "id": "neurodiversity-and-approaches",
+    "name": {
+      "en": "Neurodiversity & Approaches",
+      "he": "מגוון נוירולוגי וגישות תמיכה"
+    },
+    "description": {
+      "en": "Autism, identity, inclusion, and different approaches to support and intervention.",
+      "he": "אוטיזם, זהות, הכלה וגישות שונות לתמיכה ולהתערבות."
+    },
+    "sortOrder": 5
+  }
+]
