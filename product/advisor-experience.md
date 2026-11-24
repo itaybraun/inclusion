@@ -158,6 +158,8 @@ The answer view should include:
 - Professional or cross-advisor referrals
 - Optional podcast or MP4 recording
 
+Long answers should scroll within a height-limited answer body. Keep the selected question and the rest of the page outside that scroll area so they remain in place. Contain scroll at the answer boundary and make the answer region keyboard-scrollable.
+
 ### 5. Related Advisor References
 
 When a question crosses another role's scope, the answer should link to that advisor.

@@ -724,6 +724,9 @@ main {
 }
 .question-button:hover { color: #9a6a20; }
 .answer-panel {
+  max-height: min(60vh, 520px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   margin: 6px 0 8px;
   border-radius: 10px;
   padding: 14px 16px 12px;
@@ -732,6 +735,10 @@ main {
   line-height: 1.55;
 }
 .answer-panel:empty { display: none; }
+.answer-panel:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--teacher) 60%, white);
+  outline-offset: 2px;
+}
 .answer-panel h2, .answer-panel h3 {
   margin: 12px 0 6px;
 }

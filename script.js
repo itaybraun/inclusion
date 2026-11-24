@@ -375,12 +375,50 @@ function renderTeacherContent(query = "") {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "question-button";
+    button.id = `question-${question.id}`;
     button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-controls", `answer-${question.id}`);
     button.innerHTML = `<span>${escapeHtml(question.question[currentLanguage])}</span><span class="question-arrow" aria-hidden="true">↓</span>`;
 
     const answer = document.createElement("div");
     answer.className = "answer-panel";
+    answer.id = `answer-${question.id}`;
+    answer.setAttribute("role", "region");
+    answer.setAttribute("aria-labelledby", button.id);
+    answer.tabIndex = 0;
     answer.hidden = true;
+    answer.addEventListener("keydown", (event) => {
+      if (event.target !== answer) return;
+      const pageStep = Math.max(40, answer.clientHeight * 0.8);
+      let scrollTop;
+      switch (event.key) {
+        case "ArrowDown":
+          scrollTop = answer.scrollTop + 40;
+          break;
+        case "ArrowUp":
+          scrollTop = answer.scrollTop - 40;
+          break;
+        case "PageDown":
+          scrollTop = answer.scrollTop + pageStep;
+          break;
+        case "PageUp":
+          scrollTop = answer.scrollTop - pageStep;
+          break;
+        case "Home":
+          scrollTop = 0;
+          break;
+        case "End":
+          scrollTop = answer.scrollHeight;
+          break;
+        case " ":
+          scrollTop = answer.scrollTop + (event.shiftKey ? -pageStep : pageStep);
+          break;
+        default:
+          return;
+      }
+      event.preventDefault();
+      answer.scrollTop = scrollTop;
+    });
 
     button.addEventListener("click", async () => {
       const wasHidden = answer.hidden;
@@ -396,6 +434,7 @@ function renderTeacherContent(query = "") {
       button.classList.add("selected");
       button.setAttribute("aria-expanded", "true");
       answer.hidden = false;
+      answer.scrollTop = 0;
       answer.textContent = uiText[currentLanguage].loadingAnswer;
       try {
         const response = await fetch(`content/advisors/teacher-guide/${question.answerFiles[currentLanguage]}?v=hebrew-rtl-v1`);

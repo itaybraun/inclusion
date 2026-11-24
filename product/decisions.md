@@ -30,3 +30,17 @@ These are removed from the active advisor list and current MVP scope. This does 
 - The product specification, advisor experience, and content catalog should use this active advisor set.
 - The ASD Guide explains autism and school-relevant support concepts but does not diagnose, prescribe treatment, or replace a qualified professional.
 - Content remains expert-written or expert-reviewed. The ASD Guide must clearly distinguish general educational information from individual clinical advice.
+
+## 2026-11-25 — Keep long answers in an inner scroll area
+
+**Status:** Accepted
+
+### Decision
+
+When an answer is longer than its available reading area, scroll only the answer body. Keep the selected question, category/question layout, and surrounding page in place while the user reads.
+
+### Implications
+
+- Bound the answer body's height to the available viewport and allow it to scroll independently.
+- Keep the selected question outside the scroll area so it remains visible.
+- Contain scroll behavior at the answer boundary and support keyboard scrolling.
