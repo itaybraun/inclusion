@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=ari-demo-v1" />
+    <link rel="stylesheet" href="styles.css?v=real-world-examples-v1" />
   </head>
   <body>
     <header class="site-header">
@@ -25,6 +25,7 @@
 
       <nav class="top-nav" aria-label="Main navigation">
         <button class="nav-link active" type="button" data-view="advisors" data-i18n="navAdvisors">Advisors</button>
+        <button class="nav-link" type="button" data-view="examples" data-i18n="navExamples">Real-world examples</button>
         <button class="nav-link" type="button" data-view="accessories" data-i18n="navAccessories">Accessories</button>
         <button class="nav-link" type="button" data-view="books" data-i18n="navBooks">Books</button>
         <button class="nav-link" type="button" data-view="about" data-i18n="navAbout">About us</button>
@@ -140,7 +141,6 @@
               <input id="content-search" type="search" placeholder="Search a topic or question" autocomplete="off" />
             </label>
             <p class="search-status" id="search-status" aria-live="polite"></p>
-            <p class="demo-notice" id="demo-notice" role="status" hidden></p>
             <p class="translation-notice" id="translation-notice" hidden></p>
             <nav class="category-sidebar" id="category-nav" aria-label="Question categories"></nav>
           </aside>
@@ -162,6 +162,20 @@
           <button class="back-button" type="button" data-back data-i18n="backToAdvisors">Back to advisors</button>
         </div>
       </section>
+
+      <section class="examples-view view" id="examples-view" hidden>
+        <div class="examples-heading">
+          <div>
+            <p class="section-kicker" data-i18n="examplesKicker">Real-world examples</p>
+            <h1 data-i18n="examplesTitle">What happens, and what helps</h1>
+          </div>
+          <p data-i18n="examplesIntro">Short classroom scenarios with practical next steps.</p>
+        </div>
+        <div class="example-layout">
+          <aside class="example-list" id="example-list" aria-label="Real-world scenarios"></aside>
+          <article class="example-detail" id="example-detail" aria-live="polite"></article>
+        </div>
+      </section>
     </main>
 
     <div class="advisor-dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" hidden>
@@ -175,6 +189,6 @@
       </div>
     </div>
 
-    <script src="script.js?v=ari-demo-v1"></script>
+    <script src="script.js?v=real-world-examples-v1"></script>
   </body>
 </html>
