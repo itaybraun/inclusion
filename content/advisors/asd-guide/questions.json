@@ -616,6 +616,10 @@
       "en": "Should autism interventions aim to change autistic behaviors or support the child's development?",
       "he": "האם התערבויות באוטיזם צריכות לשנות התנהגויות אוטיסטיות או לתמוך בהתפתחות הילד?"
     },
+    "shortQuestion": {
+      "en": "Change behavior or support development?",
+      "he": "לשנות התנהגות או לתמוך בהתפתחות?"
+    },
     "keywords": { "en": [], "he": [] },
     "translationStatus": { "en": "draft", "he": "needs-human-review" },
     "answerFiles": { "en": "" },

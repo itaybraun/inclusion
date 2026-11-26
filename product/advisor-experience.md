@@ -99,7 +99,7 @@ For the MVP, live chat should be represented by a compact round icon at the righ
 
 ### 3. Search
 
-A search field should be displayed above the question categories:
+A search field should appear at the top of the advisor's question sidebar:
 
 - Placeholder: "Search Maya's guidance"
 - Search button or icon
@@ -123,32 +123,27 @@ A search field should be displayed above the question categories:
 - Avoid relying on AI retrieval; search curated question metadata and published answers
 - Keep the search label available to assistive technology without displaying a separate label above the input.
 
-### 4. Question Categories
+### 4. Question Sidebar and Reading Panel
 
-On wide screens, the advisor should present curated questions with categories in a side navigation and questions in a dedicated panel.
+On wide screens, keep a wider, independently scrollable category-and-question sidebar beside a fixed reading panel. Show each category as a group with its questions listed below it. The sidebar must scroll internally when its content exceeds the available height; selecting a question must not move or resize the reading panel.
 
 Each category should show:
 
 - Category name
-- Short category description
 - Number of available questions
-- A selected state
-- A question count
+- Expand/collapse state
 
-Selecting a category replaces the question panel content with that category's questions. Categories should not expand and show all questions on the page at once.
-Show the selected category name in the question panel using the advisor's leading color.
+Each question may have a localized short label for the sidebar. If no short label is provided, use the full question. Selecting a sidebar question highlights it and displays its full question text as the reading-panel title, with its answer below.
 
-On narrow screens, categories should become a compact horizontal list or a dropdown above the question panel.
+The reading panel stays in a fixed position and height while questions change. Long answer content scrolls inside its own answer area; the question title stays in place. The sidebar and answer area scroll independently.
 
-Questions should be displayed as natural, first-person or teacher-facing prompts.
+On narrow screens, stack the sidebar and reading panel, while keeping each independently scrollable.
 
-Example:
+Full questions should be displayed as natural, first-person or teacher-facing prompts. For example:
 
 > "What should I do if the child has a meltdown in the middle of a lesson?"
 
-Selecting a question opens its published answer.
-
-An open or selected question should be bold and use the advisor's leading color. Its arrow should point down. Answer text should use compact spacing: short paragraphs, close list spacing, and minimal vertical gaps between sections.
+Use the advisor's leading color to identify the selected sidebar question, category labels, and reading-panel category label. Answer text should use compact spacing: short paragraphs, close list spacing, and minimal vertical gaps between sections.
 
 The answer view should include:
 
@@ -160,7 +155,7 @@ The answer view should include:
 - Professional or cross-advisor referrals
 - Optional podcast or MP4 recording
 
-Long answers should scroll within a height-limited answer body. Keep the selected question and the rest of the page outside that scroll area so they remain in place. Contain scroll at the answer boundary and make the answer region keyboard-scrollable.
+Long answers should scroll within a height-limited answer body. Keep the selected question title and surrounding layout outside that scroll area so they remain in place. Contain scroll at the answer boundary and make the answer region keyboard-scrollable.
 
 ### 5. Related Advisor References
 

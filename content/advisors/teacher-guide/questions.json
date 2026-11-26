@@ -10,6 +10,10 @@
       "en": "Should the student tell the whole class about their diagnosis?",
       "he": "האם לספר לכל הכיתה על האבחנה של התלמיד?"
     },
+    "shortQuestion": {
+      "en": "Tell the whole class?",
+      "he": "לספר לכל הכיתה?"
+    },
     "keywords": {
       "en": [
         "disclosure",
@@ -311,6 +315,9 @@
     "sortOrder": 4,
     "question": {
       "en": "How do I handle noise, bright lights, or crowded spaces like assemblies, recess, and field trips?"
+    },
+    "shortQuestion": {
+      "en": "Noise, crowds & outings"
     },
     "keywords": {
       "en": [

@@ -133,14 +133,25 @@
           </div>
         </div>
 
-        <label class="content-search">
-          <span class="sr-only" id="detail-search-label" data-i18n="searchLabel">Search Maya's guidance</span>
-          <input id="content-search" type="search" placeholder="Search a topic or question" autocomplete="off" />
-        </label>
-        <p class="search-status" id="search-status" aria-live="polite"></p>
-        <p class="demo-notice" id="demo-notice" role="status" hidden></p>
-        <p class="translation-notice" id="translation-notice" hidden></p>
-        <div class="category-list" id="category-list"></div>
+        <div class="category-list" id="category-list">
+          <aside class="question-sidebar">
+            <label class="content-search">
+              <span class="sr-only" id="detail-search-label" data-i18n="searchLabel">Search Maya's guidance</span>
+              <input id="content-search" type="search" placeholder="Search a topic or question" autocomplete="off" />
+            </label>
+            <p class="search-status" id="search-status" aria-live="polite"></p>
+            <p class="demo-notice" id="demo-notice" role="status" hidden></p>
+            <p class="translation-notice" id="translation-notice" hidden></p>
+            <nav class="category-sidebar" id="category-nav" aria-label="Question categories"></nav>
+          </aside>
+          <section class="question-panel" id="question-panel" aria-live="polite">
+            <div class="question-panel-heading">
+              <p class="question-category" id="question-category"></p>
+              <h2 id="question-title"></h2>
+            </div>
+            <div class="answer-panel" id="answer-panel" role="region" aria-labelledby="question-title" tabindex="0"></div>
+          </section>
+        </div>
       </section>
 
       <section class="content-view view" id="other-view" hidden>

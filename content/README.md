@@ -11,6 +11,7 @@ This folder is the source of truth for expert-written advisor content.
 - `advisors/<advisor-id>/questions/<question-id>/answer-he.md` may contain a localized Hebrew answer.
 - `advisors/<advisor-id>/questions/<question-id>/answer-ar.md` may contain a localized Arabic answer.
 - `questions.json` stores localized question text and an `answerFiles` map keyed by language (`en`, `he`, `ar`).
+- Questions may include a localized `shortQuestion` object for compact sidebar labels; the full `question` text remains the reading-panel title.
 - `schema/` documents validation rules.
 
 Markdown is the primary answer format because it supports headings, lists, bold text, links, and images while remaining easy for experts to edit. HTML may be permitted only for a deliberate rich-content extension, such as supported media embeds, with strict allow-list sanitization.

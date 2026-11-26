@@ -12,6 +12,15 @@
       "featured": { "type": "boolean" },
       "sortOrder": { "type": "integer", "minimum": 1 },
       "question": { "type": "object" },
+      "shortQuestion": {
+        "type": "object",
+        "properties": {
+          "en": { "type": "string" },
+          "he": { "type": "string" },
+          "ar": { "type": "string" }
+        },
+        "additionalProperties": false
+      },
       "keywords": { "type": "object" },
       "translationStatus": {
         "type": "object",

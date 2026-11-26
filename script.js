@@ -11,6 +11,10 @@ const dialog = document.querySelector(".advisor-dialog");
 const dialogTitle = document.querySelector("#dialog-title");
 const dialogDescription = document.querySelector("#dialog-description");
 const teacherDetail = document.querySelector("#teacher-detail");
+const categoryNav = document.querySelector("#category-nav");
+const questionTitle = document.querySelector("#question-title");
+const questionCategory = document.querySelector("#question-category");
+const answerPanel = document.querySelector("#answer-panel");
 const ariCard = document.querySelector('.advisor-card[data-content-id="asd-guide"]');
 const ariDemoExpiresAt = Date.parse("2026-11-26T23:10:06Z");
 let currentLanguage = "en";
@@ -18,7 +22,8 @@ let advisorCategories = [];
 let advisorQuestions = [];
 let loadedAdvisorId = "";
 let currentAdvisorId = "teacher-guide";
-let selectedCategoryId = "disclosure-and-privacy";
+let selectedQuestionId = "";
+let answerRequestId = 0;
 
 const uiText = {
   en: {
@@ -47,6 +52,7 @@ const uiText = {
     ariAnswerPending: "An answer for this question has not been prepared yet. This demo includes answer drafts for the first five questions only.",
     loadingQuestions: "Loading questions…",
     contentUnavailable: "The advisor content could not be loaded.",
+    noQuestionSelected: "Select a question from the menu to read its answer.",
     searchPlaceholder: "Search a topic or question",
     translatedNotice: "",
     noResults: "No matching questions found. Try a shorter topic.",
@@ -92,6 +98,7 @@ const uiText = {
     ariAnswerPending: "תשובה לשאלה זו עדיין לא הוכנה. בהדגמה זו קיימות טיוטות תשובה לחמש השאלות הראשונות בלבד.",
     loadingQuestions: "השאלות נטענות…",
     contentUnavailable: "לא ניתן לטעון את תוכן המדריך.",
+    noQuestionSelected: "בחרו שאלה מהתפריט כדי לקרוא את התשובה.",
     searchPlaceholder: "חיפוש לפי נושא או שאלה",
     translatedNotice: "זו תצוגת עברית ראשונית. רק שאלות ותשובות שתורגמו מוצגות; התרגום עדיין דורש עריכה ובדיקה.",
     noResults: "לא נמצאו שאלות. נסו לחפש מונח קצר יותר.",
@@ -276,9 +283,12 @@ function openDialog(card) {
 
 async function showAdvisorDetail(card) {
   currentAdvisorId = card.dataset.contentId;
-  selectedCategoryId = "";
+  selectedQuestionId = "";
   updateAdvisorDetails(card);
-  document.querySelector("#category-list").textContent = uiText[currentLanguage].loadingQuestions;
+  categoryNav.textContent = uiText[currentLanguage].loadingQuestions;
+  questionTitle.textContent = "";
+  questionCategory.textContent = "";
+  answerPanel.textContent = uiText[currentLanguage].loadingQuestions;
   document.querySelector("#search-status").textContent = "";
   advisorsView.hidden = true;
   otherView.hidden = true;
@@ -288,7 +298,6 @@ async function showAdvisorDetail(card) {
   if (loadedAdvisorId !== currentAdvisorId && !(await loadAdvisorContent(currentAdvisorId))) {
     return;
   }
-  selectedCategoryId = advisorCategories[0]?.id || "";
   renderAdvisorContent();
 }
 
@@ -332,7 +341,7 @@ async function loadAdvisorContent(advisorId) {
   ]);
 
   if (!categoriesResponse.ok || !questionsResponse.ok) {
-    document.querySelector("#category-list").textContent = uiText[currentLanguage].contentUnavailable;
+    answerPanel.textContent = uiText[currentLanguage].contentUnavailable;
     return false;
   }
 
@@ -343,12 +352,11 @@ async function loadAdvisorContent(advisorId) {
 }
 
 function renderAdvisorContent(query = "") {
-  const list = document.querySelector("#category-list");
   const status = document.querySelector("#search-status");
   const needle = query.trim().toLowerCase();
   let matchCount = 0;
 
-  list.innerHTML = "";
+  categoryNav.innerHTML = "";
   const categoriesWithQuestions = advisorCategories
     .slice()
     .sort((a, b) => a.sortOrder - b.sortOrder)
@@ -363,6 +371,7 @@ function renderAdvisorContent(query = "") {
           if (!needle) return true;
           const searchable = [
             question.question[currentLanguage],
+            question.shortQuestion?.[currentLanguage],
             category.name[currentLanguage],
             category.description[currentLanguage],
             ...(question.keywords[currentLanguage] || [])
@@ -377,141 +386,91 @@ function renderAdvisorContent(query = "") {
 
   if (!categoriesWithQuestions.length) {
     status.textContent = `0 ${uiText[currentLanguage].noMatches}`;
-    list.innerHTML = `<p class="answer-panel">${escapeHtml(uiText[currentLanguage].noResults)}</p>`;
+    selectedQuestionId = "";
+    questionCategory.textContent = "";
+    questionTitle.textContent = "";
+    answerRequestId += 1;
+    answerPanel.textContent = uiText[currentLanguage].noResults;
     return;
   }
 
-  if (needle && !categoriesWithQuestions.some((entry) => entry.category.id === selectedCategoryId)) {
-    selectedCategoryId = categoriesWithQuestions[0].category.id;
-  }
-  if (!needle && !categoriesWithQuestions.some((entry) => entry.category.id === selectedCategoryId)) {
-    selectedCategoryId = categoriesWithQuestions[0].category.id;
+  const allQuestions = categoriesWithQuestions.flatMap(({ questions }) => questions);
+  let selectedQuestion = allQuestions.find((question) => question.id === selectedQuestionId);
+  if (!selectedQuestion) {
+    selectedQuestion = allQuestions[0];
+    selectedQuestionId = selectedQuestion.id;
   }
 
-  const sidebar = document.createElement("nav");
-  sidebar.className = "category-sidebar";
-  sidebar.setAttribute("aria-label", currentLanguage === "he" ? "קטגוריות שאלות" : "Question categories");
-
+  categoryNav.setAttribute("aria-label", currentLanguage === "he" ? "קטגוריות ושאלות" : "Categories and questions");
   categoriesWithQuestions.forEach(({ category, questions }) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "category-button";
-    if (category.id === selectedCategoryId) button.classList.add("selected");
-    button.setAttribute("aria-pressed", String(category.id === selectedCategoryId));
-    button.innerHTML = `<span>${escapeHtml(category.name[currentLanguage])}</span><span class="category-count">${questions.length}</span>`;
-    button.addEventListener("click", () => {
-      selectedCategoryId = category.id;
-      renderAdvisorContent(document.querySelector("#content-search").value);
+    const group = document.createElement("details");
+    group.className = "category-group";
+    group.open = true;
+
+    const heading = document.createElement("summary");
+    heading.className = "category-heading";
+    const categoryName = document.createElement("span");
+    categoryName.textContent = category.name[currentLanguage];
+    const count = document.createElement("span");
+    count.className = "category-count";
+    count.textContent = String(questions.length);
+    heading.append(categoryName, count);
+    group.append(heading);
+
+    const questionList = document.createElement("div");
+    questionList.className = "sidebar-question-list";
+    questions.forEach((question) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "sidebar-question";
+      button.dataset.questionId = question.id;
+      button.textContent = question.shortQuestion?.[currentLanguage] || question.question[currentLanguage];
+      button.title = question.question[currentLanguage];
+      button.setAttribute("aria-current", String(question.id === selectedQuestionId));
+      button.classList.toggle("selected", question.id === selectedQuestionId);
+      button.addEventListener("click", () => selectAdvisorQuestion(question));
+      questionList.append(button);
     });
-    sidebar.append(button);
+    group.append(questionList);
+    categoryNav.append(group);
   });
 
-  const selected = categoriesWithQuestions.find(
-    (entry) => entry.category.id === selectedCategoryId
-  ) || categoriesWithQuestions[0];
-  selectedCategoryId = selected.category.id;
-
-  const panel = document.createElement("section");
-  panel.className = "question-panel";
-  panel.innerHTML = `
-    <div class="question-panel-heading">
-      <h2>${escapeHtml(selected.category.name[currentLanguage])}</h2>
-      <p>${escapeHtml(selected.category.description[currentLanguage])}</p>
-    </div>
-  `;
-
-  const questionList = document.createElement("div");
-  questionList.className = "question-list";
-
-  selected.questions.forEach((question) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "question-button";
-    button.id = `question-${question.id}`;
-    button.setAttribute("aria-expanded", "false");
-    button.setAttribute("aria-controls", `answer-${question.id}`);
-    button.innerHTML = `<span>${escapeHtml(question.question[currentLanguage])}</span><span class="question-arrow" aria-hidden="true">↓</span>`;
-
-    const answer = document.createElement("div");
-    answer.className = "answer-panel";
-    answer.id = `answer-${question.id}`;
-    answer.setAttribute("role", "region");
-    answer.setAttribute("aria-labelledby", button.id);
-    answer.tabIndex = 0;
-    answer.hidden = true;
-    answer.addEventListener("keydown", (event) => {
-      if (event.target !== answer) return;
-      const pageStep = Math.max(40, answer.clientHeight * 0.8);
-      let scrollTop;
-      switch (event.key) {
-        case "ArrowDown":
-          scrollTop = answer.scrollTop + 40;
-          break;
-        case "ArrowUp":
-          scrollTop = answer.scrollTop - 40;
-          break;
-        case "PageDown":
-          scrollTop = answer.scrollTop + pageStep;
-          break;
-        case "PageUp":
-          scrollTop = answer.scrollTop - pageStep;
-          break;
-        case "Home":
-          scrollTop = 0;
-          break;
-        case "End":
-          scrollTop = answer.scrollHeight;
-          break;
-        case " ":
-          scrollTop = answer.scrollTop + (event.shiftKey ? -pageStep : pageStep);
-          break;
-        default:
-          return;
-      }
-      event.preventDefault();
-      answer.scrollTop = scrollTop;
-    });
-
-    button.addEventListener("click", async () => {
-      const wasHidden = answer.hidden;
-      panel.querySelectorAll(".answer-panel").forEach((item) => {
-        item.hidden = true;
-      });
-      panel.querySelectorAll(".question-button").forEach((item) => {
-        item.classList.remove("selected");
-        item.setAttribute("aria-expanded", "false");
-      });
-      if (!wasHidden) return;
-
-      button.classList.add("selected");
-      button.setAttribute("aria-expanded", "true");
-      answer.hidden = false;
-      answer.scrollTop = 0;
-      const answerFile = question.answerFiles?.[currentLanguage];
-      if (!answerFile && currentAdvisorId === "asd-guide") {
-        answer.textContent = uiText[currentLanguage].ariAnswerPending;
-        return;
-      }
-
-      answer.textContent = uiText[currentLanguage].loadingAnswer;
-      try {
-        const response = await fetch(`content/advisors/${currentAdvisorId}/${answerFile}?v=ari-demo-v1`);
-        if (!response.ok) throw new Error("Answer unavailable");
-        answer.innerHTML = renderMarkdown(await response.text());
-      } catch (error) {
-        answer.textContent = uiText[currentLanguage].unavailableAnswer;
-      }
-    });
-
-    questionList.append(button, answer);
-  });
-
-  panel.append(questionList);
-  list.append(sidebar, panel);
+  selectAdvisorQuestion(selectedQuestion);
 
   status.textContent = needle
     ? `${matchCount} ${currentLanguage === "he" && matchCount === 1 ? uiText.he.matchingQuestion : uiText[currentLanguage].noMatches}`
     : "";
+}
+
+async function selectAdvisorQuestion(question) {
+  selectedQuestionId = question.id;
+  categoryNav.querySelectorAll(".sidebar-question").forEach((button) => {
+    const selected = button.dataset.questionId === selectedQuestionId;
+    button.classList.toggle("selected", selected);
+    button.setAttribute("aria-current", String(selected));
+  });
+
+  const category = advisorCategories.find((item) => item.id === question.categoryId);
+  questionCategory.textContent = category?.name[currentLanguage] || "";
+  questionTitle.textContent = question.question[currentLanguage];
+  answerPanel.scrollTop = 0;
+
+  const requestId = ++answerRequestId;
+  const answerFile = question.answerFiles?.[currentLanguage];
+  if (!answerFile && currentAdvisorId === "asd-guide") {
+    answerPanel.textContent = uiText[currentLanguage].ariAnswerPending;
+    return;
+  }
+
+  answerPanel.textContent = uiText[currentLanguage].loadingAnswer;
+  try {
+    const response = await fetch(`content/advisors/${currentAdvisorId}/${answerFile}?v=ari-demo-v1`);
+    if (!response.ok) throw new Error("Answer unavailable");
+    const markdown = await response.text();
+    if (requestId === answerRequestId) answerPanel.innerHTML = renderMarkdown(markdown);
+  } catch (error) {
+    if (requestId === answerRequestId) answerPanel.textContent = uiText[currentLanguage].unavailableAnswer;
+  }
 }
 
 function escapeHtml(value) {
